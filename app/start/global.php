@@ -22,6 +22,16 @@ ClassLoader::addDirectories(array(
 
 /*
 |--------------------------------------------------------------------------
+| Set settings from database
+|--------------------------------------------------------------------------
+*/
+
+if(Schema::hasTable('configuraciones')){
+	Configuracion::setFromDB();	
+};
+
+/*
+|--------------------------------------------------------------------------
 | Application Error Logger
 |--------------------------------------------------------------------------
 |
@@ -31,7 +41,19 @@ ClassLoader::addDirectories(array(
 |
 */
 
-Log::useFiles(storage_path().'/logs/laravel.log');
+Log::useDailyFiles(storage_path().'/logs/laravel.log');
+
+/*
+|--------------------------------------------------------------------------
+| Listen the log file to print it in console
+|--------------------------------------------------------------------------
+*/
+if(Config::get('app.log_in_console')){
+	Log::listen(function($level, $message, $context){
+		$level = strtoupper($level);
+		error_log("[{$level}]: {$message}");
+	});
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -46,10 +68,35 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 |
 */
 
+app('exception')->setDebug(Config::get('app.debug'));
+
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
 });
+
+/*
+|--------------------------------------------------------------------------
+| Log querys
+|--------------------------------------------------------------------------
+*/
+if(Config::get('database.log_query')){
+	DB::listen(function($query, $bindings, $time){
+		// Format binding data for sql insertion
+		foreach($bindings as $i => $binding){
+			if($binding instanceof \DateTime){
+				$bindings[$i] = $binding->format('\'Y-m-d H:i:s\'');
+			}elseif(is_string($binding)){
+				$bindings[$i] = "'$binding'";
+			}
+		}
+		// Insert bindings into query
+		$query = str_replace(array('%', '?'), array('%%', '%s'), $query);
+		$query = vsprintf($query, $bindings);
+		// print the query
+		Log::info("[QUERY]: $query");
+	});
+}
 
 /*
 |--------------------------------------------------------------------------

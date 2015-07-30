@@ -12,6 +12,7 @@ class CrearTablaUsuarios extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('usuarios');
 		Schema::create('usuarios', function($table){
 			$table->increments('id');
 			$table->boolean('estatus')->default(1);
@@ -33,7 +34,7 @@ class CrearTablaUsuarios extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('usuarios');
+		Schema::dropIfExists('usuarios');
 	}
 
 }
