@@ -6,7 +6,9 @@ class Configuracion extends Eloquent {
 
 	public static $booleans = array(
 		'app.debug',
-		'database.log_query'
+		'database.log_query',
+		'app.log_in_console',
+
 	);
 
 	public static function setFromDB(){
