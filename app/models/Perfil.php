@@ -8,6 +8,10 @@ class Perfil extends Eloquent {
 
 	protected $guarded = array();
 
+	public static function getIdByName($nombre_perfil){
+		return Perfil::where('nombre_perfil',$nombre_perfil)->first()->id;
+	}
+
 }
 
 ?>
