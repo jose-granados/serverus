@@ -8,17 +8,17 @@ class ConfiguracionesSeeder extends Seeder {
 		Configuracion::insert(array(
 			array(
 				'nombre_configuracion'=>'app.debug',
-				'valor'=>'false',
+				'valor'=>'true',
 				'descripcion'=>'Modo debug (true/false)',
 			),
 			array(
 				'nombre_configuracion'=>'database.log_query',
-				'valor'=>'false',
+				'valor'=>'true',
 				'descripcion'=>'Escribe los querys en el archivo log (true/false)',
 			),
 			array(
 				'nombre_configuracion'=>'app.log_in_console',
-				'valor'=>'false',
+				'valor'=>'true',
 				'descripcion'=>'Imprime el log en consola',
 			),
 		));

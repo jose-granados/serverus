@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('PerfilesSeeder');
 		$this->call('PermisosSeeder');
 		$this->call('PerfilesPermisosSeeder');
+		$this->call('UsuariosSeeder');
 		
 		DB::statement("SET foreign_key_checks = 1");
 	}
