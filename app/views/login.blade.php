@@ -49,6 +49,7 @@
 			</div>
 		</div>
 
+		{{ HTML::script('public/js/jquery-1.11.3.min.js') }}
 		{{ HTML::script('public/js/bootstrap.min.js') }}
 
 	</body>
