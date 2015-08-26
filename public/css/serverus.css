@@ -12,7 +12,23 @@ a {
     text-decoration: none;
 }
 
+.sidebar a{
+    color: #e2e2e2;
+}
+
+.sidebar ul li a.active {
+    background-color: #006D7A;
+}
+.sidebar ul li a.active:hover {
+    background-color: #052f34;
+    color:#e2e2e2;
+}
+
 a:focus, a:hover {
-    color: darksalmon;
+    color: #f4ab93;
     text-decoration: underline;
+}
+
+.sidebar {
+    background-color: #00BCD4;
 }

@@ -290,7 +290,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-hdd-o fa-fw fa-2x"></i> CPU</a>
+                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-hdd-o fa-fw fa-2x"></i> OS</a>
 
                             <!-- /.nav-second-level -->
                         </li>
