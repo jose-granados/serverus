@@ -8,11 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Serverus</title>
 
 
     <!-- Bootstrap Core CSS -->
-	{{ HTML::style('public/css/bootstrap.min.css') }}
+    {{ HTML::style('public/css/bootstrap.min.css') }}
 
     <!-- MetisMenu CSS -->
     <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -25,9 +25,10 @@
 
     <!-- Morris Charts CSS -->
     <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/morrisjs/morris.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
-	{{ HTML::style('public/css/font-awesome.min.css') }}
+
+    {{ HTML::style('public/css/serverus.css') }}
+   {{ HTML::style('public/css/font-awesome.min.css') }}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html"><img class="logo" src="public/img/logo.png"></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -268,104 +269,32 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav in" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
+
+                        <li>
+                            <a href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html" class="active"><i class="fa fa-dashboard fa-fw fa-2x"></i> Inicio</a>
                         </li>
                         <li>
-                            <a href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
+                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-users fa-fw fa-2x"></i> Usuarios </a>
+
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/tables.html"><i class="fa fa-server fa-fw fa-2x"></i> Servidores</a>
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/forms.html"><i class="fa fa-desktop fa-fw fa-2x"></i> CPU</a>
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/grid.html">Grid</a>
-                                </li>
-                            </ul>
+                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-th-large fa-fw fa-2x"></i> Apps</a>
+
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        <li>
-                                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
+                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-hdd-o fa-fw fa-2x"></i> CPU</a>
+
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -374,7 +303,7 @@
         </nav>
 
         <div id="page-wrapper" style="min-height: 780px;">
-        
+
         {{ $content  }}
 
         </div>
@@ -385,12 +314,12 @@
 
     <!-- jQuery -->
 
-	{{ HTML::script('public/js/jquery.min.js') }}
-	{{ HTML::script('public/js/bootstrap.min.js') }}
-	{{ HTML::script('public/js/metisMenu.min.js') }}
-	{{ HTML::script('public/js/raphael-min.js') }}
-	{{ HTML::script('public/js/morris.min.js') }}
-	{{ HTML::script('public/js/morris-data.js') }}
-	{{ HTML::script('public/js/sb-admin-2.js') }}
+    {{ HTML::script('public/js/jquery.min.js') }}
+    {{ HTML::script('public/js/bootstrap.min.js') }}
+    {{ HTML::script('public/js/metisMenu.min.js') }}
+    {{ HTML::script('public/js/raphael-min.js') }}
+    {{ HTML::script('public/js/morris.min.js') }}
+    {{ HTML::script('public/js/morris-data.js') }}
+    {{ HTML::script('public/js/sb-admin-2.js') }}
 
 </body></html>

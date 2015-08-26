@@ -1,3 +1,18 @@
 .login-panel {
     margin-top: 25%;
 }
+
+.logo{
+    margin-top: -15px;
+    width: 70px;
+}
+
+a {
+    color: #00838F;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: darksalmon;
+    text-decoration: underline;
+}
