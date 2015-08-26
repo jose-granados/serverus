@@ -10,8 +10,9 @@
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
+
     <!-- Bootstrap Core CSS -->
-    <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	{{ HTML::style('public/css/bootstrap.min.css') }}
 
     <!-- MetisMenu CSS -->
     <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -26,7 +27,7 @@
     <link href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="./SB Admin 2 - Bootstrap Admin Theme_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+	{{ HTML::style('public/css/font-awesome.min.css') }}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -842,7 +843,7 @@
                             <ul class="chat">
                                 <li class="left clearfix">
                                     <span class="chat-img pull-left">
-                                        <img src="./SB Admin 2 - Bootstrap Admin Theme_files/fff" alt="User Avatar" class="img-circle">
+                                        {{ HTML::image('public/fff', 'User Avatar', array('class' => 'img-circle')) }}
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
@@ -858,7 +859,7 @@
                                 </li>
                                 <li class="right clearfix">
                                     <span class="chat-img pull-right">
-                                        <img src="./SB Admin 2 - Bootstrap Admin Theme_files/fff(1)" alt="User Avatar" class="img-circle">
+                                        {{ HTML::image('public/fff(1)', 'User Avatar', array('class' => 'img-circle')) }}
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
@@ -873,7 +874,7 @@
                                 </li>
                                 <li class="left clearfix">
                                     <span class="chat-img pull-left">
-                                        <img src="./SB Admin 2 - Bootstrap Admin Theme_files/fff" alt="User Avatar" class="img-circle">
+                                        {{ HTML::image('public/fff', 'User Avatar', array('class' => 'img-circle')) }}
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
@@ -888,7 +889,7 @@
                                 </li>
                                 <li class="right clearfix">
                                     <span class="chat-img pull-right">
-                                        <img src="./SB Admin 2 - Bootstrap Admin Theme_files/fff(1)" alt="User Avatar" class="img-circle">
+                                        {{ HTML::image('public/fff(1)', 'User Avatar', array('class' => 'img-circle')) }}
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
@@ -928,23 +929,13 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="./SB Admin 2 - Bootstrap Admin Theme_files/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="./SB Admin 2 - Bootstrap Admin Theme_files/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="./SB Admin 2 - Bootstrap Admin Theme_files/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="./SB Admin 2 - Bootstrap Admin Theme_files/raphael-min.js"></script>
-    <script src="./SB Admin 2 - Bootstrap Admin Theme_files/morris.min.js"></script>
-    <script src="./SB Admin 2 - Bootstrap Admin Theme_files/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="./SB Admin 2 - Bootstrap Admin Theme_files/sb-admin-2.js"></script>
-
-
-
+	{{ HTML::script('public/js/jquery.min.js') }}
+	{{ HTML::script('public/js/bootstrap.min.js') }}
+	{{ HTML::script('public/js/metisMenu.min.js') }}
+	{{ HTML::script('public/js/raphael-min.js') }}
+	{{ HTML::script('public/js/morris.min.js') }}
+	{{ HTML::script('public/js/morris-data.js') }}
+	{{ HTML::script('public/js/sb-admin-2.js') }}
 
 </body></html>
