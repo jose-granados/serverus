@@ -190,7 +190,7 @@
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
+                <div class="sidebar-nav navbar-collapse collapse">
                     <ul class="nav in" id="side-menu">
 
                         <li>
