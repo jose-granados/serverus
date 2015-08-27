@@ -29,6 +29,19 @@
     {{ HTML::style('public/css/serverus.css') }}
     {{ HTML::style('public/css/sb-admin-2.css') }}
    {{ HTML::style('public/css/font-awesome.min.css') }}
+   {{ HTML::style('public/css/dataTables.bootstrap.min.css') }}
+
+    <!-- jQuery -->
+
+    {{ HTML::script('public/js/jquery.min.js') }}
+    {{ HTML::script('public/js/bootstrap.min.js') }}
+    {{ HTML::script('public/js/metisMenu.min.js') }}
+    {{ HTML::script('public/js/raphael-min.js') }}
+    {{ HTML::script('public/js/sb-admin-2.js') }}
+
+    {{ HTML::script('public/js/jquery.dataTables.min.js') }}
+    {{ HTML::script('public/js/dataTables.bootstrap.min.js') }}
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html"><img class="logo" src="public/img/logo.png"></a>
+                <a class="navbar-brand" href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html"><img class="logo" src="public/img/logo02.png"></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -234,14 +247,5 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-
-    {{ HTML::script('public/js/jquery.min.js') }}
-    {{ HTML::script('public/js/bootstrap.min.js') }}
-    {{ HTML::script('public/js/metisMenu.min.js') }}
-    {{ HTML::script('public/js/raphael-min.js') }}
-    {{ HTML::script('public/js/morris.min.js') }}
-    {{ HTML::script('public/js/morris-data.js') }}
-    {{ HTML::script('public/js/sb-admin-2.js') }}
 
 </body></html>

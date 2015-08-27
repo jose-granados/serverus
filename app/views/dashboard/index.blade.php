@@ -6,9 +6,9 @@
 </div>
 <!-- /.row -->
 <div class="row">
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+    <div class="col-md-3 ">
+        <div class="panel panel-primary panel-indicator">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-user fa-5x color-blue"></i>
@@ -28,9 +28,9 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-            <div class="panel-heading">
+    <div class="col-md-3 ">
+        <div class="panel panel-green panel-indicator">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-tasks fa-5x color-green"></i>
@@ -50,9 +50,9 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-            <div class="panel-heading">
+    <div class="col-md-3 ">
+        <div class="panel panel-yellow panel-indicator">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-mobile fa-5x color-yellow"></i>
@@ -72,9 +72,9 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-            <div class="panel-heading">
+    <div class="col-md-3 ">
+        <div class="panel panel-red panel-indicator">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-support fa-5x color-red"></i>
@@ -211,3 +211,5 @@ iPod Touch:
     <!-- /.col-lg-4 -->
 </div>
 <!-- /.row -->
+{{ HTML::script('public/js/morris.min.js') }}
+{{ HTML::script('public/js/morris-data.js') }}

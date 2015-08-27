@@ -3,8 +3,8 @@
 }
 
 .logo{
-    margin-top: -15px;
     width: 70px;
+    margin: -10px 30% 0 30%;
 }
 
 a {
@@ -50,4 +50,34 @@ a:focus, a:hover {
 }
 .page-header{
     color: #006D7A;
+}
+.panel-heading-indicator{
+    height:118px;
+}
+
+.margin-bottom-20{
+    margin-bottom: 20px;
+}
+
+.panel-indicator{
+    max-width:211px;
+}
+.col-md-3{
+    float: left;
+}
+.row{
+    text-align:center;
+}
+
+
+@media (max-width:767px){
+    .panel-indicator{
+        max-width:211px;
+     }
+
+    .navbar-top-links {
+        margin-right: 45px;
+        margin-top: -50px;
+        float: right;
+    }
 }
