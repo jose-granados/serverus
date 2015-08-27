@@ -38,7 +38,7 @@
     {{ HTML::script('public/js/metisMenu.min.js') }}
     {{ HTML::script('public/js/raphael-min.js') }}
     {{ HTML::script('public/js/sb-admin-2.js') }}
-    
+
     {{ HTML::script('public/js/jquery.dataTables.min.js') }}
     {{ HTML::script('public/js/dataTables.bootstrap.min.js') }}
 
@@ -65,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html"><img class="logo" src="public/img/logo.png"></a>
+                <a class="navbar-brand" href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html"><img class="logo" src="public/img/logo02.png"></a>
             </div>
             <!-- /.navbar-header -->
 
