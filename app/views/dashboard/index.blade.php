@@ -100,8 +100,8 @@
     <div class="col-lg-8">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Aqui va el Mapa                   
-                    <div id="chartdiv"></div>            
+                <i></i>
+                    <div id="chartdiv"></div>
             </div>
             <!-- /.panel-heading -->
 
@@ -182,10 +182,11 @@
     <!-- /.col-lg-4 -->
 </div>
 
-<script src="http://www.amcharts.com/lib/3/ammap.js"></script>
-<script src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-<script src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+{{ HTML::script('public/js/dashboard/ammap.js') }}
+{{ HTML::script('public/js/dashboard/worldLow.js') }}
+{{ HTML::script('public/js/dashboard/light.js') }}
 {{ HTML::script('public/js/dashboard/dash.js') }}
+
 <!-- /.row -->
 <!--{{ HTML::script('public/js/morris.min.js') }}
 {{ HTML::script('public/js/morris-data.js') }}-->
