@@ -11,9 +11,9 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-user fa-5x"></i>
+                        <i class="fa fa-user fa-5x color-blue"></i>
                     </div>
-                    <div class="col-xs-9 text-right">
+                    <div class="col-xs-9 text-right color-blue">
                         <div class="huge">26</div>
                         <div>Nuevos Usuarios</div>
                     </div>
@@ -33,9 +33,9 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-tasks fa-5x"></i>
+                        <i class="fa fa-tasks fa-5x color-green"></i>
                     </div>
-                    <div class="col-xs-9 text-right">
+                    <div class="col-xs-9 text-right color-green">
                         <div class="huge">12</div>
                         <div>Servidores Online</div>
                     </div>
@@ -55,9 +55,9 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-mobile fa-5x"></i>
+                        <i class="fa fa-mobile fa-5x color-yellow"></i>
                     </div>
-                    <div class="col-xs-9 text-right">
+                    <div class="col-xs-9 text-right color-yellow">
                         <div class="huge">124</div>
                         <div>Dispositivos no Registrados</div>
                     </div>
@@ -77,9 +77,9 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-support fa-5x"></i>
+                        <i class="fa fa-support fa-5x color-red"></i>
                     </div>
-                    <div class="col-xs-9 text-right">
+                    <div class="col-xs-9 text-right color-red">
                         <div class="huge">13</div>
                         <div>Servidores Offline</div>
                     </div>

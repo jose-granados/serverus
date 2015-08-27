@@ -25,10 +25,29 @@ a {
 }
 
 a:focus, a:hover {
-    color: #f4ab93;
+    color: #052f34;
     text-decoration: underline;
 }
 
 .sidebar {
     background-color: #00BCD4;
+}
+
+.color-red{
+    color:#d9534f;
+}
+.color-yellow{
+    color:#f0ad4e;
+}
+.color-green{
+    color:#5cb85c;
+}
+.color-blue{
+    color:#337ab7;
+}
+.panel-primary{
+    background-color:none!important;
+}
+.page-header{
+    color: #006D7A;
 }
