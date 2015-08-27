@@ -51,7 +51,9 @@ a:focus, a:hover {
 .page-header{
     color: #006D7A;
 }
-
+.panel-heading-indicator{
+    height:118px;
+}
 
 .margin-bottom-20{
     margin-bottom: 20px;

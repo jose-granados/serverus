@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-md-3 ">
         <div class="panel panel-primary panel-indicator">
-            <div class="panel-heading">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-user fa-5x color-blue"></i>
@@ -30,7 +30,7 @@
     </div>
     <div class="col-md-3 ">
         <div class="panel panel-green panel-indicator">
-            <div class="panel-heading">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-tasks fa-5x color-green"></i>
@@ -52,7 +52,7 @@
     </div>
     <div class="col-md-3 ">
         <div class="panel panel-yellow panel-indicator">
-            <div class="panel-heading">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-mobile fa-5x color-yellow"></i>
@@ -74,7 +74,7 @@
     </div>
     <div class="col-md-3 ">
         <div class="panel panel-red panel-indicator">
-            <div class="panel-heading">
+            <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
                         <i class="fa fa-support fa-5x color-red"></i>
