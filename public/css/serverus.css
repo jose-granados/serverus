@@ -52,6 +52,24 @@ a:focus, a:hover {
     color: #006D7A;
 }
 
+
 .margin-bottom-20{
     margin-bottom: 20px;
+}
+
+.panel-indicator{
+    max-width:211px;
+}
+.col-md-3{
+    float: left;
+}
+.row{
+    text-align:center;
+}
+
+@media (max-width:767px){
+        .panel-indicator{
+            max-width:211px;
+        }
+
 }

@@ -6,8 +6,8 @@
 </div>
 <!-- /.row -->
 <div class="row">
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
+    <div class="col-md-3 ">
+        <div class="panel panel-primary panel-indicator">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
@@ -28,8 +28,8 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
+    <div class="col-md-3 ">
+        <div class="panel panel-green panel-indicator">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
@@ -50,8 +50,8 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
+    <div class="col-md-3 ">
+        <div class="panel panel-yellow panel-indicator">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
@@ -72,8 +72,8 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
+    <div class="col-md-3 ">
+        <div class="panel panel-red panel-indicator">
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
