@@ -211,3 +211,5 @@ iPod Touch:
     <!-- /.col-lg-4 -->
 </div>
 <!-- /.row -->
+{{ HTML::script('public/js/morris.min.js') }}
+{{ HTML::script('public/js/morris-data.js') }}

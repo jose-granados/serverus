@@ -15,3 +15,8 @@ Route::resource('/', 'HomeController');
 Route::post('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 
+Route::group(array('before' => 'auth'), function(){
+
+	Route::resource('usuarios', 'UsuariosController');
+
+});
