@@ -69,6 +69,26 @@ a:focus, a:hover {
     text-align:center;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #70b2be;
+    border-color: #70b2be;
+}
+
+.table th{
+    color:#00838F;
+    text-align:center;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #00838F;
+    border-color: #00838F;
+}
+
+.pagination>li>a {
+    color: #00838F;
+    border: 1px solid #ddd;
+}
 
 @media (max-width:767px){
     .panel-indicator{
@@ -80,7 +100,29 @@ a:focus, a:hover {
         margin-top: -50px;
         float: right;
     }
+      .fa-2x {
+    font-size: 1em !important;
+    }
 }
+
+@media (max-width:481px){
+    .fa-5x{
+        font-size: 3em !important;
+     }
+
+    .panel-indicator{
+        max-width:135px;
+     }
+    .text-right {
+    margin-top: -15px;
+    }
+    .fa-2x {
+    font-size: 1em;
+    }
+}
+
+/*PLugin MAPA */
+
 
 #chartdiv {
     width   : 100%;

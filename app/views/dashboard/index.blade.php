@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Bienvenido {{Auth::user()->email}}</h1>
+        <h4 class="page-header">Bienvenido {{Auth::user()->email}}</h4>
     </div>
     <!-- /.col-lg-12 -->
 </div>
