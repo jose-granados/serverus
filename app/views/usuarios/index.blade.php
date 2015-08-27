@@ -4,6 +4,8 @@
     </div>
 </div>
 
+@include('alerts')
+
 <a href="usuarios/create" class="btn btn-primary margin-bottom-20">Nuevo usuario</a>
 
 <div class="row">

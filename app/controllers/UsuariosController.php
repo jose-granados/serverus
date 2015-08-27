@@ -23,7 +23,8 @@ class UsuariosController extends BaseController {
 	 */
 	public function create()
 	{
-		//
+			$usuario = new Usuario;
+			$this->layout->content = View::make('usuarios/create')->with(compact('usuario'));
 	}
 
 
@@ -34,7 +35,14 @@ class UsuariosController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$usuario = new Usuario(Input::all());
+		$usuario->password = Hash::make(Input::get('password'));
+        if($usuario->save()){
+			return Redirect::to('usuarios')->with('success', "Usuario creado con exito");
+		}else{
+			return Redirect::to('usuarios/create')->withInput()->withErrors($usuario->errors());
+		}
+
 	}
 
 

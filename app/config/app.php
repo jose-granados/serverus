@@ -188,6 +188,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'Ardent'            => 'LaravelBook\Ardent\Ardent', // Self-validating smart models for Laravel Framework 4's Eloquent ORM. https://github.com/laravelbook/ardent
 
 	),
 

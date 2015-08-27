@@ -184,18 +184,9 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">
+                    <a href="{{ URL::to('logout') }}">
                         <i class="fa fa-power-off fa-fw"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
@@ -206,11 +197,10 @@
                 <div class="sidebar-nav navbar-collapse collapse">
                     <ul class="nav in" id="side-menu">
                         <li>
-                            <a href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html" class="active"><i class="fa fa-dashboard fa-fw fa-2x"></i> Inicio</a>
+                            <a href="{{ URL::to('/') }}" class="active"><i class="fa fa-dashboard fa-fw fa-2x"></i> Inicio</a>
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-users fa-fw fa-2x"></i> Usuarios </a>
-
+                            <a href="{{ URL::to('usuarios') }}"><i class="fa fa-users fa-fw fa-2x"></i> Usuarios </a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>

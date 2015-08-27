@@ -12,6 +12,8 @@
 */
 
 Route::resource('/', 'HomeController');
+
+Route::get('login', 'HomeController@index');
 Route::post('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 
