@@ -17,11 +17,11 @@ a {
 }
 
 .sidebar ul li a.active {
-    background-color: #006D7A;
+    background-color: #052f34;
 }
 .sidebar ul li a.active:hover {
-    background-color: #052f34;
-    color:#e2e2e2;
+    background-color: #e2e2e2;
+    color:#052f34;
 }
 
 a:focus, a:hover {
@@ -30,7 +30,7 @@ a:focus, a:hover {
 }
 
 .sidebar {
-    background-color: #00BCD4;
+    background-color: #006D7A;
 }
 
 .color-red{

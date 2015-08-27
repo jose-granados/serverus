@@ -192,7 +192,6 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse collapse">
                     <ul class="nav in" id="side-menu">
-
                         <li>
                             <a href="./SB Admin 2 - Bootstrap Admin Theme_files/SB Admin 2 - Bootstrap Admin Theme.html" class="active"><i class="fa fa-dashboard fa-fw fa-2x"></i> Inicio</a>
                         </li>
