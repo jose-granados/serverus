@@ -36,9 +36,7 @@
                              <!--   {{ Form::submit( 'Ingresar' , ['class'=>'btn btn-lg btn-success btn-block fill']) }} -->
                                 <button type="submit" class="btn btn-lg btn-success btn-block fill">Ingresar </button>
 
-                                @if(Session::has('message'))
-                                    {{ Session::get('message') }}
-                                @endif
+                               @include ('alerts')
 
                             </fieldset>
                             {{ Form::close() }}

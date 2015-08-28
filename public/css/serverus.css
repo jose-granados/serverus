@@ -376,12 +376,14 @@ img{
     width:100%;
 }
 
-.incorrectos{
-    color:red;
+.alert-notice {
+    color: #8a6d3b;
+     background-color: #fcf8e3;
+    border-color: #faebcc;
 }
 .alert-danger {
     color: #a94442;
-    background-color:transparent;
+    background-color:#f2dede;
       border-color: #ebccd1;
     height: 35px;
 }

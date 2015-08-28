@@ -23,13 +23,13 @@ class HomeController extends BaseController{
         if(Auth::attempt($loginData)){
             return Redirect::to('/')->with('success', 'Iniciaste sesion');
         }else{
-            return Redirect::to('/')->with('message', '<div class="alert alert-danger">Datos incorrectos </div>')->withInput();
+            return Redirect::to('/')->with('danger', 'Datos incorrectos')->withInput();
         }
     }
 
     public function logout(){
         Auth::logout();
-        return Redirect::to('/')->with('message', 'Cerraste sesión');
+        return Redirect::to('/')->with('notice', 'Cerraste sesión');
     }
 
 
