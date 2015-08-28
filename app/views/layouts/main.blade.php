@@ -202,25 +202,22 @@
                         </li>
                         <li>
                             <a href="{{ URL::to('usuarios') }}"><i class="fa fa-users fa-fw fa-2x"></i> Usuarios </a>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/tables.html"><i class="fa fa-server fa-fw fa-2x"></i> Servidores</a>
+                            <a href="{{ URL::to('/') }}"><i class="fa fa-server fa-fw fa-2x"></i> Servidores</a>
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/forms.html"><i class="fa fa-desktop fa-fw fa-2x"></i> CPU</a>
+                            <a href="{{ URL::to('/') }}"><i class="fa fa-sliders fa-fw fa-2x"></i> Switches</a>
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-th-large fa-fw fa-2x"></i> Apps</a>
-
-                            <!-- /.nav-second-level -->
+                            <a href="{{ URL::to('/') }}"><i class="fa fa-desktop fa-fw fa-2x"></i> CPU</a>
                         </li>
                         <li>
-                            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#"><i class="fa fa-hdd-o fa-fw fa-2x"></i> OS</a>
-
-                            <!-- /.nav-second-level -->
+                            <a href="{{ URL::to('/') }}"><i class="fa fa-th-large fa-fw fa-2x"></i> Apps</a>
                         </li>
-
+                        <li>
+                            <a href="{{ URL::to('/') }}"><i class="fa fa-hdd-o fa-fw fa-2x"></i> OS</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

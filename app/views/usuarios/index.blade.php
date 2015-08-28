@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-<a href="usuarios/create" class="btn btn-primary margin-bottom-20">Nuevo usuario</a>
+<button href="usuarios/create" class="btn btn-primary fill margin-bottom-20">Nuevo usuario</button>
 
 <div class="row">
     <div class="col-lg-12">

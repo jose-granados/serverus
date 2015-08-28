@@ -20,7 +20,7 @@
                 </div>
             </div>
             <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">
-                <div class="panel-footer">
+                <div class="panel-footer fill-blue">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">
-                <div class="panel-footer">
+                <div class="panel-footer fill-green">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">
-                <div class="panel-footer">
+                <div class="panel-footer fill-yellow">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#">
-                <div class="panel-footer">
+                <div class="panel-footer fill-red">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
@@ -117,7 +117,7 @@
     <div class="col-lg-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="fa fa-bell fa-fw"></i> Log
+                Log
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -169,7 +169,7 @@
                     </a>
                 </div>
                 <!-- /.list-group -->
-                <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#" class="btn btn-default btn-block">View All Alerts</a>
+                <button href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#" class="btn btn-default btn-block fill">View All Alerts</button>
             </div>
             <!-- /.panel-body -->
         </div>
