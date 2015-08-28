@@ -5,7 +5,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-<div class="row">
+<div class="row" style="margin-left: 10%;">
     <div class="col-md-3 ">
         <div class="panel panel-primary panel-indicator">
             <div class="panel-heading panel-heading-indicator">
