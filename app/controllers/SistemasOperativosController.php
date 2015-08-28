@@ -98,9 +98,9 @@ class SistemasOperativosController extends BaseController {
 	public function destroy($id)
 	{
 		if(SistemasOperativos::destroy($id)){
-			return Redirect::to('usuarios')->with('success', "Usuario eliminado con exito.");
+			return Redirect::to('sistemasoperativos')->with('success', "Sistema Operativo eliminado con exito.");
 		}else{
-			return Redirect::to('usuarios')->with('danger', "Ocurrio un error al eliminar el Sistema Operativo.");
+			return Redirect::to('sistemasoperativos')->with('danger', "Ocurrio un error al eliminar el Sistema Operativo.");
 		}
 	}
 

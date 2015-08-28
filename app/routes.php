@@ -21,5 +21,6 @@ Route::group(array('before' => 'auth'), function(){
 
 	Route::resource('usuarios', 'UsuariosController');
 	Route::resource('sistemasoperativos', 'SistemasOperativosController');
+	Route::resource('cpus', 'CpusController');
 
 });

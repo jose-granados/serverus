@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Ver CPU's</h1>
+		<h1 class="page-header">Ver Sistema Operativo</h1>
 	</div>
 </div>
 
@@ -8,9 +8,9 @@
 
 {{ Form::open( ['class'=>'form-horizontal'] ) }}
 
-	@include('cpus/form')
+	@include('sistemasoperativos/form')
 
-	{{ link_to('cpus' , 'Regresar', ['class'=>'btn btn-default']) }}
+	{{ link_to('sistemasoperativos' , 'Regresar', ['class'=>'btn btn-default']) }}
 
 {{ Form::close() }}
 
