@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ link_to('cpus/create', 'Nuevo CPU', ['class'=>'btn btn-primary fill margin-bottom-20'] ) }}
+{{ link_to('cpus/create', 'Nuevo CPU', ['class'=>'btn btn-default fill margin-bottom-20'] ) }}
 
 <div class="row">
 	<div class="col-lg-12">

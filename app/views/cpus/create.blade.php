@@ -10,8 +10,8 @@
 
 	@include('cpus/form')
 
-	{{ Form::submit( 'Guardar' , ['class'=>'btn btn-primary'] ) }}
+	{{ Form::submit( 'Guardar' , ['class'=>'btn btn-default fill'] ) }}
 
-	{{ link_to('cpus' , 'Regresar', ['class'=>'btn btn-default']) }}
+	{{ link_to('cpus' , 'Regresar', ['class'=>'btn btn-default fill']) }}
 
 {{ Form::close() }}
