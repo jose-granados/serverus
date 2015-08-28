@@ -100,6 +100,16 @@ body{
 }
 
 .btn{
+  position: relative;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
       transition:         0.08s ease-in;
   -o-transition:      0.08s ease-in;
   -ms-transition:     0.08s ease-in;
@@ -111,13 +121,13 @@ fieldset{
     color:#70b2be;
 }
 .fill:hover {
-  color: #052f34;
+  color: #fff;
 }
 
 .fill:before {
   content: "";
   position: absolute;
-  background: #383736;
+  background: #052f34;
   bottom: 0;
   left: 0;
   right: 0;
