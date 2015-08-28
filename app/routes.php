@@ -20,5 +20,6 @@ Route::get('logout', 'HomeController@logout');
 Route::group(array('before' => 'auth'), function(){
 
 	Route::resource('usuarios', 'UsuariosController');
+	Route::resource('sistemasoperativos', 'SistemasOperativosController');
 
 });
