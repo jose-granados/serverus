@@ -19,7 +19,7 @@
     {{ HTML::script('public/js/raphael-min.js') }}
     <!--{{ HTML::script('public/js/morris.min.js') }}
     {{ HTML::script('public/js/morris-data.js') }}-->
-    {{ HTML::script('public/js/sb-admin-2.js') }} 
+    {{ HTML::script('public/js/sb-admin-2.js') }}
     {{ HTML::script('public/js/jquery.dataTables.min.js') }}
     {{ HTML::script('public/js/dataTables.bootstrap.min.js') }}
     {{ HTML::style('public/css/dataTables.bootstrap.min.css') }}
@@ -42,6 +42,7 @@
     {{ HTML::style('public/css/serverus.css') }}
     {{ HTML::style('public/css/sb-admin-2.css') }}
    {{ HTML::style('public/css/font-awesome.min.css') }}
+<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -239,6 +240,6 @@
 
     <!-- jQuery -->
 
-    
+
 
 </body></html>
