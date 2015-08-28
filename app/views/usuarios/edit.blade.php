@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Crear usuario</h1>
+		<h1 class="page-header">Editar usuario</h1>
 	</div>
 </div>
 
 @include('alerts')
 
-{{ Form::open( ['route'=>'usuarios.store', 'class'=>'form-horizontal'] ) }}
+{{ Form::open( ['route'=>['usuarios.update', $usuario->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
 
 	@include('usuarios/form')
 

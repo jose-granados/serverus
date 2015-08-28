@@ -11,7 +11,7 @@ class UsuariosController extends BaseController {
 	 */
 	public function index()
 	{
-        $usuarios = Usuario::all();
+		$usuarios = Usuario::all();
 		$this->layout->content = View::make('usuarios/index')->with(compact('usuarios'));
 	}
 
@@ -23,8 +23,8 @@ class UsuariosController extends BaseController {
 	 */
 	public function create()
 	{
-			$usuario = new Usuario;
-			$this->layout->content = View::make('usuarios/create')->with(compact('usuario'));
+		$usuario = new Usuario;
+		$this->layout->content = View::make('usuarios/create')->with(compact('usuario'));
 	}
 
 
@@ -37,12 +37,11 @@ class UsuariosController extends BaseController {
 	{
 		$usuario = new Usuario(Input::all());
 		$usuario->password = Hash::make(Input::get('password'));
-        if($usuario->save()){
+		if($usuario->save()){
 			return Redirect::to('usuarios')->with('success', "Usuario creado con exito");
 		}else{
 			return Redirect::to('usuarios/create')->withInput()->withErrors($usuario->errors());
 		}
-
 	}
 
 
@@ -54,7 +53,8 @@ class UsuariosController extends BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$usuario = Usuario::find($id);
+		$this->layout->content = View::make('usuarios/show')->with(compact('usuario'));
 	}
 
 
@@ -66,7 +66,8 @@ class UsuariosController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$usuario = Usuario::find($id);
+		$this->layout->content = View::make('usuarios/edit')->with(compact('usuario'));
 	}
 
 
@@ -78,7 +79,17 @@ class UsuariosController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$usuario = Usuario::find($id);
+
+		// Forcing A Unique Rule To Ignore A Given ID
+		$usuario::$rules['email'] = str_replace("{id}", $id, $usuario::$rules['email']);
+
+		if($usuario->update(Input::all())){
+			return Redirect::to('usuarios')->with('success', "Usuario actualizado con exito");
+		}else{
+			return Redirect::route('usuarios.edit',$id)->withInput()->withErrors($usuario->errors());
+		}
+
 	}
 
 
@@ -90,7 +101,11 @@ class UsuariosController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		if(Usuario::destroy($id)){
+			return Redirect::to('usuarios')->with('success', "Usuario eliminado con exito.");
+		}else{
+			return Redirect::to('usuarios')->with('danger', "Ocurrio un error al eliminar el usuario.");
+		}
 	}
 
 

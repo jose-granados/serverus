@@ -24,7 +24,9 @@
     {{ HTML::script('public/js/dataTables.bootstrap.min.js') }}
     {{ HTML::style('public/css/dataTables.bootstrap.min.css') }}
 
+    {{ HTML::script('public/js/bootbox.min.js') }}
 
+    {{ HTML::script('public/js/serverus.js') }}
 
 
     <!-- MetisMenu CSS -->

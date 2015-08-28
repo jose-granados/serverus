@@ -9,20 +9,10 @@ class Usuario extends Ardent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
 	protected $table = 'usuarios';
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
 	protected $hidden = array();
-	protected $fillable = array();
+	protected $fillable = array('nombre','apellido_paterno','apellido_materno','telefono','email');
 	protected $guarded = array();
 
 	public static $rules = array(
