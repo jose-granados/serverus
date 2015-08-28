@@ -1,17 +1,16 @@
 <div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header">Editar usuario</h1>
-	</div>
+    <div class="col-lg-12">
+        <h4 class="page-header">Editar usuario</h4>
+    </div>
 </div>
 
 @include('alerts')
 
 {{ Form::open( ['route'=>['usuarios.update', $usuario->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
 
-	@include('usuarios/form')
+    @include('usuarios/form')
 
-	{{ Form::submit( 'Guardar' , ['class'=>'btn btn-primary'] ) }}
-
-	{{ link_to('usuarios' , 'Regresar', ['class'=>'btn btn-default']) }}
+    <button type="submit" class="btn btn-default fill">Guardar</button>
+    {{ link_to('usuarios' , 'Regresar', ['class'=>'btn btn-default fill']) }}
 
 {{ Form::close() }}
