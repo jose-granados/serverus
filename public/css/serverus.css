@@ -242,6 +242,9 @@ tr.odd, tr.even{
     margin-bottom: 3px;
 }
 
+img{
+    width:100%;
+}
 @media (max-width:767px){
     .panel-indicator{
         max-width:211px;
