@@ -36,7 +36,7 @@
 
 }
 .login-panel {
-    margin-top: 25%;
+    margin-top: 65%;
 }
 
 .logo{
@@ -63,8 +63,75 @@ a:focus, a:hover {
 body{
     font-family: montserratlight;
 }
+
+.btn-success{
+    color:#006D7A;
+    background-color:transparent;
+    border:none;
+}
+
+.btn-success.focus, .btn-success:focus {
+    color: #052f34;
+    background-color: transparent;
+    border-color: none;
+}
+.btn-success:hover {
+    color: #052f34;
+    background-color: transparent;
+    border-color: none;
+}
+
+.btn-success.active, .btn-success:active, .open>.dropdown-toggle.btn-success {
+    color: #fff;
+    background-color: #052f34;
+    border-color: none;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: thin dottedwhite;
+     outline: none;
+    outline-offset: -2px;
+}
+
+.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open>.dropdown-toggle.btn-success.focus, .open>.dropdown-toggle.btn-success:focus, .open>.dropdown-toggle.btn-success:hover {
+    color: #052f34;
+    background-color: transparent;
+    border-color: none;
+}
+
+.btn{
+      transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
+}
+
+fieldset{
+    color:#70b2be;
+}
+.fill:hover {
+  color: #052f34;
+}
+
+.fill:before {
+  content: "";
+  position: absolute;
+  background: #383736;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
+}
+
+.fill:hover:before {
+  top: 0;
+}
+
 .sidebar a{
-    color: #70b2be;
+    color: #006D7A;
 
 }
 
@@ -104,7 +171,8 @@ body{
     color: #006D7A;
 }
 .panel-heading-indicator{
-    height:118px;
+   height: 128px;
+    max-height: 128px;
 }
 
 .margin-bottom-20{
@@ -159,7 +227,10 @@ tr.odd, tr.even{
         color: 3f3f3f;
     opacity: 0.6;
 }
-
+.huge {
+    font-size: 40px;
+    margin-bottom: 3px;
+}
 
 @media (max-width:767px){
     .panel-indicator{

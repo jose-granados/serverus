@@ -295,10 +295,6 @@ table.dataTable thead .sorting:after {
     margin: 15px 0;
 }
 
-.huge {
-    font-size: 40px;
-}
-
 .panel-green {
     border-color: #5cb85c;
 }
@@ -349,3 +345,5 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+
