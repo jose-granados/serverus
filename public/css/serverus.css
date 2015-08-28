@@ -47,7 +47,7 @@
 a {
     color: #00838F;
     text-decoration: none;
-    font-family: montserratregular;
+    font-family: montserratlight;
 }
 a:focus {
     outline: thin dotted;
@@ -380,12 +380,13 @@ img{
     color: #8a6d3b;
      background-color: #fcf8e3;
     border-color: #faebcc;
+      min-height: 35px;
 }
 .alert-danger {
     color: #a94442;
     background-color:#f2dede;
       border-color: #ebccd1;
-    height: 35px;
+    min-height: 35px;
 }
 .alert {
     padding: 5px;

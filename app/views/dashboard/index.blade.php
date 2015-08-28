@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h4 class="page-header">Bienvenido {{Auth::user()->email}}</h4>
+        <h4 class="page-header">Bienvenido {{Auth::user()->nombre}}</h4>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -169,7 +169,7 @@
                     </a>
                 </div>
                 <!-- /.list-group -->
-                <button href="http://ironsummitmedia.github.io/startbootstrap-sb-admin-2/pages/index.html#" class="btn btn-default btn-block fill">View All Alerts</button>
+                <button href="" class="btn btn-default btn-block fill">View All Alerts</button>
             </div>
             <!-- /.panel-body -->
         </div>
