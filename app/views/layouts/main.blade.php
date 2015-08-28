@@ -166,7 +166,7 @@
                             <a href="{{ URL::to('/') }}"><i class="fa fa-sliders fa-fw fa-2x"></i> Switches</a>
                         </li>
                         <li>
-                            <a href="{{ URL::to('/') }}"><i class="fa fa-desktop fa-fw fa-2x"></i> CPU</a>
+                            <a href="{{ URL::to('cpus') }}"><i class="fa fa-desktop fa-fw fa-2x"></i> CPU</a>
                         </li>
                         <li>
                             <a href="{{ URL::to('/') }}"><i class="fa fa-th-large fa-fw fa-2x"></i> Apps</a>
