@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-<button href="usuarios/create" class="btn btn-primary fill margin-bottom-20">Nuevo usuario</button>
+{{ link_to('usuarios/create', 'Nuevo usuario', ['class'=>'btn btn-primary fill margin-bottom-20'] ) }}
 
 <div class="row">
 	<div class="col-lg-12">
