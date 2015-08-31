@@ -1,7 +1,11 @@
 $(document).ready(function(){
 
 	// metodo para transformar tablas a data-tables
-	$('.data-table').DataTable();
+	$('.data-table').DataTable({
+		"language": {
+			"url": "public/js/dataTables.Spanish.lang"
+		}
+	});
 
 	// metodo para mostrar tooltips de ver editar y eliminar
 	$('.glyphicon-eye-open').attr('title','ver').tooltip();
