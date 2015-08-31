@@ -1,20 +1,33 @@
-// metodo para deshabilitar inputs
-function disable_inputs(){
-	$('input ,select, textarea').attr('disabled',true);
-}
-
 $(document).ready(function(){
+
 	// metodo para transformar tablas a data-tables
 	$('.data-table').DataTable();
 
 	// metodo global para borrar registros
-	$('.borrar-registro').click(function(){
+	$('.borrar-registro').on( "click", function() {
 		var currentForm = $(this).closest('form')
-		bootbox.confirm("¿Estas seguro?", function(result){
-			if(result){
-				currentForm.submit();
-			}
-
+		bootbox.confirm({
+		    message: '¿Estas seguro?',
+		    buttons: {
+		        'cancel': {
+		            label: 'Cancelar',
+		            className: 'btn btn-lg btn-success fill'
+		        },
+		        'confirm': {
+		            label: 'Aceptar',
+		            className: 'btn btn-lg btn-success fill'
+		        }
+		    },
+		    callback: function(result) {
+		        if (result) {
+		            currentForm.submit();
+		        }
+		    }
 		});
 	});
 });
+
+// metodo para deshabilitar inputs
+function disable_inputs(){
+	$('input ,select, textarea').attr('disabled',true);
+}
