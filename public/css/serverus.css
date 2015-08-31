@@ -84,6 +84,9 @@ body{
     border:none;
 }
 
+.btn-block{
+    top:10px;
+}
 
 .btn-success.focus, .btn-success:focus {
     color: #052f34;
@@ -155,7 +158,7 @@ fieldset{
 .fill:before {
   content: "";
   position: absolute;
-  background: #052f34;
+  background: #008390;
   bottom: 0;
   left: 0;
   right: 0;
@@ -247,16 +250,16 @@ fieldset{
 }
 
 .sidebar a{
-    color: #006D7A;
+    color: #555;
 
 }
 
 .sidebar ul li a.active {
     background-color: #e2e2e2;
-    color:#052f34;
+    color:#008390;
 }
 .sidebar ul li a.active:hover {
-    background-color: #052f34;
+    background-color: #008390;
     color:#e2e2e2;
 }
 
@@ -295,6 +298,9 @@ fieldset{
 .margin-bottom-20{
     margin-bottom: 20px;
 }
+.margin-top-20{
+    margin-top: 20px;
+}
 
 .panel-indicator{
     max-width:211px;
@@ -324,12 +330,12 @@ fieldset{
     border-color: #70b2be;
 }
 .table th{
-    color:#00838F;
+    color:#555;
     text-align:center;
     font-family: montserratsemi_bold;
 }
 .table th:hover{
-    color:#052f34;
+    color:#008390;
 
 }
 
@@ -349,11 +355,11 @@ fieldset{
 }
 
 label{
-    color:#70b2be;
+    color:#555;
     font-family:montserratregular;
 }
 .dataTables_info{
-    color:#70b2be;
+    color:#555;
 }
 
 .data-table .glyphicon{
@@ -548,7 +554,10 @@ body {
     }
 }
 
+.sorting:hover, .sorting_asc:hover, .sorting_desc:hover{
+        border-color: #adadad;
 
+}
 .navbar-top-links li {
     display: inline-block;
 }
@@ -616,7 +625,6 @@ body {
     border-bottom: 1px solid #e7e7e7;
 }
 
-
 .sidebar .arrow {
     float: right;
 }
@@ -655,6 +663,13 @@ body {
     .navbar-top-links .dropdown-alerts {
         margin-left: auto;
     }
+}
+
+@media screen and (max-width: 767px){
+div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+    text-align: center;
+    margin-top: 5px;
+}
 }
 
 .btn-outline {
@@ -742,6 +757,7 @@ body {
 .dataTables_wrapper {
     position: relative;
     clear: both;
+    overflow:hidden;
 }
 
 table.dataTable thead .sorting,
@@ -815,6 +831,7 @@ table.dataTable thead .sorting:after {
 .show-grid {
     margin: 15px 0;
 }
+
 
 .panel-green {
     border-color: #5cb85c;
