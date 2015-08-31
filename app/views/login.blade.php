@@ -13,13 +13,14 @@
         {{ HTML::style('public/css/bootstrap.min.css') }}
         {{ HTML::style('public/css/serverus.css') }}
 
+
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="login-panel panel panel-default">
-                        <div class="panel-heading"><img src="public/img/logo02.png"> </div>
+                        <div class="panel-heading"><img id="main-logo"  src="public/img/logo02.png"> </div>
 
                         <div class="panel-body">
                             {{ Form::open( ['url'=>'login', 'method'=>"post"] ) }}
@@ -34,10 +35,9 @@
                                 </div>
 
                              <!--   {{ Form::submit( 'Ingresar' , ['class'=>'btn btn-lg btn-success btn-block fill']) }} -->
-                                <button type="submit" class="btn btn-lg btn-success btn-block fill">Ingresar </button>
+                                <button type="submit" class="btn btn-lg btn-success btn-block fill ">Ingresar </button>
 
                                @include ('alerts')
-
                             </fieldset>
                             {{ Form::close() }}
                         </div>
@@ -48,6 +48,12 @@
         {{ HTML::script('public/js/jquery.min.js') }}
         {{ HTML::script('public/js/jquery-1.11.3.min.js') }}
         {{ HTML::script('public/js/bootstrap.min.js') }}
-
+        <script>
+            $(document).ready(function(){
+               if($("div.alert-danger").length){
+                   $("#main-logo").addClass("animated").addClass("shake");
+               }
+            });
+        </script>
     </body>
 </html>

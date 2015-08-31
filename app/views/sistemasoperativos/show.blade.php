@@ -11,7 +11,7 @@
 
     @include('sistemasoperativos/form')
 
-    {{ link_to('sistemasoperativos' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('sistemasoperativos' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}
 

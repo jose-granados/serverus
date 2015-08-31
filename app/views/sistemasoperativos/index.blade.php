@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ link_to('sistemasoperativos/create', 'Nuevo Sistema Operativo', ['class'=>'btn btn-default fill margin-bottom-20'] ) }}
+{{ link_to('sistemasoperativos/create', 'Nuevo Sistema Operativo', ['class'=>'btn btn-default fill-green margin-bottom-20'] ) }}
 
 <div class="row">
     <div class="col-lg-12">

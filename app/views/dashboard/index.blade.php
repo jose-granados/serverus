@@ -169,7 +169,7 @@
                     </a>
                 </div>
                 <!-- /.list-group -->
-                <button href="" class="btn btn-default btn-block fill">View All Alerts</button>
+                <button href="" class="btn btn-default btn-block fill-yellow">View All Alerts</button>
             </div>
             <!-- /.panel-body -->
         </div>

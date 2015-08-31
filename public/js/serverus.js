@@ -20,11 +20,11 @@ $(document).ready(function(){
             buttons: {
                 'cancel': {
                     label: 'Cancelar',
-                    className: 'btn btn-lg btn-default fill btn-move'
+                    className: 'btn btn-lg btn-default fill-red btn-move'
                 },
                 'confirm': {
                     label: 'Aceptar',
-                    className: 'btn btn-lg btn-default fill'
+                    className: 'btn btn-lg btn-default fill-green'
                 }
             },
             callback: function(result) {

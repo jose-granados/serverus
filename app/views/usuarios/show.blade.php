@@ -10,7 +10,7 @@
 
     @include('usuarios/form')
 
-    {{ link_to('usuarios' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('usuarios' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}
 
