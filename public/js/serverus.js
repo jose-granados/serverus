@@ -11,11 +11,11 @@ $(document).ready(function(){
 		    buttons: {
 		        'cancel': {
 		            label: 'Cancelar',
-		            className: 'btn btn-lg btn-success fill'
+		            className: 'btn btn-lg btn-default fill btn-move'
 		        },
 		        'confirm': {
 		            label: 'Aceptar',
-		            className: 'btn btn-lg btn-success fill'
+		            className: 'btn btn-lg btn-default fill'
 		        }
 		    },
 		    callback: function(result) {
