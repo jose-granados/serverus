@@ -10,7 +10,7 @@
 
     @include('cpus/form')
 
-    {{ link_to('cpus' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('cpus' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}
 

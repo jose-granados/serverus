@@ -10,8 +10,8 @@
 
     @include('cpus/form')
 
-    <button type="submit" class="btn btn-default fill">Guardar</button>
+    <button type="submit" class="btn btn-default fill-green">Guardar</button>
 
-    {{ link_to('cpus' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('cpus' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}

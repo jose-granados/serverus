@@ -165,6 +165,9 @@ fieldset{
   top: 100%;
   z-index: -1;
   -webkit-transition: top 0.09s ease-in;
+    -o-transition: top     0.09s ease-in;
+  -ms-transition:  top   0.09s ease-in;
+  -moz-transition:  top  0.09s ease-in;
 }
 
 .fill:hover:before {
@@ -185,6 +188,9 @@ fieldset{
   top: 100%;
   z-index: -1;
   -webkit-transition: top 0.09s ease-in;
+      -o-transition: top     0.09s ease-in;
+  -ms-transition:  top   0.09s ease-in;
+  -moz-transition:  top  0.09s ease-in;
 }
 
 .fill-green:hover:before {
@@ -205,6 +211,9 @@ fieldset{
   top: 100%;
   z-index: -1;
   -webkit-transition: top 0.09s ease-in;
+      -o-transition: top     0.09s ease-in;
+  -ms-transition:  top   0.09s ease-in;
+  -moz-transition:  top  0.09s ease-in;
 }
 
 .fill-blue:hover:before {
@@ -224,6 +233,9 @@ fieldset{
   top: 100%;
   z-index: -1;
   -webkit-transition: top 0.09s ease-in;
+      -o-transition: top     0.09s ease-in;
+  -ms-transition:  top   0.09s ease-in;
+  -moz-transition:  top  0.09s ease-in;
 }
 
 .fill-red:hover:before {
@@ -243,6 +255,9 @@ fieldset{
   top: 100%;
   z-index: -1;
   -webkit-transition: top 0.09s ease-in;
+      -o-transition: top     0.09s ease-in;
+  -ms-transition:  top   0.09s ease-in;
+  -moz-transition:  top  0.09s ease-in;
 }
 
 .fill-yellow:hover:before {
