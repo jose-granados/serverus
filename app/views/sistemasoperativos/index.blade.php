@@ -32,7 +32,7 @@
                                     <td>{{ $sistemaOperativo->version }}</td>
                                     <td>
                                         {{ Form::open( ['route'=>['sistemasoperativos.destroy', $sistemaOperativo->id], 'method' => 'DELETE'] ) }}
-                                            <a href="{{URL::route('sistemasoperativos.show', $sistemaOperativo->id)}}"><i class="glyphicon glyphicon-search"></i></a>
+                                            <a href="{{URL::route('sistemasoperativos.show', $sistemaOperativo->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
                                             <a href="{{URL::route('sistemasoperativos.edit', $sistemaOperativo->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
                                             <a class="borrar-registro"><i class="glyphicon glyphicon-trash"></i></a>
                                         {{ Form::close() }}
