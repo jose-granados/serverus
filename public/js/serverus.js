@@ -3,26 +3,30 @@ $(document).ready(function(){
 	// metodo para transformar tablas a data-tables
 	$('.data-table').DataTable();
 
+	$('.glyphicon-eye-open').attr('title','ver').tooltip();
+	$('.glyphicon-edit').attr('title','Editar').tooltip();
+	$('.glyphicon-trash').attr('title','Eliminar').tooltip();
+
 	// metodo global para borrar registros
 	$('.borrar-registro').on( "click", function() {
 		var currentForm = $(this).closest('form')
 		bootbox.confirm({
-		    message: '¿Estas seguro?',
-		    buttons: {
-		        'cancel': {
-		            label: 'Cancelar',
-		            className: 'btn btn-lg btn-success fill'
-		        },
-		        'confirm': {
-		            label: 'Aceptar',
-		            className: 'btn btn-lg btn-success fill'
-		        }
-		    },
-		    callback: function(result) {
-		        if (result) {
-		            currentForm.submit();
-		        }
-		    }
+			message: '¿Estas seguro?',
+			buttons: {
+				'cancel': {
+					label: 'Cancelar',
+					className: 'btn btn-lg btn-success fill'
+				},
+				'confirm': {
+					label: 'Aceptar',
+					className: 'btn btn-lg btn-success fill'
+				}
+			},
+			callback: function(result) {
+				if (result) {
+					currentForm.submit();
+				}
+			}
 		});
 	});
 });
