@@ -26,21 +26,21 @@
                             <tr class="clone">
                                 <td>
                                     <label class="col-sm-2 control-label">Servicios</label>
-                                    <div class="col-sm-4">                            
+                                    <div class="col-sm-4">
                                         {{ Form::select('servicio_id', $servicios, $apps->servicio_id, ['class' => 'form-control']) }}
                                     </div>
-                                    
+
                                     <label class="col-sm-2 control-label">Puerto</label>
-                                    <div class="col-sm-4">                                          
+                                    <div class="col-sm-4">
                                         <input class="form-control">
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="removerow">-</div>
+                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
                                 </td>
                             </tr>
                         </table>
-                        <div class="addrow">+</div>
+                        <a class="addrow"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                     </div>
                 </div>
             </div>

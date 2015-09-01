@@ -45,7 +45,7 @@
 }
 
 a {
-    color: #00838F;
+    color: #337ab7;
     text-decoration: none;
     font-family: montserratlight;
 }
@@ -67,7 +67,7 @@ a.list-group-item, button.list-group-item {
     text-align:left;
 }
 a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
-    color: #006D7A;
+    color: #337ab7;
     font-weight:bold;
     font-size:15px;
 }
@@ -85,7 +85,7 @@ body{
 }
 
 .btn-success{
-    color:#006D7A;
+    color:#337ab7;
     background-color:transparent;
     border:none;
 }
@@ -165,7 +165,7 @@ fieldset{
 .fill:before {
   content: "";
   position: absolute;
-  background: #008390;
+  background: #337ab7;
   bottom: 0;
   left: 0;
   right: 0;
@@ -304,10 +304,10 @@ fieldset{
 
 .sidebar ul li a.active {
     background-color: #e2e2e2;
-    color:#008390;
+    color:#337ab7;
 }
 .sidebar ul li a.active:hover {
-    background-color: #008390;
+    background-color: #337ab7;
     color:#e2e2e2;
 }
 
@@ -336,7 +336,7 @@ fieldset{
 }
 .page-header{
     text-transform:uppercase;
-    color: #006D7A;
+    color: #337ab7;
 }
 .panel-heading-indicator{
    height: 128px;
@@ -383,22 +383,22 @@ fieldset{
     font-family: montserratsemi_bold;
 }
 .table th:hover{
-    color:#008390;
+    color:#337ab7;
 
 }
 
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
-    color: #00838F;
+    color: #337ab7;
     background-color: #eee;
     border-color: #ddd;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-    background-color: #00838F;
-    border-color: #00838F;
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
 
 .pagination>li>a {
-    color: #00838F;
+    color: #337ab7;
     border: 1px solid #ddd;
 }
 
@@ -415,7 +415,7 @@ label{
 }
 .data-table .glyphicon:hover{
     cursor: pointer;
-    color: #006d7a;
+    color: #337ab7;
 }
 
 tr.odd, tr.even{
@@ -938,8 +938,13 @@ table.dataTable thead .sorting:after {
 }
 
 tbody tr:hover{
-    color:#006d7a;
+    color:#337ab7;
     background-color: #efefef !important;
+}
+
+.tableRow tr:hover {
+    color: #337ab7;
+    background-color: transparent !important;
 }
 
 /*animatec.css*/
@@ -1022,3 +1027,18 @@ Copyright (c) 2015 Daniel Eden
   animation-name: shake;
 }
 
+.addrow{
+        float: left;
+    margin-top: -33px;
+    margin-left: 5px;
+}
+
+.removerow{
+       position: absolute;
+    left: 55px;
+    margin-top: -13px;
+}
+
+tr.clone select, tr.clone input {
+    margin-bottom: 5px;
+}
