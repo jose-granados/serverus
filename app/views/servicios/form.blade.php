@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Estatus</label>
+                        <div class="col-sm-4">
+                            {{ Form::select('estatus', ['1'=>'Activo','0'=>'Inactivo'], $servicios->estatus, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-4">
+                            {{ Form::text( 'nombre', $servicios->nombre, ['class'=>'form-control ','placeholder'=>'Nombre'] ) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Versi&oacute;n</label>
+                        <div class="col-sm-4">
+                            {{ Form::text( 'version', $servicios->version, ['class'=>'form-control ','placeholder'=>'Versi&oacute;n'] ) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
