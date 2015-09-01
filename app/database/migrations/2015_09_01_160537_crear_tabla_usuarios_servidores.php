@@ -19,7 +19,6 @@ class CrearTablaUsuariosServidores extends Migration {
 			$table->string('usuario');
 			$table->string('password');
 			$table->foreign('servidores_id')->references('id')->on('servidores');
-			$table->unique( array('servidores_id') );
 			$table->timestamps();
 		});
 	}

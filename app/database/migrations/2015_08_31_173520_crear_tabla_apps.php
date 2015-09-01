@@ -21,7 +21,6 @@ class CrearTablaApps extends Migration {
 			$table->string('ruta');
 			$table->integer('servidor_id')->unsigned();
 			$table->foreign('servidor_id')->references('id')->on('servidores');
-			$table->unique( array('servidor_id') );
 			$table->timestamps();
 		});
 	}

@@ -20,7 +20,6 @@ class CrearTablaServiciosApps extends Migration {
 			$table->integer('puerto');
 			$table->foreign('servicio_id')->references('id')->on('servicios');
 			$table->foreign('app_id')->references('id')->on('apps');
-			$table->unique( array('servicio_id','app_id') );
 			$table->timestamps();
 		});
 	}

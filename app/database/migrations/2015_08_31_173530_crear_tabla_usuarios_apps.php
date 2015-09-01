@@ -19,7 +19,6 @@ class CrearTablaUsuariosApps extends Migration {
 			$table->string('usuario');
 			$table->string('password');
 			$table->foreign('app_id')->references('id')->on('apps');
-			$table->unique( array('app_id') );
 			$table->timestamps();
 		});
 	}

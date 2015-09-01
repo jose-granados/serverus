@@ -26,7 +26,6 @@ class CrearTablaSwitches extends Migration {
 			$table->string('password');
 			$table->integer('localizacion_id')->unsigned();
 			$table->foreign('localizacion_id')->references('id')->on('localizaciones');
-			$table->unique( array('localizacion_id') );
 			$table->timestamps();
 		});
 	}

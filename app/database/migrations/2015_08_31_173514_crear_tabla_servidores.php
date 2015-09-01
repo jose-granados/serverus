@@ -30,7 +30,6 @@ class CrearTablaServidores extends Migration {
 			$table->foreign('cpu_id')->references('id')->on('cpus');
 			$table->foreign('sistema_operativo_id')->references('id')->on('sistemas_operativos');
 			$table->foreign('tipo_servidor_id')->references('id')->on('tipos_servidores');
-			//$table->unique( array('localizacion_id','cpu_id','sistema_operativo_id','tipo_servidor_id') );
 			$table->timestamps();
 		});
 	}
