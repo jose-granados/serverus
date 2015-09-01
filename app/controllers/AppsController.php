@@ -40,8 +40,12 @@ class AppsController extends BaseController {
 		$apps = new Apps(Input::all());
 		unset($apps->servicio_id);
 		unset($apps->puerto);
+		unset($apps->usuario);
+		unset($apps->password);
 		$servicios = Input::get('servicio_id');
 		$puertos = Input::get('puerto');
+		$user = Input::get('usuario');
+		$pass = Input::get('password');
 		if($apps->save()){
 			foreach ($servicios as $key => $value) {
 				$appsServicio = new ServiciosApps();
@@ -50,6 +54,15 @@ class AppsController extends BaseController {
 				$appsServicio->app_id = $apps->id;
 				$appsServicio->save();
 			}
+
+			foreach ($user as $key => $value) {
+				$appsUsuario = new UsuariosApps();
+				$appsUsuario->usuario = $user[$key];
+				$appsUsuario->password = $pass[$key];
+				$appsUsuario->app_id = $apps->id;
+				$appsUsuario->save();
+			}
+
 			return Redirect::to('apps')->with('success', "Aplicacion creada con exito");
 		}else{
 			return Redirect::to('apps/create')->withInput()->withErrors($apps->errors());

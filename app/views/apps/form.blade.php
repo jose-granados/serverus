@@ -31,15 +31,19 @@
                         <table style="width: 100%;" class="tableRow">
                             <tr class="clone">
                                 <td>
-                                    <label class="col-sm-2 control-label">Servicios</label>
-                                    <div class="col-sm-4">                            
-                                        {{ Form::select('servicio_id[]', $servicios, $apps->servicio_id, ['class' => 'form-control']) }}
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Servicios</label>
+                                        <div class="col-sm-4">
+                                            {{ Form::select('servicio_id[]', $servicios, $apps->servicio_id, ['class' => 'form-control']) }}
+                                        </div>
                                     </div>
-
-                                    <label class="col-sm-2 control-label">Puerto</label>
-                                    <div class="col-sm-4">                                          
-                                        <input class="form-control" name="puerto[]">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Puerto</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" name="puerto[]">
+                                        </div>
                                     </div>
+                                    
                                 </td>
                                 <td>
                                     <div class="removerow">-</div>
@@ -48,6 +52,34 @@
                         </table>
                         <div class="addrow">+</div>
                     </div>
+
+                    <div class="form-group">
+                        <table style="width: 100%;" class="tableRow">
+                            <tr class="clone">
+                                <td>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Usuario</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" name="usuario[]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Contraseña</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" name="password[]">
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                                <td>
+                                    <div class="removerow">-</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="addrow">+</div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
