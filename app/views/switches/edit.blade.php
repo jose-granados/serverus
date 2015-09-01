@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ Form::open( ['route'=>['switches.update', $localizaciones->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
+{{ Form::open( ['route'=>['switches.update', $switches->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
 
     @include('switches/form')
 

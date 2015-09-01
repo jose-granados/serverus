@@ -26,13 +26,13 @@ class Localizaciones extends Ardent implements UserInterface, RemindableInterfac
 		'required'	=> 'El campo :attribute es requerido.',
 	);
 	
-	public function obtenerLocalizaciones(){
+	public static function obtenerLocalizaciones(){
 		$retorno = array();
 		$localizaciones = Localizaciones::all();
 		foreach($localizaciones as $localizacion) {
 			$retorno[$localizacion->id] = $localizacion->nombre;
 		}
-		
+	
 		return $retorno;
 	}
 }

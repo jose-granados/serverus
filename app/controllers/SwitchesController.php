@@ -24,8 +24,7 @@ class SwitchesController extends BaseController {
 	public function create()
 	{
 		$switches = new Switches;
-		$localizaciones = new Localizaciones;
-		$localizaciones = $localizaciones->obtenerLocalizaciones();
+		$localizaciones = Localizaciones::obtenerLocalizaciones();
 		$this->layout->content = View::make('switches/create')->with(compact('switches','localizaciones'));
 	}
 
@@ -55,8 +54,7 @@ class SwitchesController extends BaseController {
 	public function show($id)
 	{
 		$switches = Switches::find($id);
-		$localizaciones = new Localizaciones;
-		$localizaciones = $localizaciones->obtenerLocalizaciones();
+		$localizaciones = Localizaciones::obtenerLocalizaciones();
 		$this->layout->content = View::make('switches/show')->with(compact('switches','localizaciones'));
 	}
 
@@ -70,8 +68,7 @@ class SwitchesController extends BaseController {
 	public function edit($id)
 	{
 		$switches = Switches::find($id);
-		$localizaciones = new Localizaciones;
-		$localizaciones = $localizaciones->obtenerLocalizaciones();
+		$localizaciones = Localizaciones::obtenerLocalizaciones();
 		$this->layout->content = View::make('switches/edit')->with(compact('switches','localizaciones'));
 	}
 

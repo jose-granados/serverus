@@ -8,8 +8,15 @@ class TiposServidores extends Eloquent {
 
 	protected $guarded = array();
 
+	public static function obtenerTiposServidores(){
+		$retorno = array();
+		$tiposServidores = TiposServidores::all();
+		foreach($tiposServidores as $tipoServidor) {
+			$retorno[$tipoServidor->id] = $tipoServidor->nombre;
+		}
 	
-
+		return $retorno;
+	}
 }
 
 ?>

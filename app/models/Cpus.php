@@ -22,5 +22,15 @@ class Cpus extends Ardent implements UserInterface, RemindableInterface {
 	public static $customMessages = array(
 		'required'  => 'El campo :attribute es requerido.',
 	);
-
+	
+	
+	public static function obtenerCpus(){
+		$retorno = array();
+		$cpus = Cpus::all();
+		foreach($cpus as $cpu) {
+			$retorno[$cpu->id] = $cpu->nombre;
+		}
+	
+		return $retorno;
+	}
 }

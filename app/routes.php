@@ -22,7 +22,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::resource('usuarios', 'UsuariosController');
 	Route::resource('sistemasoperativos', 'SistemasOperativosController');
 	Route::resource('cpus', 'CpusController');
-	Route::resource('servidores', 'UsuariosController');
+	Route::resource('servidores', 'ServidoresController');
 	Route::resource('switches', 'SwitchesController');
 	Route::resource('apps', 'UsuariosController');
 	Route::resource('servicios', 'ServiciosController');

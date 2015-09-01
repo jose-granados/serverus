@@ -24,5 +24,15 @@ class SistemasOperativos extends Ardent implements UserInterface, RemindableInte
 	public static $customMessages = array(
 		'required'           => 'El campo :attribute es requerido.',
 	);
-
+	
+	public static function obtenerSistemasOperativos(){
+		$retorno = array();
+		$sistemasOperativos = SistemasOperativos::all();
+		foreach($sistemasOperativos as $sistemaOperativo) {
+			$retorno[$sistemaOperativo->id] = $sistemaOperativo->nombre;
+		}
+	
+		return $retorno;
+	}
+	
 }
