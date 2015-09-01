@@ -18,8 +18,8 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Nombre</th>
-                                <th>Arquitectura</th>
-                                <th>Versi&oacute;n</th>
+                                <th>Ruta</th>
+                                <th>Estatus</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -28,8 +28,8 @@
                                 <tr>
                                     <td>{{ $app->id }}</td>
                                     <td>{{ $app->nombre }}</td>
-                                    <td>{{ $app->arquitectura }}</td>
-                                    <td>{{ $app->version }}</td>
+                                    <td>{{ $app->ruta }}</td>
+                                    <td>{{ $app->estatus == 1 ? 'Activo' : 'Inactivo' }}</td>
                                     <td>
                                         {{ Form::open( ['route'=>['apps.destroy', $app->id], 'method' => 'DELETE'] ) }}
                                             <a href="{{URL::route('apps.show', $app->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
