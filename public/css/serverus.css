@@ -66,6 +66,12 @@ a.list-group-item, button.list-group-item {
     height: 100px;
     text-align:left;
 }
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    color: #006D7A;
+    font-weight:bold;
+    font-size:15px;
+}
+
 
 em{
     font-style: normal;

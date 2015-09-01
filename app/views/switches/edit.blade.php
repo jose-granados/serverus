@@ -10,7 +10,7 @@
 
     @include('switches/form')
 
-    <button type="submit" class="btn btn-default fill">Guardar</button>
-    {{ link_to('switches' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    <button type="submit" class="btn btn-default fill-green">Guardar</button>
+    {{ link_to('switches' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}

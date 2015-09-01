@@ -11,7 +11,7 @@
 
     @include('servicios/form')
 
-    {{ link_to('servicios' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('servicios' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}
 

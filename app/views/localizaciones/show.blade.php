@@ -11,7 +11,7 @@
 
     @include('localizaciones/form')
 
-    {{ link_to('localizaciones' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('localizaciones' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}
 

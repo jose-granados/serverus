@@ -11,7 +11,7 @@
 
     @include('switches/form')
 
-    {{ link_to('switches' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('switches' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}
 

@@ -10,8 +10,8 @@
 
     @include('localizaciones/form')
 
-    <button type="submit" class="btn btn-default fill">Guardar</button>
+    <button type="submit" class="btn btn-default fill-green">Guardar</button>
 
-    {{ link_to('localizaciones' , 'Regresar', ['class'=>'btn btn-default fill']) }}
+    {{ link_to('localizaciones' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}

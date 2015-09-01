@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $module = Request::segment(1);
 
@@ -22,9 +22,9 @@ $module = Request::segment(1);
 
     {{ HTML::script('public/js/jquery.min.js') }}
     {{ HTML::script('public/js/bootstrap.min.js') }}
-    {{ HTML::script('public/js/metisMenu.min.js') }}    
+    {{ HTML::script('public/js/metisMenu.min.js') }}
     {{ HTML::script('public/js/jquery.dataTables.min.js') }}
-    {{ HTML::script('public/js/dataTables.bootstrap.min.js') }}   
+    {{ HTML::script('public/js/dataTables.bootstrap.min.js') }}
     {{ HTML::script('public/js/bootbox.min.js') }}
     {{ HTML::script('public/js/serverus.js') }}
 </head>
@@ -39,7 +39,7 @@ $module = Request::segment(1);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ URL::to('/') }}">{{ HTML::image('public/img/logo02.png', 'Logo', array('class' => 'logo')) }}</a>                
+                <a class="navbar-brand" href="{{ URL::to('/') }}">{{ HTML::image('public/img/logo02.png', 'Logo', array('class' => 'logo')) }}</a>
 
             </div>
             <ul class="nav navbar-top-links navbar-right">
@@ -143,8 +143,8 @@ $module = Request::segment(1);
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="text-center" href="{{ URL::to('/') }}">
-                                <strong>See All Alerts</strong>
+                            <a class="text-center" href="{{ URL::to('localizaciones') }}">
+                                <strong>Ver todas</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
@@ -165,8 +165,13 @@ $module = Request::segment(1);
                             </a>
                         </li>
                         <li>
+                            <a href="{{ URL::to('servicios') }}" class="{{ $module == 'servicios' ? 'active' : '' }}">
+                                <i class="fa fa-wrench fa-fw fa-2x"></i> Servicios
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ URL::to('usuarios') }}" class="{{ $module == 'usuarios' ? 'active' : '' }}">
-                                <i class="fa fa-users fa-fw fa-2x"></i> Usuarios 
+                                <i class="fa fa-users fa-fw fa-2x"></i> Usuarios
                             </a>
                         </li>
                         <li>
