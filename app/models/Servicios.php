@@ -24,7 +24,7 @@ class Servicios extends Ardent implements UserInterface, RemindableInterface {
 		'required'	=> 'El campo :attribute es requerido.',
 	);
 
-	public function obtenerServicios(){
+	public static function obtenerServicios(){
 		$retorno = array();
 		$servicios = Servicios::all();
 		foreach($servicios as $servicio) {
@@ -33,4 +33,5 @@ class Servicios extends Ardent implements UserInterface, RemindableInterface {
 		
 		return $retorno;
 	}
+
 }

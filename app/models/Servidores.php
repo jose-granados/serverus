@@ -27,4 +27,12 @@ class Servidores extends Ardent implements UserInterface, RemindableInterface {
 		'required'	=> 'El campo :attribute es requerido.',
 	);
 
+	public static function obtenerServidores(){
+		$retorno = array();
+		$servidores = Servidores::all();
+		foreach($servidores as $servidor) {
+			$retorno[$servidor->id] = $servidor->nombre;
+		}
+		return $retorno;
+	}
 }

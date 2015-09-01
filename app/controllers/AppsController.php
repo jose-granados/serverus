@@ -24,9 +24,9 @@ class AppsController extends BaseController {
 	public function create()
 	{
 		$apps = new Apps;
-		$servicios = new Servicios;
-		$servicios = $servicios->obtenerServicios();
-		$this->layout->content = View::make('apps/create')->with(compact('apps','servicios'));
+		$servicios = Servicios::obtenerServicios();
+		$servidores = Servidores::obtenerServidores();
+		$this->layout->content = View::make('apps/create')->with(compact('apps','servicios','servidores'));
 	}
 
 
@@ -38,7 +38,18 @@ class AppsController extends BaseController {
 	public function store()
 	{
 		$apps = new Apps(Input::all());
+		unset($apps->servicio_id);
+		unset($apps->puerto);
+		$servicios = Input::get('servicio_id');
+		$puertos = Input::get('puerto');
 		if($apps->save()){
+			foreach ($servicios as $key => $value) {
+				$appsServicio = new ServiciosApps();
+				$appsServicio->puerto = $puertos[$key];
+				$appsServicio->servicio_id = $servicios[$key];
+				$appsServicio->app_id = $apps->id;
+				$appsServicio->save();
+			}
 			return Redirect::to('apps')->with('success', "Aplicacion creada con exito");
 		}else{
 			return Redirect::to('apps/create')->withInput()->withErrors($apps->errors());

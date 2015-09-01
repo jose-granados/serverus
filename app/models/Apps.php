@@ -12,7 +12,7 @@ class Apps extends Ardent implements UserInterface, RemindableInterface {
 	protected $table = 'apps';
 
 	protected $hidden = array();
-	protected $fillable = array('nombre','ruta');
+	protected $fillable = array();
 	protected $guarded = array();
 
 	public static $rules = array(

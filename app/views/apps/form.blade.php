@@ -22,25 +22,31 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Servidor</label>
+                        <div class="col-sm-4">
+                            {{ Form::select('servidor_id', $servidores ,$apps->servidor, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <table style="width: 100%;" class="tableRow">
                             <tr class="clone">
                                 <td>
                                     <label class="col-sm-2 control-label">Servicios</label>
-                                    <div class="col-sm-4">
-                                        {{ Form::select('servicio_id', $servicios, $apps->servicio_id, ['class' => 'form-control']) }}
+                                    <div class="col-sm-4">                            
+                                        {{ Form::select('servicio_id[]', $servicios, $apps->servicio_id, ['class' => 'form-control']) }}
                                     </div>
 
                                     <label class="col-sm-2 control-label">Puerto</label>
-                                    <div class="col-sm-4">
-                                        <input class="form-control">
+                                    <div class="col-sm-4">                                          
+                                        <input class="form-control" name="puerto[]">
                                     </div>
                                 </td>
                                 <td>
-                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                    <div class="removerow">-</div>
                                 </td>
                             </tr>
                         </table>
-                        <a class="addrow"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
+                        <div class="addrow">+</div>
                     </div>
                 </div>
             </div>
