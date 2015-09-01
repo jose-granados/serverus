@@ -8,7 +8,7 @@ $(document).ready(function(){
     });
 
     // metodo para mostrar tooltips de ver editar y eliminar
-    $('.glyphicon-eye-open').attr('title','ver').tooltip();
+    $('.glyphicon-eye-open').attr('title','Ver').tooltip();
     $('.glyphicon-edit').attr('title','Editar').tooltip();
     $('.glyphicon-trash').attr('title','Eliminar').tooltip();
 
@@ -34,6 +34,22 @@ $(document).ready(function(){
             }
         });
     });
+
+    // Anexar y eliminar row cuando se de el caso de anexar "n" cantidad de registros
+    $(document).on("click",".addrow",function() {
+        $(".tableRow .clone:first").clone().find("input").each(function() {
+            $(this).val('');
+        }).end().appendTo("table.tableRow");
+              
+    })
+    
+    $(document).on("click",".removerow",function() {
+        $(this).parent().parent().fadeTo("fast", 0.0, function(){
+            $(this).slideUp("fast", function() {
+                $(this).remove();
+            });
+        });     
+    })
 });
 
 // metodo para deshabilitar inputs
