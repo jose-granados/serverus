@@ -12,7 +12,7 @@ class Switches extends Ardent implements UserInterface, RemindableInterface {
 	protected $table = 'switches';
 
 	protected $hidden = array();
-	protected $fillable = array('nombre','modelo','tipo','serie','version','usuario','password');
+	protected $fillable = array('nombre','modelo','tipo','serie','version','usuario','password','localizacion_id');
 	protected $guarded = array();
 
 	public static $rules = array(

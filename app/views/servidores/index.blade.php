@@ -36,8 +36,8 @@
                                     <td>{{ $servidor->dns }}</td>
                                     <td>
                                         {{ Form::open( ['route'=>['servidores.destroy', $servidor->id], 'method' => 'DELETE'] ) }}
-                                            <a href="{{URL::route('servidores.show', $localizacion->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
-                                            <a href="{{URL::route('servidores.edit', $localizacion->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
+                                            <a href="{{URL::route('servidores.show', $servidor->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                            <a href="{{URL::route('servidores.edit', $servidor->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
                                             <a class="borrar-registro"><i class="glyphicon glyphicon-trash"></i></a>
                                         {{ Form::close() }}
                                     </td>

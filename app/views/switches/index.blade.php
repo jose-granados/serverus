@@ -36,8 +36,8 @@
                                     <td>{{ $switch->version }}</td>
                                     <td>
                                         {{ Form::open( ['route'=>['switches.destroy', $switch->id], 'method' => 'DELETE'] ) }}
-                                            <a href="{{URL::route('switches.show', $localizacion->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
-                                            <a href="{{URL::route('switches.edit', $localizacion->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
+                                            <a href="{{URL::route('switches.show', $switch->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                            <a href="{{URL::route('switches.edit', $switch->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
                                             <a class="borrar-registro"><i class="glyphicon glyphicon-trash"></i></a>
                                         {{ Form::close() }}
                                     </td>

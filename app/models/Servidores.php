@@ -9,10 +9,10 @@ class Servidores extends Ardent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
-	protected $table = 'switches';
+	protected $table = 'servidores';
 
 	protected $hidden = array();
-	protected $fillable = array('nombre','ram','hdd','ip','dns');
+	protected $fillable = array();
 	protected $guarded = array();
 
 	public static $rules = array(

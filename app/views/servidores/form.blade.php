@@ -12,7 +12,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Ram</label>
                         <div class="col-sm-4">
-                            {{ Form::text( 'modelo', $servidores->ram, ['class'=>'form-control ','placeholder'=>'Ram'] ) }}
+                            {{ Form::text( 'ram', $servidores->ram, ['class'=>'form-control ','placeholder'=>'Ram'] ) }}
                         </div>
                     </div>
                     <div class="form-group">
@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Tipo Servidor</label>
                         <div class="col-sm-4">
-                            {{ Form::select('tipo_servidore_id', $tiposServidores, $servidores->tipo_servidor_id, ['class' => 'form-control']) }}
+                            {{ Form::select('tipo_servidor_id', $tiposServidores, $servidores->tipo_servidor_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
                 </div>
