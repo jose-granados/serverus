@@ -10,7 +10,9 @@
 
 
     @include('localizaciones/form')
-
+	
+	{{ HTML::script('public/js/localizaciones/localizaciones_show.js') }}
+	
     {{ link_to('localizaciones' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}

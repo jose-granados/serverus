@@ -9,8 +9,11 @@
 {{ Form::open( ['route'=>['localizaciones.update', $localizaciones->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
 
     @include('localizaciones/form')
+    
+	{{ HTML::script('public/js/localizaciones/localizaciones_edit.js') }}
 
     <button type="submit" class="btn btn-default fill-green">Guardar</button>
+    
     {{ link_to('localizaciones' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}
