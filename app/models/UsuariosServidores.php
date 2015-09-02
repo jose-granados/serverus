@@ -2,7 +2,7 @@
 
 class UsuariosServidores extends Eloquent {
 
-	protected $table = 'tipos_servidores';
+	protected $table = 'usuarios_servidores';
 
 	protected $fillable = array();
 

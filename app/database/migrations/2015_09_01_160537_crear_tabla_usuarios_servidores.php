@@ -15,10 +15,10 @@ class CrearTablaUsuariosServidores extends Migration {
 		Schema::dropIfExists('usuarios_servidores');
 		Schema::create('usuarios_servidores', function($table)
 		{
-			$table->integer('servidores_id')->unsigned();
+			$table->integer('servidor_id')->unsigned();
 			$table->string('usuario');
 			$table->string('password');
-			$table->foreign('servidores_id')->references('id')->on('servidores');
+			$table->foreign('servidor_id')->references('id')->on('servidores');
 			$table->timestamps();
 		});
 	}

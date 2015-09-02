@@ -40,7 +40,18 @@ class ServidoresController extends BaseController {
 	public function store()
 	{
 		$servidores = new Servidores(Input::all());
+		unset($servidores->usuario);
+		unset($servidores->password);
+		$user = Input::get('usuario');
+		$pass = Input::get('password');
 		if($servidores->save()){
+			foreach ($user as $key => $value) {
+				$usuariosServidores = new UsuariosServidores();
+				$usuariosServidores->usuario = $user[$key];
+				$usuariosServidores->password = $pass[$key];
+				$usuariosServidores->servidor_id = $servidores->id;
+				$usuariosServidores->save();
+			}
 			return Redirect::to('servidores')->with('success', "Servidor creado con exito");
 		}else{
 			return Redirect::to('servidores/create')->withInput()->withErrors($servidores->errors());
@@ -56,13 +67,14 @@ class ServidoresController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$switches = Switches::find($id);
+		$servidores = Servidores::find($id);
 		$localizaciones = new Localizaciones;
 		$localizaciones = Localizaciones::obtenerLocalizaciones();
 		$sistemasOperativos = SistemasOperativos::obtenerSistemasOperativos();
 		$cpus = Cpus::obtenerCpus();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
-		$this->layout->content = View::make('servidores/create')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores'));
+		$usuariosServidores = UsuariosServidores::where('servidor_id',$id)->get();
+		$this->layout->content = View::make('servidores/show')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores'));
 	}
 
 
@@ -80,7 +92,8 @@ class ServidoresController extends BaseController {
 		$sistemasOperativos = SistemasOperativos::obtenerSistemasOperativos();
 		$cpus = Cpus::obtenerCpus();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
-		$this->layout->content = View::make('servidores/edit')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores'));
+		$usuariosServidores = UsuariosServidores::where('servidor_id',$id)->get();
+		$this->layout->content = View::make('servidores/edit')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores'));
 	}
 
 
@@ -93,8 +106,20 @@ class ServidoresController extends BaseController {
 	public function update($id)
 	{
 		$servidores = Servidores::find($id);
-		
-		if($servidores->update(Input::all())){
+		$datos = Input::all();
+		unset($datos['usuario']);
+		unset($datos['password']);
+		$user = Input::get('usuario');
+		$pass = Input::get('password');
+		if($servidores->update($datos)){
+			UsuariosServidores::where('servidor_id', $id)->delete();
+			foreach ($user as $key => $value) {
+				$usuariosServidores = new UsuariosServidores();
+				$usuariosServidores->usuario = $user[$key];
+				$usuariosServidores->password = $pass[$key];
+				$usuariosServidores->servidor_id = $id;
+				$usuariosServidores->save();
+			}
 			return Redirect::to('servidores')->with('success', "Servidor actualizado con exito");
 		}else{
 			return Redirect::route('servidores.edit',$id)->withInput()->withErrors($servidores->errors());
@@ -111,7 +136,7 @@ class ServidoresController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		if(Servidores::destroy($id)){
+		if(UsuariosServidores::where('servidor_id', $id)->delete() && Servidores::destroy($id)){
 			return Redirect::to('servidores')->with('success', "Servidor eliminado con exito.");
 		}else{
 			return Redirect::to('servidores')->with('danger', "Ocurrio un error al eliminar el Servidor.");

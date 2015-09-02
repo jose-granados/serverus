@@ -57,6 +57,55 @@
                             {{ Form::select('tipo_servidor_id', $tiposServidores, $servidores->tipo_servidor_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="width-deformer">
+                            <h5 class="panel-heading page-title">Usuarios</h5>
+                            <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
+                        </div>
+                        <table style="width: 100%;" class="tableRowUser">
+                        	@if (count($usuariosServidores) > 0)
+                        		@foreach($usuariosServidores as $usuarioServidor)
+                            		<tr class="clone">
+		                                <td>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label">Usuario</label>
+		                                        <div class="col-sm-4">
+		                                            <input class="form-control" name="usuario[]" value="{{$usuarioServidor->usuario}}">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
+		                                        <div class="col-sm-4">
+		                                            <input class="form-control" name="password[]" value="{{$usuarioServidor->password}}">
+		                                        </div>
+		                                    </div>
+		                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+		                                    <hr></hr>
+		                                </td>
+		                            </tr>
+		                         @endforeach
+                            @else
+                            	 <tr class="clone">
+                                <td>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Usuario</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" name="usuario[]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" name="password[]">
+                                        </div>
+                                    </div>
+                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                    <hr></hr>
+                                </td>
+                            </tr>
+                            @endif
+                        </table>
+                    </div>                    
                 </div>
             </div>
         </div>
