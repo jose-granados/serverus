@@ -29,14 +29,7 @@
                     </div>
 
 
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Servidor</label>
-                        <div class="col-sm-4">
-                           <h5 class="panel-heading page-title">Servicios</h5>
-                            <a class="addrow addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a> 
-                        </div>
-                    </div>
-
+                    
 
                     <div class="form-group">
                         <div class="width-deformer">
