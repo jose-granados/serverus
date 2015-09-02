@@ -27,10 +27,21 @@
                             {{ Form::select('servidor_id', $servidores ,$apps->servidor, ['class' => 'form-control']) }}
                         </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Servidor</label>
+                        <div class="col-sm-4">
+                           <h5 class="panel-heading page-title">Servicios</h5>
+                            <a class="addrow addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a> 
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Servicios</h5>
-                            <a class="addrow"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
+                            <a class="addrow addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
                         <table style="width: 100%;" class="tableRow">
                             <tr class="clone">
@@ -57,9 +68,9 @@
                     <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Usuarios</h5>
-                            <a class="addrow"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
+                            <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
-                        <table style="width: 100%;" class="tableRow">
+                        <table style="width: 100%;" class="tableRowUser">
                             <tr class="clone">
                                 <td>
                                     <div class="form-group">

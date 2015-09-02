@@ -42,6 +42,13 @@ $(document).ready(function(){
         }).end().appendTo("table.tableRow");
               
     })
+
+    $(document).on("click",".addrowUser",function() {
+        $(".tableRowUser .clone:first").clone().find("input").each(function() {
+            $(this).val('');
+        }).end().appendTo("table.tableRowUser");
+              
+    })
     
     $(document).on("click",".removerow",function() {
         $(this).parent().parent().fadeTo("fast", 0.0, function(){
