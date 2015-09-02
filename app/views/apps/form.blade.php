@@ -27,10 +27,6 @@
                             {{ Form::select('servidor_id', $servidores ,$apps->servidor, ['class' => 'form-control']) }}
                         </div>
                     </div>
-
-
-                    
-
                     <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Servicios</h5>
