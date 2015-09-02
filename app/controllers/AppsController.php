@@ -26,7 +26,9 @@ class AppsController extends BaseController {
 		$apps = new Apps;
 		$servicios = Servicios::obtenerServicios();
 		$servidores = Servidores::obtenerServidores();
-		$this->layout->content = View::make('apps/create')->with(compact('apps','servicios','servidores'));
+		$serviciosApps = array();
+		$usuariosApps = array();
+		$this->layout->content = View::make('apps/create')->with(compact('apps','servicios','servidores','serviciosApps','usuariosApps'));
 	}
 
 
@@ -79,7 +81,11 @@ class AppsController extends BaseController {
 	public function show($id)
 	{
 		$apps = Apps::find($id);
-		$this->layout->content = View::make('apps/show')->with(compact('apps'));
+		$servidores = Servidores::obtenerServidores();
+		$servicios = Servicios::obtenerServicios();
+		$serviciosApps = ServiciosApps::where('app_id',$id)->get();
+		$usuariosApps = UsuariosApps::where('app_id',$id)->get();
+		$this->layout->content = View::make('apps/show')->with(compact('apps','servicios','servidores','serviciosApps','usuariosApps'));
 	}
 
 
@@ -92,7 +98,11 @@ class AppsController extends BaseController {
 	public function edit($id)
 	{
 		$apps = Apps::find($id);
-		$this->layout->content = View::make('apps/edit')->with(compact('apps'));
+		$servidores = Servidores::obtenerServidores();
+		$servicios = Servicios::obtenerServicios();
+		$serviciosApps = ServiciosApps::where('app_id',$id)->get();
+		$usuariosApps = UsuariosApps::where('app_id',$id)->get();
+		$this->layout->content = View::make('apps/edit')->with(compact('apps','servidores','servicios','serviciosApps','usuariosApps'));
 	}
 
 

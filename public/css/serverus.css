@@ -1084,3 +1084,6 @@ tr.clone select, tr.clone input {
 tr:first-child td a.removerow{
   display: none;
 }
+.view_block div.form-group a{
+  display: none;
+}

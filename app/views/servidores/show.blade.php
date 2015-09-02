@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ Form::open( ['class'=>'form-horizontal'] ) }}
+{{ Form::open( ['class'=>'form-horizontal view_block'] ) }}
 
 
     @include('servidores/form')
