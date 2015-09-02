@@ -115,8 +115,34 @@ class AppsController extends BaseController {
 	public function update($id)
 	{
 		$apps = Apps::find($id);
-		
-		if($apps->update(Input::all())){
+		$datos = Input::all();
+		unset($datos['usuario']);
+		unset($datos['password']);
+		$user = Input::get('usuario');
+		$pass = Input::get('password');
+
+		unset($datos['servicio_id']);
+		unset($datos['puerto']);
+		$servicios = Input::get('servicio_id');
+		$puerto = Input::get('puerto');
+
+		if($apps->update($datos)){
+			UsuariosApps::where('app_id',$id)->delete(); // eimino los usuaarios relacionado a esa App
+			ServiciosApps::where('app_id',$id)->delete(); // eimino los servicios relacionado a esa App
+			foreach ($servicios as $key => $value) {
+				$appsServicio = new ServiciosApps();
+				$appsServicio->puerto = $puerto[$key];
+				$appsServicio->servicio_id = $servicios[$key];
+				$appsServicio->app_id = $apps->id;
+				$appsServicio->save();
+			}
+			foreach ($user as $key => $value) {
+				$appsUsuario = new UsuariosApps();
+				$appsUsuario->usuario = $user[$key];
+				$appsUsuario->password = $pass[$key];
+				$appsUsuario->app_id = $apps->id;
+				$appsUsuario->save();
+			}
 			return Redirect::to('apps')->with('success', "Aplicacion actualizado con exito");
 		}else{
 			return Redirect::route('apps.edit',$id)->withInput()->withErrors($apps->errors());
