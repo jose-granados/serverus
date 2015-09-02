@@ -1,45 +1,52 @@
 $(document).ready(function () {
-    /**
- * This example uses pulsating circles CSS by Kevin Urrutia
- * http://kevinurrutia.tumblr.com/post/16411271583/creating-a-css3-pulsating-circle
- */
+	
+	var datosenvio;
+	
+	var map = AmCharts.makeChart("chartdiv", {
+	    type: "map",
+	    "theme": "light",
+	   // path: "http://www.amcharts.com/lib/3/",
 
-var map = AmCharts.makeChart("chartdiv", {
-    type: "map",
-    "theme": "light",
-    path: "http://www.amcharts.com/lib/3/",
+	    imagesSettings: {
+	        rollOverColor: "#C7EDF4",
+	        rollOverScale: 3,
+	        selectedScale: 3,
+	        selectedColor: "#C7EDF4",
+	        color: "#13564e"
+	    },
 
-    imagesSettings: {
-        rollOverColor: "#C7EDF4",
-        rollOverScale: 3,
-        selectedScale: 3,
-        selectedColor: "#C7EDF4",
-        color: "#13564e"
-    },
+	    areasSettings: {
+	        unlistedAreasColor: "#70b2be"
+	    },
 
-    areasSettings: {
-        unlistedAreasColor: "#70b2be"
-    },
+	    dataProvider: {
+	        map: "worldLow"
+	        
+	    }
+	});
+	
+	console.log(document.location);
+	$.ajax({
+		url: document.location.protocol + '//' + document.location.host + document.location.pathname  + 'localizaciones' +'/' + 'dashboard',
+	    type:"get",
+	    async: true,
+	    dataType: "JSON",
+	    success: function(resp){
+	    	datosenvio = {
+	    		map: "worldLow",
+	    		images:	resp
+	    	};
+	    	
+	    	map.dataProvider = datosenvio;
+    		
+	    	map.validateData();
+	    	
+		},error: function(e){
+			
+		}	
+	});
 
-    dataProvider: {
-        map: "worldLow",
-        images: [{
-            zoomLevel: 5,
-            scale: 0.5,
-            title: "Brussels",
-            latitude: 50.8371,
-            longitude: 4.3676,
-            url:"http://www.google.co.uk"
-        }, {
-            zoomLevel: 5,
-            scale: 0.5,
-            title: "London",
-            latitude: 51.5002,
-            longitude: -0.1262,
-            url:"http://www.google.co.uk"
-        }]
-    }
-});
+
 
 // add events to recalculate map position when the map is moved or zoomed
 map.addListener("positionChanged", updateCustomMarkers);

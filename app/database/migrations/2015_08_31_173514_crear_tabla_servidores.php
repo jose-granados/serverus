@@ -22,6 +22,7 @@ class CrearTablaServidores extends Migration {
 			$table->string('hdd');
 			$table->string('ip');
 			$table->string('dns');
+			$table->boolean('verificar')->default(0);
 			$table->integer('localizacion_id')->unsigned();
 			$table->integer('cpu_id')->unsigned();
 			$table->integer('sistema_operativo_id')->unsigned();
