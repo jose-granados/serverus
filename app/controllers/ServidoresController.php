@@ -28,7 +28,8 @@ class ServidoresController extends BaseController {
 		$sistemasOperativos = SistemasOperativos::obtenerSistemasOperativos();
 		$cpus = Cpus::obtenerCpus();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
-		$this->layout->content = View::make('servidores/create')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores'));
+		$usuariosServidores = array();
+		$this->layout->content = View::make('servidores/create')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores'));
 	}
 
 
