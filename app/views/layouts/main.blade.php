@@ -144,7 +144,7 @@ $module = Request::segment(1);
                         <li class="divider"></li>
                         <li>
                             <a class="text-center" href="{{ URL::to('localizaciones') }}">
-                                <strong>Ver todas</strong>
+                                <strong>Geolocalizaciones</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>

@@ -15,11 +15,11 @@
                     </div>
                     <div class="col-xs-9 text-right color-blue">
                         <div class="huge">26</div>
-                        <div>Nuevos Usuarios</div>
+                        <div>Nuevos usuarios</div>
                     </div>
                 </div>
             </div>
-            <a href="{{ URL::to('/') }}">
+            <a href="{{ URL::to('usuarios') }}">
                 <div class="panel-footer fill-blue">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -37,11 +37,11 @@
                     </div>
                     <div class="col-xs-9 text-right color-green">
                         <div class="huge">12</div>
-                        <div>Servidores Online</div>
+                        <div>Servidores online</div>
                     </div>
                 </div>
             </div>
-            <a href="{{ URL::to('/') }}">
+            <a href="{{ URL::to('servidores') }}">
                 <div class="panel-footer fill-green">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -59,11 +59,11 @@
                     </div>
                     <div class="col-xs-9 text-right color-yellow">
                         <div class="huge">124</div>
-                        <div>Dispositivos no Registrados</div>
+                        <div>Aplicaciones no registrados</div>
                     </div>
                 </div>
             </div>
-            <a href="{{ URL::to('/') }}">
+            <a href="{{ URL::to('apps') }}">
                 <div class="panel-footer fill-yellow">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -81,11 +81,11 @@
                     </div>
                     <div class="col-xs-9 text-right color-red">
                         <div class="huge">13</div>
-                        <div>Servidores Offline</div>
+                        <div>Servidores offline</div>
                     </div>
                 </div>
             </div>
-            <a href="{{ URL::to('/') }}">
+            <a href="{{ URL::to('servidores') }}">
                 <div class="panel-footer fill-red">
                     <span class="pull-left">Ver detalle</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -164,6 +164,11 @@
                     </a>
                     <a href="{{ URL::to('/') }}" class="list-group-item">
                          Payment Received
+                        <span class="pull-right text-muted small"><em>Yesterday</em>
+                        </span>
+                    </a>
+                    <a href="{{ URL::to('/') }}" class="list-group-item">
+                         Poll
                         <span class="pull-right text-muted small"><em>Yesterday</em>
                         </span>
                     </a>
