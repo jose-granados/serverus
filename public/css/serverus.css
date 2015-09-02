@@ -973,6 +973,10 @@ tbody tr:hover{
     color: #337ab7;
     background-color: transparent !important;
 }
+.tableRowUser tr:hover {
+    color: #337ab7;
+    background-color: transparent !important;
+}
 
 /*animatec.css*/
 
@@ -1058,12 +1062,14 @@ Copyright (c) 2015 Daniel Eden
      float: left;
     margin-top: -42px;
     margin-left: 50%;
+    cursor:pointer;
 }
 
 .removerow{
     margin-top: -78px;
     position: absolute;
     float: right;
+        cursor:pointer;
   }
 
 tr.clone select, tr.clone input {
