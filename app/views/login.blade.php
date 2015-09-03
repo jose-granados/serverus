@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="login-panel panel panel-default">
-                        <div class="panel-heading"><img id="main-logo"  src="public/img/logo02.png"> </div>
+                        <div class=""><img id="main-logo"  src="public/img/logo.png"> </div>
 
                         <div class="panel-body">
                             {{ Form::open( ['url'=>'login', 'method'=>"post"] ) }}

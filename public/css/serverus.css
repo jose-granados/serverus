@@ -40,8 +40,10 @@
 }
 
 .logo{
-    width: 70px;
-    margin: -10px 30% 0 30%;
+      width: 40px;
+    margin: -10px 30% 0px 30%;
+    left: 25px;
+    position: relative;
 }
 
 a {
@@ -340,6 +342,7 @@ fieldset{
 .page-header{
     text-transform:uppercase;
     color: #337ab7;
+    margin-top: 60px;
 }
 .page-title {
     color: #337ab7;
@@ -688,9 +691,19 @@ body {
     left: auto;
 }
 
+.navbar-header{
+    position:fixed;
+    width:100%;
+}
+
+nav.navbar.navbar-default.navbar-static-top {
+    position: fixed;
+    width: 100%;
+}
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
+    position:fixed;
 }
 
 .sidebar .sidebar-search {
@@ -725,6 +738,8 @@ body {
 .sidebar .nav-third-level li a {
     padding-left: 52px;
 }
+
+
 
 @media(min-width:768px) {
     .sidebar {
@@ -1087,6 +1102,3 @@ tr:first-child td a.removerow{
 .view_block div.form-group a{
   display: none;
 }
-/*form{
-  padding-bottom: 30px;
-}*/

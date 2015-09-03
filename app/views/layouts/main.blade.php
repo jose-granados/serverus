@@ -39,7 +39,7 @@ $module = Request::segment(1);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ URL::to('/') }}">{{ HTML::image('public/img/logo02.png', 'Logo', array('class' => 'logo')) }}</a>
+                <a class="navbar-brand" href="{{ URL::to('/') }}">{{ HTML::image('public/img/logo.png', 'Logo', array('class' => 'logo')) }}</a>
 
             </div>
             <ul class="nav navbar-top-links navbar-right">
