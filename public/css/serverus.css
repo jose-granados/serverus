@@ -1106,3 +1106,6 @@ tr:first-child td a.removerow{
     height: auto;
     width: auto;
 }
+.divVns{
+  display: none;
+}

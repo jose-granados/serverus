@@ -14,7 +14,6 @@ $(document).ready(function(){
         $('.divOculto').hide(); 
     }
 
-    $(".divVns").hide(); 
     $(".sino").click(function() {  
         if($(".sino").is(':checked')) {  
             $(".divVns").show();  
@@ -22,6 +21,12 @@ $(document).ready(function(){
         	$(".divVns input").val("");
             $(".divVns").hide();  
         }  
-    });  
+    }); 
+    if($(".sino").is(':checked')) {  
+        $(".divVns").show();  
+    } else {  
+      	$(".divVns input").val("");
+        $(".divVns").hide();  
+    }   
   
 });
