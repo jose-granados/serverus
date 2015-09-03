@@ -363,6 +363,10 @@ fieldset{
 .panel-indicator{
     max-width:211px;
 }
+.indicadores{
+    margin-left:50px;
+
+}
 .col-md-3{
     float: left;
 }
@@ -458,6 +462,10 @@ img{
     border-radius: 4px;
      margin-top: 20px;
 }
+img#main-logo {
+    width: 50%;
+}
+
 @media (max-width:767px){
     .panel-indicator{
         max-width:211px;
@@ -481,10 +489,13 @@ img{
     position: relative !important;
     bottom: -60px;
     }
-    .sidebar .sidebar-nav.navbar-collapse {
-            padding-top: 24px;
-                    position:inherit !important;
+    .sidebar .sidebar-nav.navbar-collapse,  {
+    padding-top: 24px;
+    position:inherit !important;
 
+    }
+    .navbar-header{
+     position:relative !important;
     }
     .in{
         padding-top:24px;
@@ -497,10 +508,11 @@ img{
      }
 
     .panel-indicator{
-        max-width:135px;
+        max-width:130px;
      }
     .text-right {
     margin-top: -15px;
+    font-size: 12px;
     }
     .fa-2x {
     font-size: 1em;
@@ -518,6 +530,9 @@ img{
     .sidebar .sidebar-nav.navbar-collapse {
             padding-top: 24px;
             position:inherit !important;
+    }
+    .navbar-header{
+     position:relative !important;
     }
     .in{
         padding-top:24px;
@@ -719,6 +734,7 @@ nav.navbar.navbar-default.navbar-static-top {
     padding-right: 0;
     padding-left: 0;
     position:fixed;
+    width:160px;
 }
 
 .sidebar .sidebar-search {
@@ -1097,6 +1113,12 @@ Copyright (c) 2015 Daniel Eden
 
 .removerow{
     margin-top: -78px;
+    position: absolute;
+    float: right;
+        cursor:pointer;
+  }
+.removerowsingle{
+    margin-top: -50px;
     position: absolute;
     float: right;
         cursor:pointer;

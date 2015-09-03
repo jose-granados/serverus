@@ -5,7 +5,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-<div class="row" style="margin-left: 10%;">
+<div class="row indicadores">
     <div class="col-md-3 ">
         <div class="panel panel-primary panel-indicator">
             <div class="panel-heading panel-heading-indicator">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-xs-9 text-right color-yellow">
                         <div class="huge">124</div>
-                        <div>Aplicaciones no registrados</div>
+                        <div>Aplicaciones registrados</div>
                     </div>
                 </div>
             </div>

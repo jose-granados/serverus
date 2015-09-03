@@ -35,13 +35,13 @@
                     </div>
                      <div class="form-group">
                         <label class="col-sm-2 control-label">Localizaci&oacute;n</label>
-                        <div class="col-sm-4">                        	
+                        <div class="col-sm-4">
                             {{ Form::select('localizacion_id', $localizaciones, $servidores->localizacion_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
                      <div class="form-group">
                         <label class="col-sm-2 control-label">CPU</label>
-                        <div class="col-sm-4">                        	
+                        <div class="col-sm-4">
                             {{ Form::select('cpu_id', $cpus, $servidores->cpu_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="col-sm-4">
                              {{ Form::select('sistema_operativo_id', $sistemasOperativos, $servidores->sistema_operativo_id, ['class' => 'form-control']) }}
                         </div>
-                    </div>                    
+                    </div>
                     <div class="form-group check">
                         <label class="col-sm-2 control-label">VNS</label>
                         <div class="col-sm-4 divcheck">
@@ -75,36 +75,36 @@
                              {{ Form::text( 'vnc_puerto', $servidores->vnc_puerto, ['class'=>'form-control ','placeholder'=>'Puerto'] ) }}
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Usuarios</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
                         <table style="width: 100%;" class="tableRowUser">
-                        	@if (count($usuariosServidores) > 0)
-                        		@foreach($usuariosServidores as $usuarioServidor)
-                            		<tr class="clone">
-		                                <td>
-		                                    <div class="form-group">
-		                                        <label class="col-sm-2 control-label">Usuario</label>
-		                                        <div class="col-sm-4">
-		                                            <input class="form-control" name="usuario[]" value="{{$usuarioServidor->usuario}}">
-		                                        </div>
-		                                    </div>
-		                                    <div class="form-group">
-		                                        <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
-		                                        <div class="col-sm-4">
-		                                            <input class="form-control" name="password[]" value="{{$usuarioServidor->password}}">
-		                                        </div>
-		                                    </div>
-		                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
-		                                    <hr></hr>
-		                                </td>
-		                            </tr>
-		                         @endforeach
+                            @if (count($usuariosServidores) > 0)
+                                @foreach($usuariosServidores as $usuarioServidor)
+                                    <tr class="clone">
+                                        <td>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Usuario</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" name="usuario[]" value="{{$usuarioServidor->usuario}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" name="password[]" value="{{$usuarioServidor->password}}">
+                                                </div>
+                                            </div>
+                                            <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                            <hr></hr>
+                                        </td>
+                                    </tr>
+                                 @endforeach
                             @else
-                            	 <tr class="clone">
+                                 <tr class="clone">
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Usuario</label>
@@ -124,38 +124,38 @@
                             </tr>
                             @endif
                         </table>
-                    </div>    
-                    
-                    
+                    </div>
+
+
                      <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Ips</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
                         <table style="width: 100%;" class="tableRowUser">
-                        	@if (count($ips) > 0)
-                        		@foreach($ips as $ip)
-                            		<tr class="clone">
-		                                <td>
-		                                    <div class="form-group">
-		                                        <label class="col-sm-2 control-label">Ip</label>
-		                                        <div class="col-sm-4">
-		                                            <input class="form-control" name="ip[]" value="{{$ip->ip}}">
-		                                        </div>
-		                                    </div>
-		                                    <div class="form-group">
-		                                        <label class="col-sm-2 control-label">Tipo</label>
-		                                        <div class="col-sm-4">
-                                           			 {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], $ip->tipo_ip, ['class' => 'form-control']) }}
-                                        		</div>
-		                                    </div>
-		                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
-		                                    <hr></hr>
-		                                </td>
-		                            </tr>
-		                         @endforeach
+                            @if (count($ips) > 0)
+                                @foreach($ips as $ip)
+                                    <tr class="clone">
+                                        <td>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Ip</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" name="ip[]" value="{{$ip->ip}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Tipo</label>
+                                                <div class="col-sm-4">
+                                                        {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], $ip->tipo_ip, ['class' => 'form-control']) }}
+                                                </div>
+                                            </div>
+                                            <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                            <hr></hr>
+                                        </td>
+                                    </tr>
+                                 @endforeach
                             @else
-                            	 <tr class="clone">
+                                 <tr class="clone">
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Ip</label>
@@ -175,32 +175,32 @@
                             </tr>
                             @endif
                         </table>
-                    </div>    
-                    
-                    
+                    </div>
+
+
                      <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Dns</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
                         <table style="width: 100%;" class="tableRowUser">
-                        	@if (count($dns) > 0)
-                        		@foreach($dns as $valor)
-                            		<tr class="clone">
-		                                <td>
-		                                    <div class="form-group">
-		                                        <label class="col-sm-2 control-label">Dns</label>
-		                                        <div class="col-sm-4">
-		                                            <input class="form-control" name="dns[]" value="{{$valor->dns}}">
-		                                        </div>
-		                                    </div>
-		                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
-		                                    <hr></hr>
-		                                </td>
-		                            </tr>
-		                         @endforeach
+                            @if (count($dns) > 0)
+                                @foreach($dns as $valor)
+                                    <tr class="clone">
+                                        <td>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Dns</label>
+                                                <div class="col-sm-4">
+                                                    <input class="form-control" name="dns[]" value="{{$valor->dns}}">
+                                                </div>
+                                            </div>
+                                            <a class="removerowsingle"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                            <hr></hr>
+                                        </td>
+                                    </tr>
+                                 @endforeach
                             @else
-                            	 <tr class="clone">
+                                 <tr class="clone">
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Dns</label>
@@ -208,14 +208,14 @@
                                             <input class="form-control" name="dns[]">
                                         </div>
                                     </div>
-                                    <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                    <a class="removerowsingle"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
                                     <hr></hr>
                                 </td>
                             </tr>
                             @endif
                         </table>
-                    </div> 
-                                    
+                    </div>
+
                 </div>
             </div>
         </div>
