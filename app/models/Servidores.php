@@ -19,8 +19,6 @@ class Servidores extends Ardent implements UserInterface, RemindableInterface {
 		'nombre' 	=> 'required',
 		'ram'  	=> 'required',
 		'hdd'  	=> 'required',
-		'ip'		=> 'required',
-		'dns'		=> 'required'
 	);
 
 	public static $customMessages = array(
@@ -33,6 +31,16 @@ class Servidores extends Ardent implements UserInterface, RemindableInterface {
 		foreach($servidores as $servidor) {
 			$retorno[$servidor->id] = $servidor->nombre;
 		}
+		return $retorno;
+	}
+	
+	public static function obtenerServidoresFisicos(){
+		$retorno = array();
+		$servidores = Servidores::where('tipo_servidor_id',1)->get();
+		foreach($servidores as $servidor) {
+			$retorno[$servidor->id] = $servidor->nombre;
+		}
+	
 		return $retorno;
 	}
 }

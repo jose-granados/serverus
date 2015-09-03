@@ -103,6 +103,15 @@ class LocalizacionesController extends BaseController {
 			return Redirect::to('localizaciones')->with('danger', "Ocurrio un error al eliminar el Localizaci&oacute;n.");
 		}
 	}
+	
+	public function dashboard(){
+		$localizaciones = Localizaciones::select('nombre as title','latitud as latitude','longitud as longitude')->get();
+		foreach ($localizaciones as $localizacion){
+			$localizacion->zoomLevel = 5;
+			$localizacion->scale = 0.5;
+		}
+		return $localizaciones->toJson();
+	}
 
 
 }

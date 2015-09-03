@@ -37,16 +37,16 @@ $(document).ready(function(){
 
     // Anexar y eliminar row cuando se de el caso de anexar "n" cantidad de registros
     $(document).on("click",".addrow",function() {
-        $(".tableRow .clone:first").clone().find("input").each(function() {
+    	$(this).closest(".form-group").find(".tableRowUser .clone:first").clone().find("input").each(function() {
             $(this).val('');
-        }).end().appendTo("table.tableRow");
+        }).end().appendTo($(this).closest(".form-group").find("table.tableRowUser"));
               
     })
 
-    $(document).on("click",".addrowUser",function() {
-        $(".tableRowUser .clone:first").clone().find("input").each(function() {
+    $(document).on("click",".addrowUser",function(e) {
+    	$(this).closest(".form-group").find(".tableRowUser .clone:first").clone().find("input").each(function() {
             $(this).val('');
-        }).end().appendTo("table.tableRowUser");
+        }).end().appendTo($(this).closest(".form-group").find("table.tableRowUser"));
               
     })
     

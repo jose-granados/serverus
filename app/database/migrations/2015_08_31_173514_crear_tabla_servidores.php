@@ -20,9 +20,10 @@ class CrearTablaServidores extends Migration {
 			$table->string('nombre');
 			$table->string('ram');
 			$table->string('hdd');
-			$table->string('ip');
-			$table->string('dns');
 			$table->boolean('verificar')->default(0);
+			$table->string('vnc_ip'); 
+			$table->string('vnc_pass');
+			$table->string('vnc_puerto');
 			$table->integer('localizacion_id')->unsigned();
 			$table->integer('cpu_id')->unsigned();
 			$table->integer('sistema_operativo_id')->unsigned();

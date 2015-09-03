@@ -29,7 +29,11 @@ class ServidoresController extends BaseController {
 		$cpus = Cpus::obtenerCpus();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
 		$usuariosServidores = array();
-		$this->layout->content = View::make('servidores/create')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores'));
+		$servidoresFisicos = Servidores::obtenerServidoresFisicos(); 
+		$servidores->padre_servidor_id = null;
+		$ips = array();
+		$dns = array();
+		$this->layout->content = View::make('servidores/create')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns'));
 	}
 
 
@@ -43,8 +47,19 @@ class ServidoresController extends BaseController {
 		$servidores = new Servidores(Input::all());
 		unset($servidores->usuario);
 		unset($servidores->password);
+		unset($servidores->ip);
+		unset($servidores->tipo_ip);
+		unset($servidores->dns);
+		unset($servidores->padre_servidor_id);
+		
 		$user = Input::get('usuario');
 		$pass = Input::get('password');
+		
+		$ips = Input::get('ip');
+		$tipo_ips = Input::get('tipo_ip');
+		$dns = Input::get('dns');
+		
+		
 		if($servidores->save()){
 			foreach ($user as $key => $value) {
 				$usuariosServidores = new UsuariosServidores();
@@ -53,6 +68,29 @@ class ServidoresController extends BaseController {
 				$usuariosServidores->servidor_id = $servidores->id;
 				$usuariosServidores->save();
 			}
+			
+			foreach ($ips as $key => $value) {
+				$ipsServidores = new IpsServidores();
+				$ipsServidores->ip = $ips[$key];
+				$ipsServidores->tipo_ip = $tipo_ips[$key];
+				$ipsServidores->servidor_id = $servidores->id;
+				$ipsServidores->save();
+			}
+			
+			foreach ($dns as $key => $value) {
+				$dnsServidores = new DnsServidores();
+				$dnsServidores->dns = $dns[$key];
+				$dnsServidores->servidor_id = $servidores->id;
+				$dnsServidores->save();
+			}
+			
+			if(Input::get('tipo_servidor_id') == 2){
+				$vmsServidores = new VmsServidores();
+				$vmsServidores->hijo_servidor_id = $servidores->id;
+				$vmsServidores->padre_servidor_id = Input::get('padre_servidor_id');
+				$vmsServidores->save();
+			}
+			
 			return Redirect::to('servidores')->with('success', "Servidor creado con exito");
 		}else{
 			return Redirect::to('servidores/create')->withInput()->withErrors($servidores->errors());
@@ -75,7 +113,13 @@ class ServidoresController extends BaseController {
 		$cpus = Cpus::obtenerCpus();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
 		$usuariosServidores = UsuariosServidores::where('servidor_id',$id)->get();
-		$this->layout->content = View::make('servidores/show')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores'));
+		$servidoresFisicos = Servidores::obtenerServidoresFisicos();
+		$ips = IpsServidores::where('servidor_id',$id)->get();
+		$dns = DnsServidores::where('servidor_id',$id)->get();
+		$servidores->padre_servidor_id = VmsServidores::where('hijo_servidor_id', $id)->first();
+		$servidores->padre_servidor_id = $servidores->padre_servidor_id['padre_servidor_id'];
+		
+		$this->layout->content = View::make('servidores/show')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns'));
 	}
 
 
@@ -94,7 +138,12 @@ class ServidoresController extends BaseController {
 		$cpus = Cpus::obtenerCpus();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
 		$usuariosServidores = UsuariosServidores::where('servidor_id',$id)->get();
-		$this->layout->content = View::make('servidores/edit')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores'));
+		$servidoresFisicos = Servidores::obtenerServidoresFisicos();
+		$ips = IpsServidores::where('servidor_id',$id)->get();
+		$dns = DnsServidores::where('servidor_id',$id)->get();
+		$servidores->padre_servidor_id = VmsServidores::where('hijo_servidor_id', $id)->first();
+		$servidores->padre_servidor_id = $servidores->padre_servidor_id['padre_servidor_id'];
+		$this->layout->content = View::make('servidores/edit')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns'));
 	}
 
 
@@ -110,9 +159,21 @@ class ServidoresController extends BaseController {
 		$datos = Input::all();
 		unset($datos['usuario']);
 		unset($datos['password']);
+		unset($datos['ip']);
+		unset($datos['tipo_ip']);
+		unset($datos['dns']);
+		unset($datos['padre_servidor_id']);
+		
+		$user = Input::get('usuario');
+		$pass = Input::get('password');
+		
+		$ips = Input::get('ip');
+		$tipo_ips = Input::get('tipo_ip');
+		$dns = Input::get('dns');
 		$user = Input::get('usuario');
 		$pass = Input::get('password');
 		if($servidores->update($datos)){
+			
 			UsuariosServidores::where('servidor_id', $id)->delete();
 			foreach ($user as $key => $value) {
 				$usuariosServidores = new UsuariosServidores();
@@ -121,6 +182,32 @@ class ServidoresController extends BaseController {
 				$usuariosServidores->servidor_id = $id;
 				$usuariosServidores->save();
 			}
+			
+			IpsServidores::where('servidor_id', $id)->delete();
+			foreach ($ips as $key => $value) {
+				$ipsServidores = new IpsServidores();
+				$ipsServidores->ip = $ips[$key];
+				$ipsServidores->tipo_ip = $tipo_ips[$key];
+				$ipsServidores->servidor_id = $servidores->id;
+				$ipsServidores->save();
+			}
+				
+			DnsServidores::where('servidor_id', $id)->delete();
+			foreach ($dns as $key => $value) {
+				$dnsServidores = new DnsServidores();
+				$dnsServidores->dns = $dns[$key];
+				$dnsServidores->servidor_id = $servidores->id;
+				$dnsServidores->save();
+			}
+				
+			VmsServidores::where('hijo_servidor_id', $id)->delete();
+			if(Input::get('tipo_servidor_id') == 2){
+				$vmsServidores = new VmsServidores();
+				$vmsServidores->hijo_servidor_id = $servidores->id;
+				$vmsServidores->padre_servidor_id = Input::get('padre_servidor_id');
+				$vmsServidores->save();
+			}
+			
 			return Redirect::to('servidores')->with('success', "Servidor actualizado con exito");
 		}else{
 			return Redirect::route('servidores.edit',$id)->withInput()->withErrors($servidores->errors());

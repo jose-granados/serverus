@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h4 class="page-header">Ver Servidores</h4>
+        <h4 class="page-header">Ver Servidor</h4>
     </div>
 </div>
 
