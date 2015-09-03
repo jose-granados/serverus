@@ -24,10 +24,10 @@
                      <div class="form-group">
                         <label class="col-sm-2 control-label">Tipo Servidor</label>
                         <div class="col-sm-4">
-                            {{ Form::select('tipo_servidor_id', $tiposServidores, $servidores->tipo_servidor_id, ['class' => 'form-control']) }}
+                            {{ Form::select('tipo_servidor_id', $tiposServidores, $servidores->tipo_servidor_id, ['class' => 'form-control selectTipo']) }}
                         </div>
                     </div>
-                     <div class="form-group" style="display: <?= ($servidores->tipo_servidor_id == 1 || $servidores->tipo_servidor_id == null) ? "none" : "block";?>">
+                     <div class="form-group divOculto" style="display: <?= ($servidores->tipo_servidor_id == 1 || $servidores->tipo_servidor_id == null) ? "none" : "block";?>">
                         <label class="col-sm-2 control-label">Servidor Fisico</label>
                         <div class="col-sm-4">
                             {{ Form::select('padre_servidor_id', $servidoresFisicos, $servidores->padre_servidor_id, ['class' => 'form-control']) }}
@@ -50,21 +50,26 @@
                         <div class="col-sm-4">
                              {{ Form::select('sistema_operativo_id', $sistemasOperativos, $servidores->sistema_operativo_id, ['class' => 'form-control']) }}
                         </div>
+                    </div>                    
+                    <div class="form-group check">
+                        <label class="col-sm-2 control-label">VNS</label>
+                        <div class="col-sm-4 divcheck">
+                            {{ Form::checkbox('sino', 'value', false, ['class' => 'form-control sino']); }}
+                        </div>
                     </div>
-                    
-                     <div class="form-group">
+                    <div class="form-group divVns">
                         <label class="col-sm-2 control-label">VNS Ip</label>
                         <div class="col-sm-4">
                              {{ Form::text( 'vnc_ip', $servidores->vnc_ip, ['class'=>'form-control ','placeholder'=>'IP'] ) }}
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group divVns">
                         <label class="col-sm-2 control-label">VNS Password</label>
                         <div class="col-sm-4">
                              {{ Form::text( 'vnc_pass', $servidores->vnc_pass, ['class'=>'form-control ','placeholder'=>'Password'] ) }}
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group divVns">
                         <label class="col-sm-2 control-label">VNS Puerto</label>
                         <div class="col-sm-4">
                              {{ Form::text( 'vnc_puerto', $servidores->vnc_puerto, ['class'=>'form-control ','placeholder'=>'Puerto'] ) }}
