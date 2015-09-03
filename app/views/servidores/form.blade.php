@@ -194,7 +194,7 @@
                                                     <input class="form-control" name="dns[]" value="{{$valor->dns}}">
                                                 </div>
                                             </div>
-                                            <a class="removerowsingle"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                            <a class="removerowsingle removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
                                             <hr></hr>
                                         </td>
                                     </tr>
@@ -208,7 +208,7 @@
                                             <input class="form-control" name="dns[]">
                                         </div>
                                     </div>
-                                    <a class="removerowsingle"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
+                                    <a class="removerowsingle removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
                                     <hr></hr>
                                 </td>
                             </tr>
