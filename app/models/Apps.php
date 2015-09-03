@@ -16,12 +16,16 @@ class Apps extends Ardent implements UserInterface, RemindableInterface {
 	protected $guarded = array();
 
 	public static $rules = array(
-		'nombre' 		=> 'required',
-		'ruta'  		=> 'required'
+		'nombre' 				=> 'required',
+		'ruta'  				=> 'required',
+		'reponsable_nombre'		=> 'required',
+		'reponsable_correo'		=> 'required|email',
+		'reponsable_telefono'	=> 'required'
 	);
 
 	public static $customMessages = array(
 		'required'           => 'El campo :attribute es requerido.',
+		'reponsable_correo'	 => 'Verifique que el campo de :attribute es un correo valido.'
 	);
 
 }

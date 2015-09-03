@@ -27,12 +27,47 @@
                             {{ Form::select('servidor_id', $servidores ,$apps->servidor_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <div class="width-deformer">
+                            <h5 class="panel-heading page-title">Responsable</h5>
+                        </div>
+                        <table style="width: 100%;" class="sinHover">
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Nombre</label>
+                                        <div class="col-sm-4">
+                                            {{ Form::text( 'reponsable_nombre', $apps->reponsable_nombre, ['class'=>'form-control ','placeholder'=>'Nombre del responsable'] ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Email</label>
+                                        <div class="col-sm-4">
+                                            {{ Form::text( 'reponsable_correo', $apps->reponsable_correo, ['class'=>'form-control ','placeholder'=>'Email'] ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Teléfono</label>
+                                        <div class="col-sm-4">
+                                            {{ Form::text( 'reponsable_telefono', $apps->reponsable_telefono, ['class'=>'form-control ','placeholder'=>'Teléfono'] ) }}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+
+
                     <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Servicios</h5>
                             <a class="addrow addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
-                        <table style="width: 100%;" class="tableRow">                        
+                        <table style="width: 100%;" class="tableRow sinHover">                        
                             @if (count($serviciosApps) > 0)
                                 @foreach($serviciosApps as $serviciosApp)
                                     <tr class="clone">
@@ -81,7 +116,7 @@
                             <h5 class="panel-heading page-title">Usuarios</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
-                        <table style="width: 100%;" class="tableRowUser">
+                        <table style="width: 100%;" class="tableRowUser sinHover">
                             @if (count($usuariosApps) > 0)
                                 @foreach($usuariosApps as $usuariosApp)
                                     <tr class="clone">
@@ -125,8 +160,6 @@
                             @endif
                         </table>
                     </div>
-
-
                 </div>
             </div>
         </div>

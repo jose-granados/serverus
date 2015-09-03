@@ -969,7 +969,7 @@ tbody tr:hover{
     background-color: #efefef !important;
 }
 
-.tableRow tr:hover {
+.sinHover tr:hover {
     color: #337ab7;
     background-color: transparent !important;
 }
