@@ -1087,6 +1087,6 @@ tr:first-child td a.removerow{
 .view_block div.form-group a{
   display: none;
 }
-form{
+/*form{
   padding-bottom: 30px;
-}
+}*/
