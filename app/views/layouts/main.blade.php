@@ -166,41 +166,62 @@ $module = Request::segment(1);
                                 <i class="fa fa-dashboard fa-fw fa-2x"></i> Inicio
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ URL::to('servicios') }}" class="{{ $module == 'servicios' ? 'active' : '' }}">
-                                <i class="fa fa-wrench fa-fw fa-2x"></i> Servicios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('usuarios') }}" class="{{ $module == 'usuarios' ? 'active' : '' }}">
-                                <i class="fa fa-users fa-fw fa-2x"></i> Usuarios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('servidores') }}" class="{{ $module == 'servidores' ? 'active' : '' }}">
-                                <i class="fa fa-server fa-fw fa-2x"></i> Servidores
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('switches') }}" class="{{ $module == 'switches' ? 'active' : '' }}">
-                                <i class="fa fa-sliders fa-fw fa-2x"></i> Switches
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('cpus') }}" class="{{ $module == 'cpus' ? 'active' : '' }}">
-                                <i class="fa fa-desktop fa-fw fa-2x"></i> CPU
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('apps') }}" class="{{ $module == 'apps' ? 'active' : '' }}">
-                                <i class="fa fa-th-large fa-fw fa-2x"></i> Apps
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('sistemasoperativos') }}" class="{{ $module == 'sistemasoperativos' ? 'active' : '' }}">
-                                <i class="fa fa-hdd-o fa-fw fa-2x"></i> OS
-                            </a>
-                        </li>
+                        
+                        @if(Usuario::canAccess('servicios.index'))
+                            <li>
+                                <a href="{{ URL::to('servicios') }}" class="{{ $module == 'servicios' ? 'active' : '' }}">
+                                    <i class="fa fa-wrench fa-fw fa-2x"></i> Servicios
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(Usuario::canAccess('usuarios.index'))
+                            <li>
+                                <a href="{{ URL::to('usuarios') }}" class="{{ $module == 'usuarios' ? 'active' : '' }}">
+                                    <i class="fa fa-users fa-fw fa-2x"></i> Usuarios
+                                </a>
+                            </li>
+                        @endif
+                        
+                        @if(Usuario::canAccess('servidores.index'))
+                            <li>
+                                <a href="{{ URL::to('servidores') }}" class="{{ $module == 'servidores' ? 'active' : '' }}">
+                                    <i class="fa fa-server fa-fw fa-2x"></i> Servidores
+                                </a>
+                            </li>
+                        @endif
+                        
+                        @if(Usuario::canAccess('switches.index'))
+                            <li>
+                                <a href="{{ URL::to('switches') }}" class="{{ $module == 'switches' ? 'active' : '' }}">
+                                    <i class="fa fa-sliders fa-fw fa-2x"></i> Switches
+                                </a>
+                            </li>
+                        @endif
+                        
+                        @if(Usuario::canAccess('cpus.index'))
+                            <li>
+                                <a href="{{ URL::to('cpus') }}" class="{{ $module == 'cpus' ? 'active' : '' }}">
+                                    <i class="fa fa-desktop fa-fw fa-2x"></i> CPU
+                                </a>
+                            </li>
+                        @endif
+                        
+                        @if(Usuario::canAccess('apps.index'))
+                            <li>
+                                <a href="{{ URL::to('apps') }}" class="{{ $module == 'apps' ? 'active' : '' }}">
+                                    <i class="fa fa-th-large fa-fw fa-2x"></i> Apps
+                                </a>
+                            </li>
+                        @endif
+                        
+                        @if(Usuario::canAccess('sistemasoperativos.index'))
+                            <li>
+                                <a href="{{ URL::to('sistemasoperativos') }}" class="{{ $module == 'sistemasoperativos' ? 'active' : '' }}">
+                                    <i class="fa fa-hdd-o fa-fw fa-2x"></i> OS
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>

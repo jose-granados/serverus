@@ -21,6 +21,7 @@ class HomeController extends BaseController{
             'password'	=> Input::get('password')
         );
         if(Auth::attempt($loginData)){
+            Session::put('permisos', Permiso::getByLoggedUser());
             return Redirect::to('/')->with('success', 'Iniciaste sesion');
         }else{
             return Redirect::to('/')->with('danger', 'Datos incorrectos')->withInput();
@@ -29,6 +30,7 @@ class HomeController extends BaseController{
 
     public function logout(){
         Auth::logout();
+        Session::forget('permisos');
         return Redirect::to('/')->with('notice', 'Cerraste sesión');
     }
 

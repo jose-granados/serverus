@@ -15,6 +15,11 @@ class Usuario extends Ardent implements UserInterface, RemindableInterface {
 	protected $fillable = array('nombre','apellido_paterno','apellido_materno','telefono','email');
 	protected $guarded = array();
 
+	public static function canAccess($permiso){
+		$permisos = Session::get('permisos');
+		return (in_array($permiso, $permisos)) ? true : false;
+	}
+
 	public static $rules = array(
 		'nombre'            => 'required',
 		'apellido_paterno'  => 'required',
