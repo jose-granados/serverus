@@ -21,6 +21,7 @@ class CrearTablaServidores extends Migration {
 			$table->string('ram');
 			$table->string('hdd');
 			$table->boolean('verificar')->default(0);
+			$table->boolean('vnc')->default(0);
 			$table->string('vnc_ip'); 
 			$table->string('vnc_pass');
 			$table->string('vnc_puerto');

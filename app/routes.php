@@ -17,8 +17,6 @@ Route::get('login', 'HomeController@index');
 Route::post('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 
-Route::get('localizaciones/dashboard', 'LocalizacionesController@dashboard');
-
 Route::group(array('before' => 'auth'), function(){
 
 	Route::resource('usuarios', 'UsuariosController');
@@ -30,7 +28,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::resource('servicios', 'ServiciosController');
 	Route::resource('localizaciones', 'LocalizacionesController');
 	Route::resource('apps', 'AppsController');
-	
+	Route::resource('dashboard', 'LocalizacionesController@dashboard');
 
 });
 

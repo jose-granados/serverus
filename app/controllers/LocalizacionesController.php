@@ -110,6 +110,7 @@ class LocalizacionesController extends BaseController {
 			$localizacion->zoomLevel = 5;
 			$localizacion->scale = 0.5;
 		}
+		
 		return $localizaciones->toJson();
 	}
 
