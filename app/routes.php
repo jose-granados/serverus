@@ -28,6 +28,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::resource('servicios', 'ServiciosController');
 	Route::resource('localizaciones', 'LocalizacionesController');
 	Route::resource('apps', 'AppsController');
+	Route::resource('logs', 'LogsController');
 	Route::resource('dashboard', 'LocalizacionesController@dashboard');
 
 });
