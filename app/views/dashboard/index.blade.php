@@ -174,7 +174,8 @@
                     </a>
                 </div>
                 <!-- /.list-group -->
-                <button href="" class="btn btn-default btn-block arrow">View All Alerts</button>
+                <a href="{{ URL::to('logs') }}" class="btn btn-default btn-block arrow">Listado de Logs</a>
+                
             </div>
             <!-- /.panel-body -->
         </div>
