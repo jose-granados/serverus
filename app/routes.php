@@ -30,6 +30,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::resource('apps', 'AppsController');
 	Route::resource('logs', 'LogsController');
 	Route::resource('dashboard', 'LocalizacionesController@dashboard');
-
+	Route::resource('mantenimientos', 'MantenimientosController');
+	
 });
 

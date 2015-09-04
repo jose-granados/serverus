@@ -18,9 +18,9 @@ class CrearTablaMantenimientos extends Migration {
 			$table->increments('id');
 			$table->string('descripcion');
 			$table->string('fecha');
-			$table->string('reponsable_nombre');
-			$table->string('reponsable_correo');
-			$table->string('reponsable_telefono');
+			$table->string('responsable_nombre');
+			$table->string('responsable_correo');
+			$table->string('responsable_telefono');
 			$table->boolean('tipo_mantenimiento')->default(1);
 			$table->timestamps();
 		});

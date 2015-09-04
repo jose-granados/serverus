@@ -52,6 +52,15 @@ class PerfilesPermisosSeeder extends Seeder {
 			'localizaciones.show',
 			'localizaciones.edit',
 			'localizaciones.destroy',
+				
+			'mantenimientos.index',
+			'mantenimientos.create',
+			'mantenimientos.show',
+			'mantenimientos.edit',
+			'mantenimientos.destroy',
+				
+			'logs.index'
+				
 		);
 
 		$permisos_power_user = array(
@@ -72,6 +81,15 @@ class PerfilesPermisosSeeder extends Seeder {
 			'apps.show',
 			'apps.edit',
 			'apps.destroy',
+			
+			'mantenimientos.index',
+			'mantenimientos.create',
+			'mantenimientos.show',
+			'mantenimientos.edit',
+			'mantenimientos.destroy',
+			
+			'logs.index'
+				
 		);
 
 		$permisos_user = array(
@@ -80,6 +98,10 @@ class PerfilesPermisosSeeder extends Seeder {
 			'switches.index',
 
 			'apps.index',
+				
+			'mantenimientos.index',
+			
+			'logs.index'
 		);
 
 		PerfilPermiso::truncate();

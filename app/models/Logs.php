@@ -15,11 +15,10 @@ class Logs extends Ardent implements UserInterface, RemindableInterface {
 	protected $fillable = array();
 	protected $guarded = array();
 
-	// public static $rules = array(
-	// 	'nombre' 		=> 'required'
-	// );
-
-	// public static $customMessages = array(
-	// 	'required'  => 'El campo :attribute es requerido.',
-	// );
+	public static function salvarMovimiento($ruta,$indice){
+		$logs = new Logs();
+		$logs->ruta = $ruta;
+		$logs->indice = $indice;
+		$logs->save();
+	}
 }

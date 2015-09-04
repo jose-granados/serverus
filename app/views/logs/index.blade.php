@@ -15,7 +15,7 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Descripción</th>
+                                <th>Descripci&oacute;n</th>
                                 <th>Ver</th>
                             </tr>
                         </thead>
@@ -25,9 +25,9 @@
                                     <td>{{ $log->id }}</td>
                                     <td>{{ $log->descripcion }}</td>
                                     <td>
-                                        {{ Form::open( ['route'=>['cpus.destroy', $log->id], 'method' => 'DELETE'] ) }}
-                                            <a href="{{URL::route('$log->ruta.show', $log->indice)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
-                                        {{ Form::close() }}
+                                        
+                                        <a href="{{URL::route($log->ruta.'.show', $log->indice)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                        
                                     </td>
                                 </tr>
                             @endforeach

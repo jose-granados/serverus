@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">HDD</label>
                         <div class="col-sm-4">
-                            {{ Form::text( 'hdd', $servidores->hdd, ['class'=>'form-control ','placeholder'=>'dns'] ) }}
+                            {{ Form::text( 'hdd', $servidores->hdd, ['class'=>'form-control ','placeholder'=>'HDD'] ) }}
                         </div>
                     </div>
                      <div class="form-group">

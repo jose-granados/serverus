@@ -19,6 +19,7 @@ class CrearTablaLogs extends Migration {
 			$table->boolean('estatus')->default(1);
 			$table->string('descripcion');
 			$table->string('ruta');
+			$table->integer('indice');
 			$table->timestamps();
 		});
 	}

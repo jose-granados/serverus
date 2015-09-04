@@ -53,6 +53,14 @@ class PermisosSeeder extends Seeder {
 			array('nombre_permiso'=>'localizaciones.show'),
 			array('nombre_permiso'=>'localizaciones.edit'),
 			array('nombre_permiso'=>'localizaciones.destroy'),
+			
+			array('nombre_permiso'=>'mantenimientos.index'),
+			array('nombre_permiso'=>'mantenimientos.create'),
+			array('nombre_permiso'=>'mantenimientos.show'),
+			array('nombre_permiso'=>'mantenimientos.edit'),
+			array('nombre_permiso'=>'mantenimientos.destroy'),
+			
+			array('nombre_permiso'=>'logs.index'),
 
 		));
 
