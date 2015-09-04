@@ -12,6 +12,8 @@ $module = Request::segment(1);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" href="public/img/favicon.ico" />
+    <link rel="shortcut icon" href="public/img/favicon.png" />
     <title>Serverus</title>
 
     <!-- Bootstrap Core CSS -->
@@ -27,6 +29,7 @@ $module = Request::segment(1);
     {{ HTML::script('public/js/dataTables.bootstrap.min.js') }}
     {{ HTML::script('public/js/bootbox.min.js') }}
     {{ HTML::script('public/js/serverus.js') }}
+
 </head>
 <body>
     <div id="wrapper">
