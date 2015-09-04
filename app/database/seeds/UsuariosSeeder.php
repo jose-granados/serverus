@@ -8,6 +8,7 @@ class UsuariosSeeder extends Seeder {
 		Usuario::insert(array(
 			array(
 				'email'=>'serverus@test.com',
+				'perfil_id'=>1,
 				'password'=>Hash::make('bsd123'),
 			)
 		));
