@@ -54,7 +54,7 @@
                     <div class="form-group check">
                         <label class="col-sm-2 control-label">VNS</label>
                         <div class="col-sm-4 divcheck">
-                            {{ Form::checkbox('sino', 'value', false, ['class' => 'form-control sino']); }}
+                            {{ Form::checkbox('vnc', $servidores->vnc, false, ['class' => 'form-control sino']); }}
                         </div>
                     </div>
                     <div class="form-group divVns">
@@ -75,7 +75,12 @@
                              {{ Form::text( 'vnc_puerto', $servidores->vnc_puerto, ['class'=>'form-control ','placeholder'=>'Puerto'] ) }}
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Pinguear</label>
+                        <div class="col-sm-4">
+                            {{ Form::checkbox('verificar', $servidores->verificar, false, ['class' => 'form-control sinoverificar']); }}
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">Usuarios</h5>

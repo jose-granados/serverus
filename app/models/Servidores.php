@@ -17,8 +17,9 @@ class Servidores extends Ardent implements UserInterface, RemindableInterface {
 
 	public static $rules = array(
 		'nombre' 	=> 'required',
-		'ram'  	=> 'required',
-		'hdd'  	=> 'required',
+		'ram'  		=> 'required',
+		'hdd'  		=> 'required',
+		'verificar'	=> 'required'
 	);
 
 	public static $customMessages = array(

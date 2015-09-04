@@ -14,6 +14,10 @@ $(document).ready(function(){
         $('.divOculto').hide(); 
     }
 
+    sino = $(".sino").val();
+    if(sino == 1){$(".sino").prop('checked', true);}
+    sinove = $(".sinoverificar").val();
+    if(sinove == 1){$(".sinoverificar").prop('checked', true);}
     $(".sino").click(function() {  
         if($(".sino").is(':checked')) {  
             $(".divVns").show();  
@@ -28,5 +32,4 @@ $(document).ready(function(){
       	$(".divVns input").val("");
         $(".divVns").hide();  
     }   
-  
 });

@@ -37,9 +37,9 @@ $(document).ready(function(){
 
     // Anexar y eliminar row cuando se de el caso de anexar "n" cantidad de registros
     $(document).on("click",".addrow",function() {
-    	$(this).closest(".form-group").find(".tableRowUser .clone:first").clone().find("input").each(function() {
+    	$(this).closest(".form-group").find(".tableRow  .clone:first").clone().find("input").each(function() {
             $(this).val('');
-        }).end().appendTo($(this).closest(".form-group").find("table.tableRowUser"));
+        }).end().appendTo($(this).closest(".form-group").find("table.tableRow "));
               
     })
 

@@ -9,6 +9,8 @@
 {{ Form::open( ['route'=>['servidores.update', $servidores->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
 
     @include('servidores/form')
+    
+    {{ HTML::script('public/js/servidores/servidores.js') }}
 
     <button type="submit" class="btn btn-default fill-green">Guardar</button>
     {{ link_to('servidores' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}

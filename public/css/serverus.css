@@ -1145,9 +1145,10 @@ tr:first-child td a.removerow{
 .view_block div.form-group a{
   display: none;
 }
-.form-control.sino {
+.form-control.sino, .form-control.sinoverificar {
     height: auto;
     width: auto;
+    margin-top: 10px;
 }
 .divVns{
   display: none;

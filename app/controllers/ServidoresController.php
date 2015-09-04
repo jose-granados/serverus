@@ -59,7 +59,8 @@ class ServidoresController extends BaseController {
 		$tipo_ips = Input::get('tipo_ip');
 		$dns = Input::get('dns');
 		
-		
+		$servidores->vnc = ($servidores->vnc == 'on') ? 1 : 0;
+		$servidores->verificar = ($servidores->verificar == 'on') ? 1 : 0;
 		if($servidores->save()){
 			foreach ($user as $key => $value) {
 				$usuariosServidores = new UsuariosServidores();
@@ -90,7 +91,7 @@ class ServidoresController extends BaseController {
 				$vmsServidores->padre_servidor_id = Input::get('padre_servidor_id');
 				$vmsServidores->save();
 			}
-			
+	
 			return Redirect::to('servidores')->with('success', "Servidor creado con exito");
 		}else{
 			return Redirect::to('servidores/create')->withInput()->withErrors($servidores->errors());
@@ -172,6 +173,9 @@ class ServidoresController extends BaseController {
 		$dns = Input::get('dns');
 		$user = Input::get('usuario');
 		$pass = Input::get('password');
+
+		$servidores->vnc = ($servidores->vnc == 'on') ? 1 : 0;
+		$servidores->verificar = ($servidores->verificar == 'on') ? 1 : 0;
 		if($servidores->update($datos)){
 			
 			UsuariosServidores::where('servidor_id', $id)->delete();
