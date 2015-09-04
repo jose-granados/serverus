@@ -13,7 +13,6 @@ $module = Request::segment(1);
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="public/img/favicon.ico" />
-    <link rel="shortcut icon" href="public/img/favicon.png" />
     <title>Serverus</title>
 
     <!-- Bootstrap Core CSS -->
