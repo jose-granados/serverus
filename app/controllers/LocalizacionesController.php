@@ -37,7 +37,8 @@ class LocalizacionesController extends BaseController {
 	{
 		$localizaciones = new Localizaciones(Input::all());
 		if($localizaciones->save()){
-			return Redirect::to('localizaciones')->with('success', "Servicio creado con exito");
+			Logs::salvarMovimiento('localizaciones', $localizaciones->id,'Alta de Localizaciones');
+			return Redirect::to('localizaciones')->with('success', "Localizacion creada con exito");
 		}else{
 			return Redirect::to('localizaciones/create')->withInput()->withErrors($localizaciones->errors());
 		}

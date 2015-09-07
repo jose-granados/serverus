@@ -42,7 +42,7 @@ class MantenimientosController extends BaseController {
 		$mantenimientos = new Mantenimientos(Input::all());
 				
 		if($mantenimientos->save()){
-			Logs::salvarMovimiento('mantenimientos', $mantenimientos->id);
+			Logs::salvarMovimiento('mantenimientos', $mantenimientos->id,'Alta de Mantenimientos');
 			if(Input::get('tipo_mantenimiento') == 1){
 				$mantenimientosServidores = new MantenimientosServidores();
 				$mantenimientosServidores->mantenimiento_id = $mantenimientos->id;

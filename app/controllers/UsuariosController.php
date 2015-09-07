@@ -38,6 +38,7 @@ class UsuariosController extends BaseController {
 		$usuario = new Usuario(Input::all());
 		$usuario->password = Hash::make(Input::get('password'));
 		if($usuario->save()){
+			Logs::salvarMovimiento('usuarios', $usuarios->id,'Alta de Usuarios');
 			return Redirect::to('usuarios')->with('success', "Usuario creado con exito");
 		}else{
 			return Redirect::to('usuarios/create')->withInput()->withErrors($usuario->errors());

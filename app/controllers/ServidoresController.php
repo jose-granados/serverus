@@ -62,6 +62,7 @@ class ServidoresController extends BaseController {
 		$servidores->vnc = ($servidores->vnc == 'on') ? 1 : 0;
 		$servidores->verificar = ($servidores->verificar == 'on') ? 1 : 0;
 		if($servidores->save()){
+			Logs::salvarMovimiento('servidores', $servidores->id,'Alta de Servidores');
 			foreach ($user as $key => $value) {
 				$usuariosServidores = new UsuariosServidores();
 				$usuariosServidores->usuario = $user[$key];

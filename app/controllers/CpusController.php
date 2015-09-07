@@ -37,6 +37,7 @@ class CpusController extends BaseController {
 	{
 		$cpus = new Cpus(Input::all());
 		if($cpus->save()){
+			Logs::salvarMovimiento('cpus', $cpus->id,'Alta de CPUs');
 			return Redirect::to('cpus')->with('success', "CPU creado con exito");
 		}else{
 			return Redirect::to('cpus/create')->withInput()->withErrors($cpus->errors());

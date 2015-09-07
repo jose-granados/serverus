@@ -38,6 +38,7 @@ class SwitchesController extends BaseController {
 	{
 		$switches = new Switches(Input::all());
 		if($switches->save()){
+			Logs::salvarMovimiento('switches', $switches->id,'Alta de Switches');
 			return Redirect::to('switches')->with('success', "Switch creado con exito");
 		}else{
 			return Redirect::to('switches/create')->withInput()->withErrors($switches->errors());

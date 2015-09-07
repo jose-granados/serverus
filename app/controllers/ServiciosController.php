@@ -37,6 +37,7 @@ class ServiciosController extends BaseController {
 	{
 		$servicios = new Servicios(Input::all());
 		if($servicios->save()){
+			Logs::salvarMovimiento('servicios', $servicios->id,'Alta de Servicios');
 			return Redirect::to('servicios')->with('success', "Servicio creado con exito");
 		}else{
 			return Redirect::to('servicios/create')->withInput()->withErrors($servicios->errors());

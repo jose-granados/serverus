@@ -15,10 +15,11 @@ class Logs extends Ardent implements UserInterface, RemindableInterface {
 	protected $fillable = array();
 	protected $guarded = array();
 
-	public static function salvarMovimiento($ruta,$indice){
+	public static function salvarMovimiento($ruta,$indice,$descripcion){
 		$logs = new Logs();
 		$logs->ruta = $ruta;
 		$logs->indice = $indice;
+		$logs->descripcion = $descripcion;
 		$logs->save();
 	}
 }

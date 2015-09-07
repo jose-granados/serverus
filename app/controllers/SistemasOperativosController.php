@@ -37,6 +37,7 @@ class SistemasOperativosController extends BaseController {
 	{
 		$sistemasOperativos = new SistemasOperativos(Input::all());
 		if($sistemasOperativos->save()){
+			Logs::salvarMovimiento('sistemasoperativos', $sistemasOperativos->id,'Alta de Sistemas Operativo');
 			return Redirect::to('sistemasoperativos')->with('success', "Sistemas Operativo creado con exito");
 		}else{
 			return Redirect::to('sistemasoperativos/create')->withInput()->withErrors($sistemasOperativos->errors());

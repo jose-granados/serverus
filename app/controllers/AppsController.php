@@ -49,6 +49,7 @@ class AppsController extends BaseController {
 		$user = Input::get('usuario');
 		$pass = Input::get('password');
 		if($apps->save()){
+			Logs::salvarMovimiento('apps', $apps->id,'Alta de Aplicaciones');
 			foreach ($servicios as $key => $value) {
 				$appsServicio = new ServiciosApps();
 				$appsServicio->puerto = $puertos[$key];
