@@ -5,22 +5,6 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Id</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($logs as $log)
-            <tr>
-                <td>{{$log->descripcion}}</td>
-                <td>{{$log->created_at}}</td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
 <div class="row indicadores">
     <div class="col-md-3 ">
         <div class="panel panel-primary panel-indicator">
@@ -119,17 +103,8 @@
                 <i></i>
                     <div id="chartdiv"></div>
             </div>
-            <!-- /.panel-heading -->
-
-            <!-- /.panel-body -->
         </div>
-        <!-- /.panel -->
-
-        <!-- /.panel -->
-
-        <!-- /.panel -->
     </div>
-    <!-- /.col-lg-8 -->
     <div class="col-lg-4">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -138,32 +113,22 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="list-group">
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         New Comment
-                        <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                    @foreach($logs as $log)
+                    <div class="list-group-item">
+                        {{$log->descripcion}}
+                    <span class="pull-right text-muted small"><em>{{$log->created_at->format('M j, Y H:i:s')}}</em>
                         </span>
-                    </a>                    
+                    </div>
+                    @endforeach                                        
                 </div>
                 <!-- /.list-group -->
                 <a href="{{ URL::to('logs') }}" class="btn btn-default btn-block arrow">Listado de Logs</a>
-
             </div>
-            <!-- /.panel-body -->
         </div>
-        <!-- /.panel -->
-
-        <!-- /.panel -->
-
-        <!-- /.panel .chat-panel -->
     </div>
-    <!-- /.col-lg-4 -->
 </div>
 
 {{ HTML::script('public/js/dashboard/ammap.js') }}
 {{ HTML::script('public/js/dashboard/worldLow.js') }}
 {{ HTML::script('public/js/dashboard/light.js') }}
 {{ HTML::script('public/js/dashboard/dash.js') }}
-
-<!-- /.row -->
-<!--{{ HTML::script('public/js/morris.min.js') }}
-{{ HTML::script('public/js/morris-data.js') }}-->

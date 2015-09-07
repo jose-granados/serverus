@@ -61,7 +61,8 @@ a:focus, a:hover {
     text-decoration: underline;
 }
 
-a.list-group-item, button.list-group-item {
+a.list-group-item, button.list-group-item,
+div.list-group-item {
     color: #555;
     float: left;
     width: 50%;
