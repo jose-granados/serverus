@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ link_to('localizaciones/create', 'Nueva Localizaci&oacute;n', ['class'=>'btn btn-default fill-green margin-bottom-20'] ) }}
+{{ link_to('localizaciones/create', 'Nueva Localizaci&oacute;n', ['class'=>'btn btn-default fill-green margin-bottom-20 check'] ) }}
 
 <div class="row">
     <div class="col-lg-12">

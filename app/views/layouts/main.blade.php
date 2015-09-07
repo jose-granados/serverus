@@ -47,50 +47,21 @@ $module = Request::segment(1);
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="{{ URL::to('/') }}">
-                        <i class="fa fa-gear fa-fw"></i>
+                        <i class="fa fa-user fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="{{ URL::to('/') }}">
+                            <a href="{{ URL::to('usuarios/1') }}">
                                 <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
+                                    <strong>Epifauno Alebrije</strong>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{{ URL::to('/') }}">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ URL::to('/') }}">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="{{ URL::to('/') }}">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
+                             <div class="sangria">
+                                 <strong>Poweruser</strong>
+                             </div>
                         </li>
                     </ul>
                 </li>
@@ -166,7 +137,7 @@ $module = Request::segment(1);
                                 <i class="fa fa-dashboard fa-fw fa-2x"></i> Inicio
                             </a>
                         </li>
-                        
+
                         @if(Usuario::canAccess('servicios.index'))
                             <li>
                                 <a href="{{ URL::to('servicios') }}" class="{{ $module == 'servicios' ? 'active' : '' }}">
@@ -182,7 +153,7 @@ $module = Request::segment(1);
                                 </a>
                             </li>
                         @endif
-                        
+
                         @if(Usuario::canAccess('servidores.index'))
                             <li>
                                 <a href="{{ URL::to('servidores') }}" class="{{ $module == 'servidores' ? 'active' : '' }}">
@@ -190,7 +161,7 @@ $module = Request::segment(1);
                                 </a>
                             </li>
                         @endif
-                        
+
                         @if(Usuario::canAccess('switches.index'))
                             <li>
                                 <a href="{{ URL::to('switches') }}" class="{{ $module == 'switches' ? 'active' : '' }}">
@@ -198,7 +169,7 @@ $module = Request::segment(1);
                                 </a>
                             </li>
                         @endif
-                        
+
                         @if(Usuario::canAccess('cpus.index'))
                             <li>
                                 <a href="{{ URL::to('cpus') }}" class="{{ $module == 'cpus' ? 'active' : '' }}">
@@ -206,7 +177,7 @@ $module = Request::segment(1);
                                 </a>
                             </li>
                         @endif
-                        
+
                         @if(Usuario::canAccess('apps.index'))
                             <li>
                                 <a href="{{ URL::to('apps') }}" class="{{ $module == 'apps' ? 'active' : '' }}">
@@ -214,7 +185,7 @@ $module = Request::segment(1);
                                 </a>
                             </li>
                         @endif
-                        
+
                         @if(Usuario::canAccess('sistemasoperativos.index'))
                             <li>
                                 <a href="{{ URL::to('sistemasoperativos') }}" class="{{ $module == 'sistemasoperativos' ? 'active' : '' }}">

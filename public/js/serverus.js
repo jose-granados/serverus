@@ -20,11 +20,11 @@ $(document).ready(function(){
             buttons: {
                 'cancel': {
                     label: 'Cancelar',
-                    className: 'btn btn-lg btn-default fill-red btn-move'
+                    className: 'btn btn-lg btn-default cross fill-red btn-move'
                 },
                 'confirm': {
                     label: 'Aceptar',
-                    className: 'btn btn-lg btn-default fill-green'
+                    className: 'btn btn-lg btn-default fill-green check'
                 }
             },
             callback: function(result) {
@@ -37,25 +37,25 @@ $(document).ready(function(){
 
     // Anexar y eliminar row cuando se de el caso de anexar "n" cantidad de registros
     $(document).on("click",".addrow",function() {
-    	$(this).closest(".form-group").find(".tableRow  .clone:first").clone().find("input").each(function() {
+        $(this).closest(".form-group").find(".tableRow  .clone:first").clone().find("input").each(function() {
             $(this).val('');
         }).end().appendTo($(this).closest(".form-group").find("table.tableRow "));
-              
+
     })
 
     $(document).on("click",".addrowUser",function(e) {
-    	$(this).closest(".form-group").find(".tableRowUser .clone:first").clone().find("input").each(function() {
+        $(this).closest(".form-group").find(".tableRowUser .clone:first").clone().find("input").each(function() {
             $(this).val('');
         }).end().appendTo($(this).closest(".form-group").find("table.tableRowUser"));
-              
+
     })
-    
+
     $(document).on("click",".removerow",function() {
         $(this).parent().parent().fadeTo("fast", 0.0, function(){
             $(this).slideUp("fast", function() {
                 $(this).remove();
             });
-        });     
+        });
     })
 });
 
