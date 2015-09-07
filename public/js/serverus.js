@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    // ocultar las alertas despues de unos segundos
+    setTimeout(function() {
+        $('.alert').fadeOut(1500);
+    }, 3000); // <-- time in milliseconds
 
     // metodo para transformar tablas a data-tables
     $('.data-table').DataTable({
