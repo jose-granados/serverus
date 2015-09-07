@@ -178,6 +178,14 @@ $module = Request::segment(1);
                             </li>
                         @endif
 
+                        @if(Usuario::canAccess('mantenimientos.index'))
+                            <li>
+                                <a href="{{ URL::to('mantenimientos') }}" class="{{ $module == 'mantenimientos' ? 'active' : '' }}">
+                                    <i class="fa fa-cogs fa-fw fa-2x"></i> Mantenimientos
+                                </a>
+                            </li>
+                        @endif
+
                         @if(Usuario::canAccess('apps.index'))
                             <li>
                                 <a href="{{ URL::to('apps') }}" class="{{ $module == 'apps' ? 'active' : '' }}">
