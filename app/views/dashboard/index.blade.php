@@ -5,6 +5,22 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($logs as $log)
+            <tr>
+                <td>{{$log->descripcion}}</td>
+                <td>{{$log->created_at}}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
 <div class="row indicadores">
     <div class="col-md-3 ">
         <div class="panel panel-primary panel-indicator">
@@ -14,7 +30,7 @@
                         <i class="fa fa-user fa-3x color-blue"></i>
                     </div>
                     <div class="col-xs-9 text-right color-blue">
-                        <div class="huge">26</div>
+                        <div class="huge"><?php echo count($usuarios);?></div>
                         <div>Nuevos usuarios</div>
                     </div>
                 </div>
@@ -58,7 +74,7 @@
                         <i class="fa fa-mobile fa-3x color-yellow"></i>
                     </div>
                     <div class="col-xs-9 text-right color-yellow">
-                        <div class="huge">124</div>
+                        <div class="huge"><?php echo count($apps);?></div>
                         <div>Aplicaciones registrados</div>
                     </div>
                 </div>
@@ -126,52 +142,7 @@
                          New Comment
                         <span class="pull-right text-muted small"><em>4 minutes ago</em>
                         </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         3 New Followers
-                        <span class="pull-right text-muted small"><em>12 minutes ago</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         Message Sent
-                        <span class="pull-right text-muted small"><em>27 minutes ago</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         New Task
-                        <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         Server Rebooted
-                        <span class="pull-right text-muted small"><em>11:32 AM</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         Server Crashed!
-                        <span class="pull-right text-muted small"><em>11:13 AM</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         Server Not Responding
-                        <span class="pull-right text-muted small"><em>10:57 AM</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         New Order Placed
-                        <span class="pull-right text-muted small"><em>9:49 AM</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         Payment Received
-                        <span class="pull-right text-muted small"><em>Yesterday</em>
-                        </span>
-                    </a>
-                    <a href="{{ URL::to('/') }}" class="list-group-item">
-                         Poll
-                        <span class="pull-right text-muted small"><em>Yesterday</em>
-                        </span>
-                    </a>
+                    </a>                    
                 </div>
                 <!-- /.list-group -->
                 <a href="{{ URL::to('logs') }}" class="btn btn-default btn-block arrow">Listado de Logs</a>

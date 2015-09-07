@@ -7,8 +7,10 @@ class HomeController extends BaseController{
     public function index()
     {
         if(Auth::check()){
-
-            $this->layout->content = View::make('dashboard/index');
+            $apps = Apps::optieneApps();
+            $usuarios = Usuario::obtieneUsuarios();
+            $logs = Logs::select('descripcion','id','created_at')->take(10)->get();
+            $this->layout->content = View::make('dashboard/index')->with(compact('apps','usuarios','logs'));;
 
         }else{
             return View::make('login');

@@ -28,4 +28,12 @@ class Apps extends Ardent implements UserInterface, RemindableInterface {
 		'reponsable_correo'	 => 'Verifique que el campo de :attribute es un correo valido.'
 	);
 
+	public static function optieneApps(){
+		$retorno = array();
+		$apps = Apps::all();
+		foreach($apps as $app) {
+			$retorno[$app->id] = $app->nombre;
+		}		
+		return $retorno;
+	}
 }

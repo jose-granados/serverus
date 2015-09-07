@@ -36,4 +36,12 @@ class Usuario extends Ardent implements UserInterface, RemindableInterface {
 		'password.required'  => 'El campo contraseña es requerido.',
 	);
 
+	public static function obtieneUsuarios(){
+		$retorno = array();
+		$usuarios = Usuario::all();
+		foreach($usuarios as $usuario) {
+			$retorno[$usuario->id] = $usuario->nombre;
+		}		
+		return $retorno;
+	}
 }
