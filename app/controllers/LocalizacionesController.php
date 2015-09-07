@@ -106,14 +106,54 @@ class LocalizacionesController extends BaseController {
 	}
 	
 	public function dashboard(){
-		$localizaciones = Localizaciones::select('nombre as title','latitud as latitude','longitud as longitude')->get();
+		$localizaciones = Localizaciones::select('id','nombre as title','latitud as latitude','longitud as longitude')->get();
 		foreach ($localizaciones as $localizacion){
 			$localizacion->zoomLevel = 5;
 			$localizacion->scale = 0.5;
+			$localizacion->correcto = $this->verificarServerApps($localizacion->id);
+			
+			
 		}
 		
 		return $localizaciones->toJson();
 	}
+	
+	private function verificarServerApps($localizacion_id){
+		$servidores = Servidores::select('servidores.id','ips_servidores.ip')->join('ips_servidores', 'servidores.id', '=', 'ips_servidores.servidor_id')->where('servidores.localizacion_id',$localizacion_id)->where('servidores.verificar',true)->get();
+		
+		foreach ($servidores as $servidor){
+			
+			$url = 'http://' . $servidor->ip;
+			
+			if(!$this->compruebaEstadoServidorApps($url)) return true;
+			
+			/*$apps = Apps::select('ruta','nombre','responsable_nombre','responsable_correo','responsable_felefono')->where('servidor_id',$servidor->id)->get();
 
+			foreach ($apps as $app){
+				
+				$url = 'http://' . $servidor->ip . '/' . $app->ruta;
+
+				if(!$this->compruebaEstadoServidorApps($url)) return true;
+			}*/
+		}
+		
+		return false;
+		
+	}
+	
+	private function compruebaEstadoServidorApps($url){
+		
+		$cl = curl_init($url);
+		curl_setopt($cl,CURLOPT_CONNECTTIMEOUT,10);
+		curl_setopt($cl,CURLOPT_HEADER,true);
+		curl_setopt($cl,CURLOPT_NOBODY,true);
+		curl_setopt($cl,CURLOPT_RETURNTRANSFER,true);
+			
+		$response = curl_exec($cl);
+			
+		curl_close($cl);
+			
+		return ($response) ? true : false;
+	}
 
 }

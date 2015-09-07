@@ -532,6 +532,12 @@ img#main-logo {
   z-index:10;
   position:absolute;
 }
+
+.pulse-red {
+  border:5px solid #d9534f;
+  background-color: #592221;
+}
+
 .map-marker .dot {
   border:10px solid #198895;
   background:transparent;
@@ -552,6 +558,11 @@ img#main-logo {
   z-index:1;
   opacity:0;
 }
+
+.map-marker .dot-red {
+  border:10px solid #DF9694;
+}
+
 @-moz-keyframes pulse {
   0% {
     -moz-transform:scale(0);

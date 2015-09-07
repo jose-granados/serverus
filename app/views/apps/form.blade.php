@@ -39,19 +39,19 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Nombre</label>
                                         <div class="col-sm-4">
-                                            {{ Form::text( 'reponsable_nombre', $apps->reponsable_nombre, ['class'=>'form-control ','placeholder'=>'Nombre del responsable'] ) }}
+                                            {{ Form::text( 'responsable_nombre', $apps->responsable_nombre, ['class'=>'form-control ','placeholder'=>'Nombre del responsable'] ) }}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Email</label>
                                         <div class="col-sm-4">
-                                            {{ Form::text( 'reponsable_correo', $apps->reponsable_correo, ['class'=>'form-control ','placeholder'=>'Email'] ) }}
+                                            {{ Form::text( 'responsable_correo', $apps->responsable_correo, ['class'=>'form-control ','placeholder'=>'Email'] ) }}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Teléfono</label>
                                         <div class="col-sm-4">
-                                            {{ Form::text( 'reponsable_telefono', $apps->reponsable_telefono, ['class'=>'form-control ','placeholder'=>'Teléfono'] ) }}
+                                            {{ Form::text( 'responsable_telefono', $apps->responsable_telefono, ['class'=>'form-control ','placeholder'=>'Teléfono'] ) }}
                                         </div>
                                     </div>
                                 </td>

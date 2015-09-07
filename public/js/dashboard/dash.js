@@ -5,24 +5,16 @@ $(document).ready(function () {
 	var map = AmCharts.makeChart("chartdiv", {
 	    type: "map",
 	    "theme": "light",
-	   // path: "http://www.amcharts.com/lib/3/",
-
-	    imagesSettings: {
-	        rollOverColor: "#C7EDF4",
-	        rollOverScale: 3,
-	        selectedScale: 3,
-	        selectedColor: "#C7EDF4",
-	        color: "#13564e"
-	    },
-
-	    areasSettings: {
+	    
+	   areasSettings: {
 	        unlistedAreasColor: "#70b2be"
 	    },
 
 	    dataProvider: {
 	        map: "worldLow"
 	        
-	    }
+	    },
+	    
 	});
 	
 	console.log(document.location);
@@ -90,11 +82,13 @@ function createCustomMarker(image) {
     // create dot
     var dot = document.createElement('div');
     dot.className = 'dot';
+    dot.className += (image.correcto) ? ' dot-red' : '';
     holder.appendChild(dot);
 
     // create pulse
     var pulse = document.createElement('div');
     pulse.className = 'pulse';
+    pulse.className += (image.correcto) ? ' pulse-red' : '';
     holder.appendChild(pulse);
 
     // append the marker to the map container

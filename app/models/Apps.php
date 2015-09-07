@@ -18,9 +18,9 @@ class Apps extends Ardent implements UserInterface, RemindableInterface {
 	public static $rules = array(
 		'nombre' 				=> 'required',
 		'ruta'  				=> 'required',
-		'reponsable_nombre'		=> 'required',
-		'reponsable_correo'		=> 'required|email',
-		'reponsable_telefono'	=> 'required'
+		'responsable_nombre'		=> 'required',
+		'responsable_correo'		=> 'required|email',
+		'responsable_telefono'	=> 'required'
 	);
 
 	public static $customMessages = array(
