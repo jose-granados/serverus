@@ -744,8 +744,6 @@ nav.navbar.navbar-default.navbar-static-top {
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
-    position:fixed;
-    width:160px;
 }
 
 .sidebar .sidebar-search {
