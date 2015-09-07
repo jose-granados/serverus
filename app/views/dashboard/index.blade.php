@@ -114,11 +114,12 @@
             <div class="panel-body">
                 <div class="list-group">
                     @foreach($logs as $log)
-                    <div class="list-group-item">
+                    <a href="{{URL::route($log->ruta.'.show', $log->indice)}}" class="list-group-item">
                         {{$log->descripcion}}
-                    <span class="pull-right text-muted small"><em>{{$log->created_at->format('M j, Y H:i:s')}}</em>
+                        <span class="pull-right text-muted small">
+                            <em>{{$log->created_at->format('M j, Y H:i a')}}</em>
                         </span>
-                    </div>
+                    </a>
                     @endforeach                                        
                 </div>
                 <!-- /.list-group -->

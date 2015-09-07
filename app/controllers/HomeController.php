@@ -9,7 +9,7 @@ class HomeController extends BaseController{
         if(Auth::check()){
             $apps = Apps::optieneApps();
             $usuarios = Usuario::obtieneUsuarios();
-            $logs = Logs::select('descripcion','id','created_at')->orderBy('id', 'desc')->take(10)->get();
+            $logs = Logs::select('descripcion','id','created_at','indice','ruta')->orderBy('id', 'desc')->take(10)->get();
             $this->layout->content = View::make('dashboard/index')->with(compact('apps','usuarios','logs'));;
 
         }else{

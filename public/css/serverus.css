@@ -72,10 +72,10 @@ div.list-group-item {
 a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
     color: #337ab7;
     font-weight:bold;
-    font-size:15px;
 }
-
-
+div.list-group-item:hover{
+  background: #eaeaea;
+}
 em{
     font-style: normal;
     color:#aaaaaa;
