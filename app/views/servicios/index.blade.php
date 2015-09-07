@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ link_to('servicios/create', 'Nuevo Servicio', ['class'=>'btn btn-default fill-green margin-bottom-20 new'] ) }}
+{{ link_to('servicios/create', 'Nuevo Servicio', ['class'=>'btn btn-default fill-green margin-bottom-20'] ) }}
 
 <div class="row">
     <div class="col-lg-12">

@@ -10,7 +10,7 @@
 
     @include('usuarios/form')
 
-    <button type="submit" class="btn btn-default fill-green">Guardar</button>
+    <button type="submit" class="btn btn-default fill-green save">Guardar</button>
     {{ link_to('usuarios' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 
 {{ Form::close() }}

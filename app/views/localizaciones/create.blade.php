@@ -9,10 +9,10 @@
 {{ Form::open( ['route'=>'localizaciones.store', 'class'=>'form-horizontal'] ) }}
 
     @include('localizaciones/form')
-	
-	{{ HTML::script('public/js/localizaciones/localizaciones_create.js') }}
-	
-    <button type="submit" class="btn btn-default fill-green">Guardar</button>
+    
+    {{ HTML::script('public/js/localizaciones/localizaciones_create.js') }}
+    
+    <button type="submit" class="btn btn-default fill-green save">Guardar</button>
 
     {{ link_to('localizaciones' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 

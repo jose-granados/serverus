@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ link_to('apps/create', 'Nueva Aplicación', ['class'=>'btn btn-default fill-green margin-bottom-20 new'] ) }}
+{{ link_to('apps/create', 'Nueva Aplicación', ['class'=>'btn btn-default fill-green margin-bottom-20'] ) }}
 
 <div class="row">
     <div class="col-lg-12">
