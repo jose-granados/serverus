@@ -11,23 +11,29 @@
 					</div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Fecha</label>
-						<div class="col-sm-4">{{ Form::text( 'fecha', $mantenimientos->fecha,
-							['class'=>'form-control ','placeholder'=>'Fecha'] ) }}</div>
-					</div>
+		                <div class='input-group date col-sm-4' id='datetimepicker1'>
+		                    {{ Form::text( 'fecha', $mantenimientos->fecha,
+								['class'=>'form-control fecha','placeholder'=>'Fecha'] ) }}
+		                    <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		            </div>
+
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Tipo Mantenimiento</label>
 						<div class="col-sm-4">{{ Form::select('tipo_mantenimiento',
 							['1'=>'Servidores','0'=>'Switches'],
-							$mantenimientos->tipo_mantenimiento, ['class' => 'form-control'])
+							$mantenimientos->tipo_mantenimiento, ['class' => 'form-control selectTipo'])
 							}}</div>
 					</div>
-					<div class="form-group divOculto" style="display: <?= ($mantenimientos->tipo_mantenimiento == 1 ) ? "none" : "block";?>">
+					<div class="form-group selectServidor">
                         <label class="col-sm-2 control-label">Servidor Fisico</label>
                         <div class="col-sm-4">
                             {{ Form::select('servidor_id', $servidoresFisicos, $mantenimientos->servidor_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
-                    <div class="form-group divOculto" style="display: <?= ($mantenimientos->tipo_mantenimiento == 1 || $mantenimientos->tipo_mantenimiento == null) ? "none" : "block";?>">
+                    <div class="form-group selectSwitch">
                         <label class="col-sm-2 control-label">Switches</label>
                         <div class="col-sm-4">
                             {{ Form::select('switch_id', $switches, $mantenimientos->switch_id, ['class' => 'form-control']) }}

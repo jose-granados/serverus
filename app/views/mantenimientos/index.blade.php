@@ -20,6 +20,7 @@
                                 <th>Descripcion</th>
                                 <th>Fecha</th>
                                 <th>Nombre Responsable</th>
+                                <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
