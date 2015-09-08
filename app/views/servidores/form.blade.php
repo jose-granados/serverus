@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="form-group divVns">
-                        <label class="col-sm-2 control-label">VNS Ip</label>
+                        <label class="col-sm-2 control-label">VNS IP</label>
                         <div class="col-sm-4">
                              {{ Form::text( 'vnc_ip', $servidores->vnc_ip, ['class'=>'form-control ','placeholder'=>'IP'] ) }}
                         </div>
@@ -134,7 +134,7 @@
 
                      <div class="form-group">
                         <div class="width-deformer">
-                            <h5 class="panel-heading page-title">Ips</h5>
+                            <h5 class="panel-heading page-title">IPS</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
                         <table style="width: 100%;" class="tableRowUser">
@@ -143,7 +143,7 @@
                                     <tr class="clone">
                                         <td>
                                             <div class="form-group">
-                                                <label class="col-sm-2 control-label">Ip</label>
+                                                <label class="col-sm-2 control-label">IP</label>
                                                 <div class="col-sm-4">
                                                     <input class="form-control" name="ip[]" value="{{$ip->ip}}">
                                                 </div>
@@ -163,7 +163,7 @@
                                  <tr class="clone">
                                 <td>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Ip</label>
+                                        <label class="col-sm-2 control-label">IP</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" name="ip[]">
                                         </div>
@@ -185,7 +185,7 @@
 
                      <div class="form-group">
                         <div class="width-deformer">
-                            <h5 class="panel-heading page-title">Dns</h5>
+                            <h5 class="panel-heading page-title">DNS</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
                         <table style="width: 100%;" class="tableRowUser">
@@ -194,7 +194,7 @@
                                     <tr class="clone">
                                         <td>
                                             <div class="form-group">
-                                                <label class="col-sm-2 control-label">Dns</label>
+                                                <label class="col-sm-2 control-label">DNS</label>
                                                 <div class="col-sm-4">
                                                     <input class="form-control" name="dns[]" value="{{$valor->dns}}">
                                                 </div>
@@ -208,7 +208,7 @@
                                  <tr class="clone">
                                 <td>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Dns</label>
+                                        <label class="col-sm-2 control-label">DNS</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" name="dns[]">
                                         </div>

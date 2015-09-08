@@ -296,6 +296,7 @@ fieldset {
 }
 .page-title {
   color:#337ab7;
+  font-family:montserratregular;
 }
 .panel-heading-indicator {
   height:128px;
@@ -357,8 +358,9 @@ fieldset {
 }
 label {
   color:#555;
-  font-family:montserratregular;
+  font-family:montserratlight;
 }
+
 .dataTables_info {
   color:#555;
 }
