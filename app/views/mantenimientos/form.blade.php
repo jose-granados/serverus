@@ -13,7 +13,7 @@
 						<label class="col-sm-2 control-label">Fecha</label>
 		                <div class='input-group date col-sm-4' id='datetimepicker1'>
 		                    {{ Form::text( 'fecha', $mantenimientos->fecha,
-								['class'=>'form-control fecha','placeholder'=>'Fecha'] ) }}
+								['class'=>'form-control fecha','placeholder'=>'Fecha', 'readonly'=>'readonly'] ) }}
 		                    <span class="input-group-addon">
 		                        <span class="glyphicon glyphicon-calendar"></span>
 		                    </span>

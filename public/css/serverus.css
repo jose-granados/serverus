@@ -1000,5 +1000,12 @@ tr:first-child td a.removerow {
 }
 .sangria {
   padding: 3px 20px;
-    opacity:0.5;
+  opacity:0.5;
+}
+.form-control.fecha{
+  background: none;
+}
+.mante + form .form-control.fecha{
+  background-color: #eee;
+  opacity: 1;
 }
