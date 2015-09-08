@@ -1000,4 +1000,5 @@ tr:first-child td a.removerow {
 }
 .sangria {
   padding: 3px 20px;
+    opacity:0.5;
 }

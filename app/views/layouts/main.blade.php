@@ -57,7 +57,6 @@ $module = Request::segment(1);
                                 </div>
                             </a>
                         </li>
-                        <li class="divider"></li>
                         <li>
                              <div class="sangria">
                                  <strong>Poweruser</strong>
