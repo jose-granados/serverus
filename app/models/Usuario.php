@@ -11,8 +11,8 @@ class Usuario extends Ardent implements UserInterface, RemindableInterface {
 
 	protected $table = 'usuarios';
 
-	protected $hidden = array();
-	protected $fillable = array('nombre','apellido_paterno','apellido_materno','telefono','email');
+	protected $hidden = array('perfil_id');
+	protected $fillable = array('nombre','apellido_paterno','apellido_materno','telefono','email','perfil_id');
 	protected $guarded = array();
 
 	public static function canAccess($permiso){

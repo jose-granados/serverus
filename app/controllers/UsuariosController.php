@@ -24,7 +24,8 @@ class UsuariosController extends BaseController {
 	public function create()
 	{
 		$usuario = new Usuario;
-		$this->layout->content = View::make('usuarios/create')->with(compact('usuario'));
+		$perfiles = Perfil::lists('nombre_perfil','id');
+		$this->layout->content = View::make('usuarios/create')->with(compact('usuario','perfiles'));
 	}
 
 
@@ -38,7 +39,7 @@ class UsuariosController extends BaseController {
 		$usuario = new Usuario(Input::all());
 		$usuario->password = Hash::make(Input::get('password'));
 		if($usuario->save()){
-			Logs::salvarMovimiento('usuarios', $usuarios->id,'Alta de Usuarios');
+			Logs::salvarMovimiento('usuarios', $usuario->id,'Alta de Usuarios');
 			return Redirect::to('usuarios')->with('success', "Usuario creado con exito");
 		}else{
 			return Redirect::to('usuarios/create')->withInput()->withErrors($usuario->errors());
@@ -55,7 +56,8 @@ class UsuariosController extends BaseController {
 	public function show($id)
 	{
 		$usuario = Usuario::find($id);
-		$this->layout->content = View::make('usuarios/show')->with(compact('usuario'));
+		$perfiles = Perfil::lists('nombre_perfil','id');
+		$this->layout->content = View::make('usuarios/show')->with(compact('usuario','perfiles'));
 	}
 
 
@@ -68,7 +70,8 @@ class UsuariosController extends BaseController {
 	public function edit($id)
 	{
 		$usuario = Usuario::find($id);
-		$this->layout->content = View::make('usuarios/edit')->with(compact('usuario'));
+		$perfiles = Perfil::lists('nombre_perfil','id');
+		$this->layout->content = View::make('usuarios/edit')->with(compact('usuario','perfiles'));
 	}
 
 

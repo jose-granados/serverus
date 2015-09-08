@@ -16,7 +16,7 @@ class CrearTablaUsuarios extends Migration {
 		Schema::create('usuarios', function($table){
 			$table->increments('id');
 			$table->boolean('estatus')->default(1);
-			$table->integer('perfil_id')->unsigned();
+			$table->integer('perfil_id');
 			$table->foreign('perfil_id')->references('id')->on('perfiles');
 			$table->string('nombre');
 			$table->string('apellido_paterno');

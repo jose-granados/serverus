@@ -47,6 +47,12 @@
                             </div>
                         </div>
                     @endif
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Perfil</label>
+                        <div class="col-sm-4">
+                            {{ Form::select('perfil_id', $perfiles, $usuario->perfil_id, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
