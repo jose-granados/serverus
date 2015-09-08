@@ -19,12 +19,13 @@ class Mantenimientos extends Ardent implements UserInterface, RemindableInterfac
 		'descripcion' 			=> 'required',
 		'fecha' 				=> 'required',
 		'responsable_nombre' 	=> 'required',
-		'responsable_correo' 	=> 'required',
+		'responsable_correo' 	=> 'required|email|',
 		'responsable_telefono'	=> 'required'
 	);
 
 	public static $customMessages = array(
 		'required'	=> 'El campo :attribute es requerido.',
+		'email'		=> 'Verifique que el campo de :attribute sea un correo valido.'
 	);
 
 }

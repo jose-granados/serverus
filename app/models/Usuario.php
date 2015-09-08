@@ -32,7 +32,7 @@ class Usuario extends Ardent implements UserInterface, RemindableInterface {
 	public static $customMessages = array(
 		'required'           => 'El campo :attribute es requerido.',
 		'unique'             => 'Un usuario con este :attribute ya existe.',
-		'email'              => 'Verifique que el campo de :attribute es un correo valido.',
+		'email'				 => 'Verifique que el campo de :attribute sea un correo valido.',
 		'password.required'  => 'El campo contraseña es requerido.',
 	);
 

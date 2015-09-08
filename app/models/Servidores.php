@@ -19,11 +19,13 @@ class Servidores extends Ardent implements UserInterface, RemindableInterface {
 		'nombre' 	=> 'required',
 		'ram'  		=> 'required',
 		'hdd'  		=> 'required',
-		'verificar'	=> 'required'
+		'verificar'	=> 'required',
+		'vnc_ip'	=> 'ip'
 	);
 
 	public static $customMessages = array(
 		'required'	=> 'El campo :attribute es requerido.',
+		'ip'		=> 'El campo :attribute debe ser una IP'
 	);
 
 	public static function obtenerServidores(){
