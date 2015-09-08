@@ -7,11 +7,11 @@
 <!-- /.row -->
 <div class="row indicadores">
     <div class="col-md-3 ">
-        <div class="panel panel-primary panel-indicator">
+        <div class="panel panel-primary panel-indicator hvr-grow">
             <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-user fa-3x color-blue"></i>
+                        <i class="fa fa-user fa-3x color-blue hvr-grow"></i>
                     </div>
                     <div class="col-xs-9 text-right color-blue">
                         <div class="huge"><?php echo count($usuarios);?></div>
@@ -29,11 +29,11 @@
         </div>
     </div>
     <div class="col-md-3 ">
-        <div class="panel panel-green panel-indicator">
+        <div class="panel panel-green panel-indicator hvr-grow">
             <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-tasks fa-3x color-green"></i>
+                        <i class="fa fa-tasks fa-3x color-green hvr-grow"></i>
                     </div>
                     <div class="col-xs-9 text-right color-green">
                         <div class="huge">12</div>
@@ -51,11 +51,11 @@
         </div>
     </div>
     <div class="col-md-3 ">
-        <div class="panel panel-yellow panel-indicator">
+        <div class="panel panel-yellow panel-indicator hvr-grow">
             <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-mobile fa-3x color-yellow"></i>
+                        <i class="fa fa-mobile fa-3x color-yellow hvr-grow"></i>
                     </div>
                     <div class="col-xs-9 text-right color-yellow">
                         <div class="huge"><?php echo count($apps);?></div>
@@ -73,11 +73,11 @@
         </div>
     </div>
     <div class="col-md-3 ">
-        <div class="panel panel-red panel-indicator">
+        <div class="panel panel-red panel-indicator hvr-grow">
             <div class="panel-heading panel-heading-indicator">
                 <div class="row">
                     <div class="col-xs-3">
-                        <i class="fa fa-support fa-3x color-red"></i>
+                        <i class="fa fa-support fa-3x color-red hvr-grow"></i>
                     </div>
                     <div class="col-xs-9 text-right color-red">
                         <div class="huge">13</div>
@@ -114,13 +114,13 @@
             <div class="panel-body">
                 <div class="list-group">
                     @foreach($logs as $log)
-                    <a href="{{URL::route($log->ruta.'.show', $log->indice)}}" class="list-group-item">
+                    <a href="{{URL::route($log->ruta.'.show', $log->indice)}}" class="list-group-item hvr-overline-from-center">
                         {{$log->descripcion}}
                         <span class="pull-right text-muted small">
                             <em>{{$log->created_at->format('M j, Y H:i a')}}</em>
                         </span>
                     </a>
-                    @endforeach                                        
+                    @endforeach
                 </div>
                 <!-- /.list-group -->
                 <a href="{{ URL::to('logs') }}" class="btn btn-default btn-block arrow">Listado de Logs</a>

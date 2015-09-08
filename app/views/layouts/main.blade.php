@@ -20,7 +20,6 @@ $module = Request::segment(1);
     {{ HTML::style('public/css/font-awesome.min.css') }}
     {{ HTML::style('public/css/dataTables.bootstrap.min.css') }}
     {{ HTML::style('public/css/serverus.css') }}
-
     {{ HTML::script('public/js/jquery.min.js') }}
     {{ HTML::script('public/js/bootstrap.min.js') }}
     {{ HTML::script('public/js/metisMenu.min.js') }}
@@ -69,11 +68,11 @@ $module = Request::segment(1);
                         <i class="fa fa-map-marker fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
-                    	@foreach(Localizaciones::obtenerLocalizacionesMenu() as $localizacion)
+                        @foreach(Localizaciones::obtenerLocalizacionesMenu() as $localizacion)
                         <li>
                             <a href="{{ URL::to('localizaciones/'.$localizacion->id) }}">
                                 <div>
-                                    <i class="fa fa-comment fa-fw"></i> {{$localizacion->nombre}}
+                                    <i class="fa fa-map-marker fa-fw"></i> {{$localizacion->nombre}}
                                     <span class="pull-right text-muted small">{{$localizacion->created_at->format('M j, Y H:i a')}}</span>
                                 </div>
                             </a>
