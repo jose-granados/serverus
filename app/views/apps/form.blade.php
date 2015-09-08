@@ -38,19 +38,19 @@
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Nombre</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             {{ Form::text( 'responsable_nombre', $apps->responsable_nombre, ['class'=>'form-control ','placeholder'=>'Nombre del responsable'] ) }}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Email</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             {{ Form::text( 'responsable_correo', $apps->responsable_correo, ['class'=>'form-control ','placeholder'=>'Email'] ) }}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Teléfono</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             {{ Form::text( 'responsable_telefono', $apps->responsable_telefono, ['class'=>'form-control ','placeholder'=>'Teléfono'] ) }}
                                         </div>
                                     </div>
@@ -67,19 +67,19 @@
                             <h5 class="panel-heading page-title">Servicios</h5>
                             <a class="addrow addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
-                        <table style="width: 100%;" class="tableRow sinHover">                        
+                        <table style="width: 100%;" class="tableRow sinHover">
                             @if (count($serviciosApps) > 0)
                                 @foreach($serviciosApps as $serviciosApp)
                                     <tr class="clone">
                                         <td>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Servicio</label>
-                                                <div class="col-sm-4">                                                      {{ Form::select('servicio_id[]', $servicios, $serviciosApp->servicio_id, ['class' => 'form-control']) }}                        
+                                                <div class="col-sm-4 tablas-margen">                                                      {{ Form::select('servicio_id[]', $servicios, $serviciosApp->servicio_id, ['class' => 'form-control']) }}
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Puerto</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="puerto[]" value="{{$serviciosApp->puerto}}">
                                                 </div>
                                             </div>
@@ -93,13 +93,13 @@
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Servicio</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             {{ Form::select('servicio_id[]', $servicios, $apps->servicio_id, ['class' => 'form-control']) }}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Puerto</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="puerto[]">
                                         </div>
                                     </div>
@@ -123,13 +123,13 @@
                                         <td>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Usuario</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="usuario[]" value="{{$usuariosApp->usuario}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="password[]" value="{{$usuariosApp->password}}">
                                                 </div>
                                             </div>
@@ -143,13 +143,13 @@
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Usuario</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="usuario[]">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="password[]">
                                         </div>
                                     </div>

@@ -93,13 +93,13 @@
                                         <td>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Usuario</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="usuario[]" value="{{$usuarioServidor->usuario}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="password[]" value="{{$usuarioServidor->password}}">
                                                 </div>
                                             </div>
@@ -113,13 +113,13 @@
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Usuario</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="usuario[]">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Contrase&ntilde;a</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="password[]">
                                         </div>
                                     </div>
@@ -144,13 +144,13 @@
                                         <td>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">IP</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="ip[]" value="{{$ip->ip}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Tipo</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                         {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], $ip->tipo_ip, ['class' => 'form-control']) }}
                                                 </div>
                                             </div>
@@ -164,13 +164,13 @@
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">IP</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="ip[]">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Tipo</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                            {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], null, ['class' => 'form-control']) }}
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@
                                         <td>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">DNS</label>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="dns[]" value="{{$valor->dns}}">
                                                 </div>
                                             </div>
@@ -209,7 +209,7 @@
                                 <td>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">DNS</label>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="dns[]">
                                         </div>
                                     </div>

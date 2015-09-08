@@ -430,6 +430,9 @@ img#main-logo {
   .navbar-header {
     position:relative !important;
   }
+    .form-group table .col-sm-4 {
+    padding: 0px 30px 0px 30px;
+}
 
 }
 @media (max-width:548px) {
@@ -1008,4 +1011,19 @@ tr:first-child td a.removerow {
 .mante + form .form-control.fecha{
   background-color: #eee;
   opacity: 1;
+}
+
+.form-group div.date {
+    padding: 0 15px;
+}
+
+.form-group{
+    margin:10px -15px;
+}
+.tablas-margen{
+    padding-left:25px;
+}
+
+textarea.form-control {
+    resize: none;
 }
