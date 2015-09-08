@@ -69,51 +69,17 @@ $module = Request::segment(1);
                         <i class="fa fa-map-marker fa-fw"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
+                    	@foreach(Localizaciones::obtenerLocalizacionesMenu() as $localizacion)
                         <li>
-                            <a href="{{ URL::to('/') }}">
+                            <a href="{{ URL::to('localizaciones/'.$localizacion->id) }}">
                                 <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                    <i class="fa fa-comment fa-fw"></i> {{$localizacion->nombre}}
+                                    <span class="pull-right text-muted small">{{$localizacion->created_at->format('M j, Y H:i a')}}</span>
                                 </div>
                             </a>
                         </li>
                         <li class="divider"></li>
-                        <li>
-                            <a href="{{ URL::to('/') }}">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ URL::to('/') }}">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ URL::to('/') }}">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ URL::to('/') }}">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
+                       @endforeach
                         <li>
                             <a class="text-center" href="{{ URL::to('localizaciones') }}">
                                 <strong>Geolocalizaciones</strong>

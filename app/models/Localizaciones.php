@@ -35,4 +35,9 @@ class Localizaciones extends Ardent implements UserInterface, RemindableInterfac
 	
 		return $retorno;
 	}
+	
+	public static function obtenerLocalizacionesMenu(){
+		return Localizaciones::select('id','nombre','created_at')->orderBy('id', 'desc')->take(5)->get();
+	}
+	
 }
