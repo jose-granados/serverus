@@ -31,6 +31,8 @@ Route::group(array('before' => 'auth'), function(){
 	Route::resource('logs', 'LogsController');
 	Route::resource('dashboard', 'LocalizacionesController@dashboard');
 	Route::resource('mantenimientos', 'MantenimientosController');
+
+	Route::get('ubicacion/{id}','LocalizacionesController@ubicacion');
 	
 });
 

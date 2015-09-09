@@ -156,4 +156,11 @@ class LocalizacionesController extends BaseController {
 		return ($response) ? true : false;
 	}
 
+	public static function ubicacion($id){
+		$query = Servidores::select('localizacion_id')->where('id',$id)->first();
+
+		return $query['localizacion_id'];
+
+	
+	}
 }

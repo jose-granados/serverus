@@ -1,17 +1,23 @@
 $(document).ready(function(){
 	$('.selectTipo').change(function(){
+        $('.selectLoca').removeAttr("selected");
 		opc = $( ".selectTipo option:selected" ).val();
         if(opc == 2) {
+            $(".serverFisico").change();
             $('.divOculto').show(); 
+            $(".selectLoca").attr("disabled", true); 
         } else {
             $('.divOculto').hide(); 
+            $(".selectLoca").attr("disabled", false); 
         } 
     }); 
 	opc = $( ".selectTipo option:selected" ).val();
     if(opc == 2) {
         $('.divOculto').show(); 
+        $(".selectLoca").attr("disabled", true); 
     } else {
-        $('.divOculto').hide(); 
+        $('.divOculto').hide();
+        $(".selectLoca").attr("disabled", false);  
     }
 
     sino = $(".sino").val();
@@ -31,5 +37,12 @@ $(document).ready(function(){
     } else {  
       	$(".divVns input").val("");
         $(".divVns").hide();  
-    }   
+    } 
+
+    $(".serverFisico").change(function() {
+        $.get('/versus/ubicacion/' + $(this).val(), function(data) {
+           $('.selectLoca').val(data);
+           $('.selectLoca').change();
+        }); 
+    });  
 });
