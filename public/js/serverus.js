@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     // ocultar las alertas despues de unos segundos
     setTimeout(function() {
         $('.alert').fadeOut(1500);
@@ -48,12 +49,10 @@ $(document).ready(function(){
     })
 
     $(document).on("click",".addrowUser",function(e) {
+
         $(this).closest(".form-group").find(".tableRowUser .clone:first").clone().find("input").each(function() {
             $(this).val('');
         }).end().appendTo($(this).closest(".form-group").find("table.tableRowUser"));
-        
-        // $(".tablaIPS tr.clone:first-child .ip_primaria").prop('checked', true);
-        // $(".tablaIPS tr.clone:last-child .ip_primaria").prop('checked', false).val(0);
         $(".tablaIPS tr.clone:last-child .label_ip").text("IP Secundaria");
     })
 
