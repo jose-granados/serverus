@@ -154,7 +154,7 @@
                                                         {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], $ip->tipo_ip, ['class' => 'form-control']) }}
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" style="display:none">
                                                  {{ Form::checkbox('primario[]', $ip->primario, false, ['class' => 'ip_primaria form-control check_ip']); }}     
                                             </div>
                                             <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
@@ -177,7 +177,7 @@
                                            {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], null, ['class' => 'form-control']) }}
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" style="display:none">
                                         <input type="checkbox" class="ip_primaria check_ip" name="primario[]" value="1" checked="checked">
                                     </div>
                                     <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>

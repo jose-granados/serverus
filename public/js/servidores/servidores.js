@@ -39,8 +39,10 @@ $(document).ready(function(){
         $(".divVns").hide();  
     } 
 
+    var loc = window.location;
+    var pathName = window.location.pathname.substring(0, loc.pathname.lastIndexOf('/') - 10);
     $(".serverFisico").change(function() {
-        $.get('/versus/ubicacion/' + $(this).val(), function(data) {
+        $.get(pathName + 'ubicacion/' + $(this).val(), function(data) {
            $('.selectLoca').val(data);
            $('.selectLoca').change();
         }); 
@@ -49,5 +51,5 @@ $(document).ready(function(){
     $(".clone .label_ip").text("IP Secundaria");
     $("tr.clone:first-child .label_ip").text("IP Primaria");
 
-    $(".check_ip").prop( "checked", true );
+    $(".check_ip").prop( "checked", true );   
 });
