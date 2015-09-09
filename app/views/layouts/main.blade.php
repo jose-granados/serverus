@@ -50,16 +50,21 @@ $module = Request::segment(1);
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="{{ URL::to('usuarios/1') }}">
+                            <a href="usuarios/{{ Auth::user()->id}}">
                                 <div>
-                                    <strong>Epifauno Alebrije</strong>
+                                    <strong>
+                                        {{  Auth::user()->nombre.' '. 
+                                            Auth::user()->apellido_paterno.' '.
+                                            Auth::user()->apellido_materno
+                                        }}
+                                    </strong>
                                 </div>
                             </a>
                         </li>
                         <li>
-                             <div class="sangria">
-                                 <strong>Poweruser</strong>
-                             </div>
+                            <div class="sangria">
+                                <strong>{{Perfil::obtienePerfilUser()}}</strong>
+                            </div>
                         </li>
                     </ul>
                 </li>

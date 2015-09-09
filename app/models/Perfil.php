@@ -12,6 +12,10 @@ class Perfil extends Eloquent {
 		return Perfil::where('nombre_perfil',$nombre_perfil)->first()->id;
 	}
 
+	public static function obtienePerfilUser(){
+		$perfilUser = Perfil::select('nombre_perfil')->where('id',Auth::user()->perfil_id)->first();
+		return $perfilUser['nombre_perfil'];
+	}
 }
 
 ?>
