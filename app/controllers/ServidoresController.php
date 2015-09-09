@@ -49,6 +49,7 @@ class ServidoresController extends BaseController {
 		unset($servidores->password);
 		unset($servidores->ip);
 		unset($servidores->tipo_ip);
+		unset($servidores->primario);
 		unset($servidores->dns);
 		unset($servidores->padre_servidor_id);
 		
@@ -57,6 +58,7 @@ class ServidoresController extends BaseController {
 		
 		$ips = Input::get('ip');
 		$tipo_ips = Input::get('tipo_ip');
+		$primarios = Input::get('primario');
 		$dns = Input::get('dns');
 		
 		$servidores->vnc = ($servidores->vnc == 'on') ? 1 : 0;
@@ -75,6 +77,7 @@ class ServidoresController extends BaseController {
 				$ipsServidores = new IpsServidores();
 				$ipsServidores->ip = $ips[$key];
 				$ipsServidores->tipo_ip = $tipo_ips[$key];
+				$ipsServidores->primario = $primarios[$key];
 				$ipsServidores->servidor_id = $servidores->id;
 				$ipsServidores->save();
 			}
@@ -163,6 +166,7 @@ class ServidoresController extends BaseController {
 		unset($datos['password']);
 		unset($datos['ip']);
 		unset($datos['tipo_ip']);
+		unset($datos['primario']);
 		unset($datos['dns']);
 		unset($datos['padre_servidor_id']);
 		
@@ -172,6 +176,7 @@ class ServidoresController extends BaseController {
 		$ips = Input::get('ip');
 		$tipo_ips = Input::get('tipo_ip');
 		$dns = Input::get('dns');
+		$primarios = Input::get('primario');
 		$user = Input::get('usuario');
 		$pass = Input::get('password');
 
@@ -193,6 +198,7 @@ class ServidoresController extends BaseController {
 				$ipsServidores = new IpsServidores();
 				$ipsServidores->ip = $ips[$key];
 				$ipsServidores->tipo_ip = $tipo_ips[$key];
+				$ipsServidores->primario = $primarios[$key];
 				$ipsServidores->servidor_id = $servidores->id;
 				$ipsServidores->save();
 			}

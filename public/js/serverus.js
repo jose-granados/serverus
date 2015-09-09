@@ -51,7 +51,10 @@ $(document).ready(function(){
         $(this).closest(".form-group").find(".tableRowUser .clone:first").clone().find("input").each(function() {
             $(this).val('');
         }).end().appendTo($(this).closest(".form-group").find("table.tableRowUser"));
-
+        
+        // $(".tablaIPS tr.clone:first-child .ip_primaria").prop('checked', true);
+        // $(".tablaIPS tr.clone:last-child .ip_primaria").prop('checked', false).val(0);
+        $(".tablaIPS tr.clone:last-child .label_ip").text("IP Secundaria");
     })
 
     $(document).on("click",".removerow",function() {

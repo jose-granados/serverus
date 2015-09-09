@@ -137,13 +137,13 @@
                             <h5 class="panel-heading page-title">IPS</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
-                        <table style="width: 100%;" class="tableRowUser">
+                        <table style="width: 100%;" class="tableRowUser tablaIPS">
                             @if (count($ips) > 0)
                                 @foreach($ips as $ip)
                                     <tr class="clone">
                                         <td>
                                             <div class="form-group">
-                                                <label class="col-sm-2 control-label">IP</label>
+                                                <label class="col-sm-2 control-label label_ip">IP Primaria</label>
                                                 <div class="col-sm-4 tablas-margen">
                                                     <input class="form-control" name="ip[]" value="{{$ip->ip}}">
                                                 </div>
@@ -154,6 +154,9 @@
                                                         {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], $ip->tipo_ip, ['class' => 'form-control']) }}
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                 {{ Form::checkbox('primario[]', $ip->primario, false, ['class' => 'ip_primaria form-control check_ip']); }}     
+                                            </div>
                                             <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
                                             <hr></hr>
                                         </td>
@@ -163,7 +166,7 @@
                                  <tr class="clone">
                                 <td>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">IP</label>
+                                        <label class="col-sm-2 control-label label_ip">IP Primaria</label>
                                         <div class="col-sm-4 tablas-margen">
                                             <input class="form-control" name="ip[]">
                                         </div>
@@ -173,6 +176,9 @@
                                         <div class="col-sm-4 tablas-margen">
                                            {{ Form::select('tipo_ip[]', ['1'=>'Fisico','0'=>'Virtual'], null, ['class' => 'form-control']) }}
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="ip_primaria check_ip" name="primario[]" value="1" checked="checked">
                                     </div>
                                     <a class="removerow"><i class="glyphicon glyphicon-minus-sign color-red fa-2x"> </i></a>
                                     <hr></hr>
@@ -220,7 +226,6 @@
                             @endif
                         </table>
                     </div>
-                    <input class="form-control" name="dns[]" class="epi">
                 </div>
             </div>
         </div>

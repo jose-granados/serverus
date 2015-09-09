@@ -44,5 +44,10 @@ $(document).ready(function(){
            $('.selectLoca').val(data);
            $('.selectLoca').change();
         }); 
-    });  
+    });
+
+    $(".clone .label_ip").text("IP Secundaria");
+    $("tr.clone:first-child .label_ip").text("IP Primaria");
+
+    $(".check_ip").prop( "checked", true );
 });
