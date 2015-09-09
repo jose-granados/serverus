@@ -82,6 +82,7 @@ class PermisosSeeder extends Seeder {
 			array('nombre_permiso'=>'mantenimientos.destroy'),
 			
 			array('nombre_permiso'=>'logs.index'),
+			array('nombre_permiso'=>'dashboard.index'),
 
 		));
 

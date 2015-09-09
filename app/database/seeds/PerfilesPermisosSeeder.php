@@ -79,8 +79,8 @@ class PerfilesPermisosSeeder extends Seeder {
 			'mantenimientos.update',
 			'mantenimientos.destroy',
 				
-			'logs.index'
-				
+			'logs.index',
+			'dashboard.index',
 		);
 
 		$permisos_power_user = array(
@@ -118,7 +118,8 @@ class PerfilesPermisosSeeder extends Seeder {
 			'mantenimientos.update',
 			'mantenimientos.destroy',
 			
-			'logs.index'
+			'logs.index',
+			'dashboard.index',
 				
 		);
 
@@ -133,7 +134,8 @@ class PerfilesPermisosSeeder extends Seeder {
 				
 			'mantenimientos.index',
 			
-			'logs.index'
+			'logs.index',
+			'dashboard.index',
 		);
 
 		PerfilPermiso::truncate();
