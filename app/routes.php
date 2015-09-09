@@ -33,6 +33,10 @@ Route::group(array('before' => 'auth'), function(){
 	Route::resource('mantenimientos', 'MantenimientosController');
 
 	Route::get('ubicacion/{id}','LocalizacionesController@ubicacion');
+
+	Route::get('acceso_denegado', function(){
+		return View::make('layouts.main')->with('content', View::make('accesso_denegado'));
+	});
 	
 });
 

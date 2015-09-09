@@ -7,6 +7,15 @@ class BaseController extends Controller {
 	 *
 	 * @return void
 	 */
+
+	public function __construct(){
+
+		if(Auth::check() && !Usuario::canAccess(Route::currentRouteName())){
+			Redirect::to('acceso_denegado')->send();
+		}	
+
+	}
+
 	protected function setupLayout()
 	{
 		if ( ! is_null($this->layout))
