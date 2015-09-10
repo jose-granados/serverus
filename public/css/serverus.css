@@ -293,6 +293,11 @@ fieldset {
   color:#337ab7;
   margin-top:60px;
 }
+.page-header-denegado {
+  text-transform:uppercase;
+  color:#d9534f;
+  margin-top:60px;
+}
 .page-title {
   color:#337ab7;
   font-family:montserratregular;
@@ -1116,3 +1121,4 @@ textarea.form-control {
   left: 0;
   right: 0;
 }
+
