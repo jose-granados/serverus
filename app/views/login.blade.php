@@ -54,7 +54,11 @@
                if($("div.alert-danger").length){
                    $("#main-logo").addClass("animated").addClass("shake");
                }
-            });
+
+               setTimeout(function() {
+                    $('.alert').fadeOut(1500);
+                }, 3000); // <-- time in milliseconds
+                        });
         </script>
     </body>
 </html>
