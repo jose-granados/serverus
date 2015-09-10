@@ -10,7 +10,9 @@ class HomeController extends BaseController{
             $apps = Apps::optieneApps();
             $usuarios = Usuario::obtieneUsuarios();
             $logs = Logs::select('descripcion','id','created_at','indice','ruta')->orderBy('id', 'desc')->take(10)->get();
-            $this->layout->content = View::make('dashboard/index')->with(compact('apps','usuarios','logs'));;
+            $servidoresOn = Servidores::select()->where('activo',1)->count();
+            $servidoresOf = Servidores::select()->where('activo',0)->count();;
+            $this->layout->content = View::make('dashboard/index')->with(compact('apps','usuarios','logs','servidoresOn','servidoresOf'));;
 
         }else{
             return View::make('login');

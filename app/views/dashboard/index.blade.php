@@ -36,7 +36,7 @@
                         <i class="fa fa-tasks fa-3x color-green hvr-grow"></i>
                     </div>
                     <div class="col-xs-9 text-right color-green">
-                        <div class="huge">12</div>
+                        <div class="huge"><?php echo $servidoresOn;?></div>
                         <div>Servidores online</div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         <i class="fa fa-support fa-3x color-red hvr-grow"></i>
                     </div>
                     <div class="col-xs-9 text-right color-red">
-                        <div class="huge">13</div>
+                        <div class="huge"><?php echo $servidoresOf;?></div>
                         <div>Servidores offline</div>
                     </div>
                 </div>

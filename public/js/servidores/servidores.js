@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$('.selectTipo').change(function(){
         $('.selectLoca').removeAttr("selected");
 		opc = $( ".selectTipo option:selected" ).val();

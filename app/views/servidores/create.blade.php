@@ -10,7 +10,7 @@
 
     @include('servidores/form')
 
-    {{ HTML::script('public/js/servidores/servidores.js') }}
+    {{ HTML::script('public/js/servidores/servidores.js') }}  
 
     <button type="submit" class="btn btn-default fill-green ">Guardar</button>
 

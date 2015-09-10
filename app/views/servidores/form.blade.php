@@ -145,7 +145,7 @@
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label label_ip">IP Primaria</label>
                                                 <div class="col-sm-4 tablas-margen">
-                                                    <input class="form-control" name="ip[]" value="{{$ip->ip}}">
+                                                    <input class="form-control ipv4" name="ip[]" value="{{$ip->ip}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -168,7 +168,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label label_ip">IP Primaria</label>
                                         <div class="col-sm-4 tablas-margen">
-                                            <input class="form-control" name="ip[]">
+                                            <input class="form-control ipv4" name="ip[]">
                                         </div>
                                     </div>
                                     <div class="form-group">
