@@ -22,6 +22,7 @@ class CrearTablaApps extends Migration {
 			$table->string('responsable_nombre');
 			$table->string('responsable_correo');
 			$table->string('responsable_telefono');
+			$table->boolean('activo')->default(1);
 			$table->integer('servidor_id')->unsigned();
 			$table->foreign('servidor_id')->references('id')->on('servidores');
 			$table->timestamps();

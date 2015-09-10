@@ -18,6 +18,7 @@ class CrearTablaIpsServidores extends Migration {
 			$table->integer('servidor_id')->unsigned();
 			$table->string('ip');
 			$table->boolean('tipo_ip')->default(0);
+			$table->boolean('primario')->default(0);
 			$table->foreign('servidor_id')->references('id')->on('servidores');
 			$table->timestamps();
 		});

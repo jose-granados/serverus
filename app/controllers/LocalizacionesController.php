@@ -106,56 +106,22 @@ class LocalizacionesController extends BaseController {
 	}
 	
 	public function dashboard(){
-		$localizaciones = Localizaciones::select('id','nombre as title','latitud as latitude','longitud as longitude')->get();
+		$localizaciones = Localizaciones::select('localizaciones.id','localizaciones.nombre as title','localizaciones.latitud as latitude','localizaciones.longitud as longitude','servidores.activo','servidores.id as servido_id')->
+		join('servidores', 'servidores.localizacion_id','=','localizaciones.id')->get();
 		foreach ($localizaciones as $localizacion){
 			$localizacion->zoomLevel = 5;
 			$localizacion->scale = 0.5;
-			$localizacion->correcto = $this->verificarServerApps($localizacion->id);
-			
-			
+			$localizacion->correcto = ($localizacion->activo) ? ($this->verificarApps($localizacion->servido_id)) : true;
 		}
 		
 		return $localizaciones->toJson();
 	}
 	
-	private function verificarServerApps($localizacion_id){
-		$servidores = Servidores::select('servidores.id','ips_servidores.ip')->join('ips_servidores', 'servidores.id', '=', 'ips_servidores.servidor_id')->where('servidores.localizacion_id',$localizacion_id)->where('servidores.verificar',true)->get();
-		
-		foreach ($servidores as $servidor){
-			
-			$url = 'http://' . $servidor->ip;
-			
-			if(!$this->compruebaEstadoServidorApps($url)) return true;
-			
-			/*$apps = Apps::select('ruta','nombre','responsable_nombre','responsable_correo','responsable_felefono')->where('servidor_id',$servidor->id)->get();
-
-			foreach ($apps as $app){
-				
-				$url = 'http://' . $servidor->ip . '/' . $app->ruta;
-
-				if(!$this->compruebaEstadoServidorApps($url)) return true;
-			}*/
-		}
-		
-		return false;
-		
+	private function verificarApps($localizacion_id){
+		$servidores = Apps::select()->where('activo',false)->count();
+		return ($servidores > 0) ? true : false;
 	}
 	
-	private function compruebaEstadoServidorApps($url){
-		
-		$cl = curl_init($url);
-		curl_setopt($cl,CURLOPT_CONNECTTIMEOUT,10);
-		curl_setopt($cl,CURLOPT_HEADER,true);
-		curl_setopt($cl,CURLOPT_NOBODY,true);
-		curl_setopt($cl,CURLOPT_RETURNTRANSFER,true);
-			
-		$response = curl_exec($cl);
-			
-		curl_close($cl);
-			
-		return ($response) ? true : false;
-	}
-
 	public static function ubicacion($id){
 		$query = Servidores::select('localizacion_id')->where('id',$id)->first();
 		return $query['localizacion_id'];	
