@@ -18,14 +18,16 @@ class Apps extends Ardent implements UserInterface, RemindableInterface {
 	public static $rules = array(
 		'nombre' 				=> 'required',
 		'ruta'  				=> 'required',
-		'responsable_nombre'		=> 'required',
-		'responsable_correo'		=> 'required|email',
-		'responsable_telefono'	=> 'required'
+		'responsable_nombre'	=> 'required',
+		'responsable_correo'	=> 'required|email',
+		'responsable_telefono'	=> 'required',
+		'ruta'					=>  array('required', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \?=.-]*)*\/?$/')
 	);
 
 	public static $customMessages = array(
 		'required'           => 'El campo :attribute es requerido.',
-		'email'				 => 'Verifique que el campo de :attribute sea un correo valido.'
+		'email'				 => 'El campo :attribute no es un correo valido.',
+		'regex'			     => 'El campo :attribute es un formato invalido.'
 	);
 
 	public static function optieneApps(){

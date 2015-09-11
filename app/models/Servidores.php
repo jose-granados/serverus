@@ -20,7 +20,7 @@ class Servidores extends Ardent implements UserInterface, RemindableInterface {
 		'ram'  		=> 'required',
 		'hdd'  		=> 'required',
 		'verificar'	=> 'required',
-		'vnc_ip'	=> 'ip'
+		'vnc_ip'	=> 'ip',
 	);
 
 	public static $customMessages = array(

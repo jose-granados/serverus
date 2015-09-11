@@ -44,6 +44,7 @@ class ServidoresController extends BaseController {
 	 */
 	public function store()
 	{
+		DB::beginTransaction();
 		$servidores = new Servidores(Input::all());
 		unset($servidores->usuario);
 		unset($servidores->password);
@@ -69,8 +70,11 @@ class ServidoresController extends BaseController {
 				$usuariosServidores = new UsuariosServidores();
 				$usuariosServidores->usuario = $user[$key];
 				$usuariosServidores->password = $pass[$key];
-				$usuariosServidores->servidor_id = $servidores->id;
-				$usuariosServidores->save();
+				$usuariosServidores->servidor_id = $servidores->id;				
+				if(!$usuariosServidores->save()){
+					DB::rollback();
+					return Redirect::to('servidores/create')->withInput()->withErrors($usuariosServidores->errors());
+				}
 			}
 			
 			foreach ($ips as $key => $value) {
@@ -78,7 +82,7 @@ class ServidoresController extends BaseController {
 				$ipsServidores->ip = $ips[$key];
 				$ipsServidores->tipo_ip = $tipo_ips[$key];
 				$ipsServidores->primario = $primarios[$key];
-				$ipsServidores->servidor_id = $servidores->id;
+				$ipsServidores->servidor_id = $servidores->id;				
 				$ipsServidores->save();
 			}
 			
@@ -95,7 +99,7 @@ class ServidoresController extends BaseController {
 				$vmsServidores->padre_servidor_id = Input::get('padre_servidor_id');
 				$vmsServidores->save();
 			}
-	
+			DB::commit();
 			return Redirect::to('servidores')->with('success', "Servidor creado con exito");
 		}else{
 			return Redirect::to('servidores/create')->withInput()->withErrors($servidores->errors());
@@ -160,6 +164,7 @@ class ServidoresController extends BaseController {
 	 */
 	public function update($id)
 	{
+		DB::beginTransaction();
 		$servidores = Servidores::find($id);
 		$datos = Input::all();
 		unset($datos['usuario']);
@@ -182,15 +187,18 @@ class ServidoresController extends BaseController {
 
 		$servidores->vnc = ($servidores->vnc == 'on') ? 1 : 0;
 		$servidores->verificar = ($servidores->verificar == 'on') ? 1 : 0;
-		if($servidores->update($datos)){
-			
+		if($servidores->update($datos)){			
 			UsuariosServidores::where('servidor_id', $id)->delete();
 			foreach ($user as $key => $value) {
 				$usuariosServidores = new UsuariosServidores();
 				$usuariosServidores->usuario = $user[$key];
 				$usuariosServidores->password = $pass[$key];
 				$usuariosServidores->servidor_id = $id;
-				$usuariosServidores->save();
+				if(!$usuariosServidores->save()){
+					DB::rollback();
+					return Redirect::route('servidores.edit',$id)->withInput()->withErrors($usuariosServidores->errors());
+				}
+				
 			}
 			
 			IpsServidores::where('servidor_id', $id)->delete();
@@ -218,7 +226,7 @@ class ServidoresController extends BaseController {
 				$vmsServidores->padre_servidor_id = Input::get('padre_servidor_id');
 				$vmsServidores->save();
 			}
-			
+			DB::commit();
 			return Redirect::to('servidores')->with('success', "Servidor actualizado con exito");
 		}else{
 			return Redirect::route('servidores.edit',$id)->withInput()->withErrors($servidores->errors());

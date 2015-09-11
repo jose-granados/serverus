@@ -12,7 +12,7 @@
 
     {{ HTML::script('public/js/servidores/servidores.js') }}  
 
-    <button type="submit" class="btn btn-default fill-green ">Guardar</button>
+    <button type="submit" class="btn btn-default fill-green btnSave">Guardar</button>
 
     {{ link_to('servidores' , 'Regresar', ['class'=>'btn btn-default fill-blue']) }}
 

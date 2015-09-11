@@ -21,25 +21,25 @@
                             {{ Form::text( 'hdd', $servidores->hdd, ['class'=>'form-control ','placeholder'=>'HDD'] ) }}
                         </div>
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">Tipo Servidor</label>
                         <div class="col-sm-4">
                             {{ Form::select('tipo_servidor_id', $tiposServidores, $servidores->tipo_servidor_id, ['class' => 'form-control selectTipo']) }}
                         </div>
                     </div>
-                     <div class="form-group divOculto" style="display: <?= ($servidores->tipo_servidor_id == 1 || $servidores->tipo_servidor_id == null) ? "none" : "block";?>">
+                    <div class="form-group divOculto" style="display: <?= ($servidores->tipo_servidor_id == 1 || $servidores->tipo_servidor_id == null) ? "none" : "block";?>">
                         <label class="col-sm-2 control-label">Servidor Fisico</label>
                         <div class="col-sm-4">
                             {{ Form::select('padre_servidor_id', $servidoresFisicos, $servidores->padre_servidor_id, ['class' => 'form-control serverFisico']) }}
                         </div>
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">Localizaci&oacute;n</label>
                         <div class="col-sm-4">
                             {{ Form::select('localizacion_id', $localizaciones, $servidores->localizacion_id, ['class' => 'form-control selectLoca']) }}
                         </div>
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">CPU</label>
                         <div class="col-sm-4">
                             {{ Form::select('cpu_id', $cpus, $servidores->cpu_id, ['class' => 'form-control']) }}
@@ -114,7 +114,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Usuario</label>
                                         <div class="col-sm-4 tablas-margen">
-                                            <input class="form-control" name="usuario[]">
+                                            <input class="form-control userInput" name="usuario[]">
                                         </div>
                                     </div>
                                     <div class="form-group">
