@@ -15,14 +15,19 @@
 	            color: #555;
 	            font-size: 20px;
 	            margin-top: 20px;
-	            padding: 3px;
+	            padding: 5px;
 	            text-align: center;
 	        }
+	        .logo_correo {
+			    float: right;
+			    height: 35px;
+			    width: 35px;
+			}
 	    </style>
    </head>
    <body>
         <div class="contenedor_correo">
-        <div class="titulo">Datos de la aplicación</div>
+        <div class="titulo">Datos de la aplicación {{ HTML::image('public/img/logo.png', 'Logo', array('class' => 'logo_correo')) }}</div>
         <table style="width:100%; border: 1px solid #eeeeee;">
             <tr>
                 <td><strong>Servidor:</strong></td>
