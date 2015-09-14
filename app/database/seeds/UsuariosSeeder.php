@@ -7,7 +7,7 @@ class UsuariosSeeder extends Seeder {
 		Usuario::truncate();
 		Usuario::insert(array(
 			array(
-				'email'=>'serverus@test.com',
+				'email'=>'serverus.test@gmail.com',
 				'perfil_id'=>1,
 				'password'=>Hash::make('bsd123'),
 			)
