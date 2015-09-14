@@ -45,12 +45,6 @@
                             {{ Form::select('cpu_id', $cpus, $servidores->cpu_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Sistema Operativo</label>
-                        <div class="col-sm-4">
-                             {{ Form::select('sistema_operativo_id', $sistemasOperativos, $servidores->sistema_operativo_id, ['class' => 'form-control']) }}
-                        </div>
-                    </div>
                     <div class="form-group check">
                         <label class="col-sm-2 control-label">VNS</label>
                         <div class="col-sm-4 divcheck">
@@ -82,8 +76,14 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Sistema Operativo</label>
+                        <div class="col-sm-4">
+                             {{ Form::select('sistema_operativo_id', $sistemasOperativos, $servidores->sistema_operativo_id, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <div class="width-deformer">
-                            <h5 class="panel-heading page-title">Usuarios</h5>
+                            <h5 class="panel-heading page-title">Usuarios OS</h5>
                             <a class="addrowUser addrowIcon"><i class="glyphicon glyphicon-plus-sign color-green fa-2x"> </i></a>
                         </div>
                         <table style="width: 100%;" class="tableRowUser">
@@ -130,8 +130,12 @@
                             @endif
                         </table>
                     </div>
-
-
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Responsable</label>
+                        <div class="col-sm-4">
+                             {{ Form::select('usuario_id', $usuarios, $servidores->usuario_id, ['class' => 'form-control']) }}
+                        </div>
+                    </div>
                      <div class="form-group">
                         <div class="width-deformer">
                             <h5 class="panel-heading page-title">IPS</h5>

@@ -20,8 +20,7 @@
                                 <th>Nombre</th>
                                 <th>Ram</th>
                                 <th>HDD</th>
-                                <th>IP</th>
-                                <th>DNS</th>
+                                <th>Tipo Servidor</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -32,8 +31,7 @@
                                     <td>{{ $servidor->nombre }}</td>
                                     <td>{{ $servidor->ram }}</td>
                                     <td>{{ $servidor->hdd }}</td>
-                                    <td>{{ $servidor->ip }}</td>
-                                    <td>{{ $servidor->dns }}</td>
+                                    <td>{{ $servidor->tipo_servidor_id == 1 ? 'Fisico' : 'Virtual' }}</td>
                                     <td>
                                         {{ Form::open( ['route'=>['servidores.destroy', $servidor->id], 'method' => 'DELETE'] ) }}
                                             <a href="{{URL::route('servidores.show', $servidor->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>

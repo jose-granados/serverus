@@ -26,6 +26,7 @@ class ServidoresController extends BaseController {
 		$servidores = new Servidores;
 		$localizaciones = Localizaciones::obtenerLocalizaciones();
 		$sistemasOperativos = SistemasOperativos::obtenerSistemasOperativos();
+		$usuarios = Usuario::obtieneUsuarios();
 		$cpus = Cpus::obtenerCpus();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
 		$usuariosServidores = array();
@@ -33,7 +34,7 @@ class ServidoresController extends BaseController {
 		$servidores->padre_servidor_id = null;
 		$ips = array();
 		$dns = array();
-		$this->layout->content = View::make('servidores/create')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns'));
+		$this->layout->content = View::make('servidores/create')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns','usuarios'));
 	}
 
 
@@ -120,6 +121,7 @@ class ServidoresController extends BaseController {
 		$localizaciones = Localizaciones::obtenerLocalizaciones();
 		$sistemasOperativos = SistemasOperativos::obtenerSistemasOperativos();
 		$cpus = Cpus::obtenerCpus();
+		$usuarios = Usuario::obtieneUsuarios();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
 		$usuariosServidores = UsuariosServidores::where('servidor_id',$id)->get();
 		$servidoresFisicos = Servidores::obtenerServidoresFisicos();
@@ -128,7 +130,7 @@ class ServidoresController extends BaseController {
 		$servidores->padre_servidor_id = VmsServidores::where('hijo_servidor_id', $id)->first();
 		$servidores->padre_servidor_id = $servidores->padre_servidor_id['padre_servidor_id'];
 		
-		$this->layout->content = View::make('servidores/show')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns'));
+		$this->layout->content = View::make('servidores/show')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns','usuarios'));
 	}
 
 
@@ -145,6 +147,7 @@ class ServidoresController extends BaseController {
 		$localizaciones = Localizaciones::obtenerLocalizaciones();
 		$sistemasOperativos = SistemasOperativos::obtenerSistemasOperativos();
 		$cpus = Cpus::obtenerCpus();
+		$usuarios = Usuario::obtieneUsuarios();
 		$tiposServidores = TiposServidores::obtenerTiposServidores();
 		$usuariosServidores = UsuariosServidores::where('servidor_id',$id)->get();
 		$servidoresFisicos = Servidores::obtenerServidoresFisicos();
@@ -152,7 +155,7 @@ class ServidoresController extends BaseController {
 		$dns = DnsServidores::where('servidor_id',$id)->get();
 		$servidores->padre_servidor_id = VmsServidores::where('hijo_servidor_id', $id)->first();
 		$servidores->padre_servidor_id = $servidores->padre_servidor_id['padre_servidor_id'];
-		$this->layout->content = View::make('servidores/edit')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns'));
+		$this->layout->content = View::make('servidores/edit')->with(compact('servidores','localizaciones','cpus','sistemasOperativos','tiposServidores','usuariosServidores','servidoresFisicos','ips','dns','usuarios'));
 	}
 
 
