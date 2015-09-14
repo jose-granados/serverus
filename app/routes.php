@@ -40,3 +40,8 @@ Route::group(array('before' => 'auth'), function(){
 	
 });
 
+Route::get('mail_test', function(){
+	Mail::send('emails/mail_test', array(), function($message){
+		$message->to(Config::get('mail.username'))->subject('MAIL TEST');
+	});
+});
