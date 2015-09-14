@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	$('.selectTipo').change(function(){
+         $('.selectLoca').change();
         $('.selectLoca').removeAttr("selected");
 		opc = $( ".selectTipo option:selected" ).val();
         if(opc == 2) {
