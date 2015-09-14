@@ -141,8 +141,10 @@ class MantenimientosController extends BaseController {
 	 * @return Response
 	 */
 	public function destroy($id)
-	{
-		if(MantenimientosServidores::where('mantenimiento_id', $id)->delete() && MantenimientosSwitches::where('mantenimiento_id', $id)->delete() && Mantenimientos::destroy($id)){
+	{	
+		MantenimientosServidores::where('mantenimiento_id', $id)->delete();
+		MantenimientosSwitches::where('mantenimiento_id', $id)->delete();
+		if(Mantenimientos::destroy($id)){
 			return Redirect::to('mantenimientos')->with('success', "Mantenimiento eliminado con exito.");
 		}else{
 			return Redirect::to('mantenimientos')->with('danger', "Ocurrio un error al eliminar el Mantenimiento.");

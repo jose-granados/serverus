@@ -159,7 +159,9 @@ class AppsController extends BaseController {
 	 * @return Response
 	 */
 	public function destroy($id)
-	{
+	{	
+		UsuariosApps::where('app_id',$id)->delete(); // eimino los usuaarios relacionado a esa App
+		ServiciosApps::where('app_id',$id)->delete(); // eimino los servicios relacionado a esa App
 		if(Apps::destroy($id)){
 			return Redirect::to('apps')->with('success', "Aplicacion eliminada con exito.");
 		}else{

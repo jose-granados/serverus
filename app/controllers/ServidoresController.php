@@ -243,7 +243,11 @@ class ServidoresController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		if(UsuariosServidores::where('servidor_id', $id)->delete() && Servidores::destroy($id)){
+		IpsServidores::where('servidor_id', $id)->delete();
+		DnsServidores::where('servidor_id', $id)->delete();
+		VmsServidores::where('hijo_servidor_id', $id)->delete();
+		UsuariosServidores::where('servidor_id', $id)->delete(); 
+		if(Servidores::destroy($id)){
 			return Redirect::to('servidores')->with('success', "Servidor eliminado con exito.");
 		}else{
 			return Redirect::to('servidores')->with('danger', "Ocurrio un error al eliminar el Servidor.");
