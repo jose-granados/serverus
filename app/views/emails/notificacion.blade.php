@@ -20,14 +20,13 @@
 	        }
 	        .logo_correo {
 			    float: right;
-			    height: 35px;
-			    width: 35px;
+			    width: auto;
 			}
 	    </style>
    </head>
    <body>
         <div class="contenedor_correo">
-        <div class="titulo">Datos de la aplicación {{ HTML::image('public/img/logo.png', 'Logo', array('class' => 'logo_correo')) }}</div>
+        <div class="titulo">Datos de la aplicación {{ HTML::image('public/img/logo.png', 'Logo', array('class' => 'logo_correo','width' => '35px','height'=>'35px')) }}</div>
         <table style="width:100%; border: 1px solid #eeeeee;">
             <tr>
                 <td><strong>Servidor:</strong></td>
