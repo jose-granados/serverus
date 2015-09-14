@@ -107,7 +107,7 @@ class LocalizacionesController extends BaseController {
 	
 	public function dashboard(){
 		$localizaciones = Localizaciones::select('localizaciones.id','localizaciones.nombre as title','localizaciones.latitud as latitude','localizaciones.longitud as longitude','servidores.activo','servidores.id as servido_id')->
-		join('servidores', 'servidores.localizacion_id','=','localizaciones.id')->get();
+		join('servidores', 'servidores.localizacion_id','=','localizaciones.id')->orderBy('servidores.activo','desc')->get();
 		foreach ($localizaciones as $localizacion){
 			$localizacion->zoomLevel = 5;
 			$localizacion->scale = 0.5;
@@ -126,4 +126,83 @@ class LocalizacionesController extends BaseController {
 		$query = Servidores::select('localizacion_id')->where('id',$id)->first();
 		return $query['localizacion_id'];	
 	}
+	
+	public function verificarServidores(){
+		$servidores = Servidores::select(
+				'servidores.id',
+				'ips_servidores.ip',
+				'servidores.nombre as titulo',
+				'localizaciones.nombre as ubicacion',
+				'localizaciones.latitud',
+				'localizaciones.longitud',
+				'usuarios.email as correo'
+		)->
+		join('localizaciones','localizaciones.id','=','servidores.localizacion_id')->
+		join('ips_servidores','ips_servidores.servidor_id','=','servidores.id')->
+		join('usuarios','usuarios.usuario_id','=','usuarios.id')->
+		where('servidores.verificar',true)->where('ips_servidores.primario',true)->get();
+		
+		foreach($servidores as $servidor) {
+		
+			$respuesta = $this->compruebaEstadoServidorApps('http://'.$servidor->ip);
+				
+			$data = array(
+					'servidor'=>$servidor->titulo,
+					'localizacion'=>$servidor->ubicacion,
+					'latitud'=>$servidor->latitud,
+					'longitud'=>$servidor->longitud,
+					'aplicacion' => '',
+			);
+				
+			if( is_bool($respuesta) && $respuesta === true ){
+				Servidores::where('id',$servidor->id)->update(array('activo'=>true));
+				$apps = Apps::select()->where('servidor_id',$servidor->id)->get();
+				foreach ($apps as $app){
+					$respuesta_apps = $this->compruebaEstadoServidorApps($app->ruta);
+					if( is_bool($respuesta_apps) && $respuesta_apps === true ){
+						Apps::where('id',$app->id)->update(array('activo'=>true));
+					}else{
+						Logs::salvarMovimiento('apps', $app->id,'Aplicacion Fuera de linea');
+						Apps::where('id',$app->id)->update(array('activo'=>false));
+		
+						$data['mensaje'] = $respuesta_apps;
+						$data['aplicacion'] = $app->nombre;
+						$this->envioMail($data, $app->responsable_correo, 'Aplicacion Fuera de linea');
+					}
+				}
+			}else{
+				
+				Servidores::where('id',$servidor->id)->update(array('activo'=>false));
+				Logs::salvarMovimiento('servidores', $servidor->id,'Servidor Fuera de linea');
+				$data['mensaje'] = $respuesta;
+				$this->envioMail($data,$servidor->correo, 'Servidor Fuera de linea');
+			}
+		}
+		return '';
+	}
+		
+	private function envioMail($datos,$destinatario,$asunto){
+		Mail::send('emails/notificacion', $datos, function($message) use ($destinatario,$asunto){
+			$message->to($destinatario)->subject($asunto);
+		});
+	}
+		
+		
+	private function compruebaEstadoServidorApps($url){
+	
+		$cl = curl_init($url);
+		curl_setopt($cl,CURLOPT_CONNECTTIMEOUT,10);
+		curl_setopt($cl,CURLOPT_HEADER,true);
+		curl_setopt($cl,CURLOPT_NOBODY,true);
+		curl_setopt($cl,CURLOPT_RETURNTRANSFER,true);
+			
+		$response = curl_exec($cl);
+	
+		$error = (!$response) ? curl_error($cl) : '';
+	
+		curl_close($cl);
+			
+		return ($response) ? true :$error ;
+	}	
+	
 }

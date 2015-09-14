@@ -27,11 +27,13 @@ class CrearTablaServidores extends Migration {
 			$table->string('vnc_puerto');
 			$table->boolean('activo')->default(1);
 			$table->integer('localizacion_id')->unsigned();
+			$table->integer('usuario_id')->unsigned();
 			$table->integer('cpu_id')->unsigned();
 			$table->integer('sistema_operativo_id')->unsigned();
 			$table->integer('tipo_servidor_id')->unsigned();
 			$table->foreign('localizacion_id')->references('id')->on('localizaciones');
 			$table->foreign('cpu_id')->references('id')->on('cpus');
+			$table->foreign('usuario_id')->references('id')->on('usuarios');
 			$table->foreign('sistema_operativo_id')->references('id')->on('sistemas_operativos');
 			$table->foreign('tipo_servidor_id')->references('id')->on('tipos_servidores');
 			$table->timestamps();

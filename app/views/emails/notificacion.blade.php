@@ -30,20 +30,20 @@
         <table style="width:100%; border: 1px solid #eeeeee;">
             <tr>
                 <td><strong>Servidor:</strong></td>
-                <td>$variable</td> 
+                <td>{{$servidor}}</td> 
             </tr>
             <tr>
                 <td><strong>Localización:</strong></td>
-                <td>$variable</td> 
+                <td>{{$localizacion}}</td> 
             </tr>
             <tr>
                 <td><strong>Aplicación:</strong></td>
-                <td>$variable</td> 
+                <td>{{$aplicacion}}</td> 
             </tr>
             <tr>
                 <td><strong>Mensaje:</strong></td>
                 <td>
-                    Este es un mensaje de pruebas para indicar que el servidor tiene una aplicación que no esta funcioanando, vefiricar confuguración.
+                    {{$mensaje}}
                 </td>
             </tr>
         </table>
