@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-lg-12">
-        <h4 class="page-header">CPU's</h4>
+        <h4 class="page-header">Tipo de Switches</h4>
     </div>
 </div>
 
 @include('alerts')
 
-{{ link_to('tiposwitches/create', 'Nuevo Tipo de Switche', ['class'=>'btn btn-default fill-green margin-bottom-20'] ) }}
+{{ link_to('tiposwitches/create', 'Nuevo Tipo de Switch', ['class'=>'btn btn-default fill-green margin-bottom-20'] ) }}
 
 <div class="row">
     <div class="col-lg-12">
@@ -18,7 +18,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>

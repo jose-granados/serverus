@@ -29,6 +29,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Marca</label>
+                        <div class="col-sm-4">
+                            {{ Form::text( 'marca', $switches->marca, ['class'=>'form-control ','placeholder'=>'Marca'] ) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">Versi&oacute;n</label>
                         <div class="col-sm-4">
                             {{ Form::text( 'version', $switches->version, ['class'=>'form-control ','placeholder'=>'Versi&oacute;n'] ) }}

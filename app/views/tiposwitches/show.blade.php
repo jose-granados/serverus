@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h4 class="page-header">Ver Tipo de Switches</h4>
+        <h4 class="page-header">Ver Tipo de Switch</h4>
     </div>
 </div>
 
