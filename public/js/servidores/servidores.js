@@ -41,13 +41,20 @@ $(document).ready(function(){
         $(".divVns").hide();  
     } 
 
-    var loc = window.location;
-    var pathName = window.location.pathname.substring(0, loc.pathname.lastIndexOf('/') - 10);
     $(".serverFisico").change(function() {
-        $.get(pathName + 'ubicacion/' + $(this).val(), function(data) {
-           $('.selectLoca').val(data);
-           $('.selectLoca').change();
-        }); 
+        $.ajax({
+    		url: document.location.protocol + '//' + document.location.host + '/' + window.location.pathname.split('/')[1] + '/' +'ubicacion',
+    	    type:"post",
+    	    async: true,
+    	    data:{'id':$(this).val()},
+    	    success: function(resp){
+    	    	 $('.selectLoca').val(resp);
+    	    	 $('.selectLoca').change();
+    	    	
+    		},error: function(e){
+    			
+    		}	
+    	});
     });
 
     $(".clone .label_ip").text("IP Secundaria");

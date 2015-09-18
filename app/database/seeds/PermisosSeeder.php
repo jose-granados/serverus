@@ -91,7 +91,8 @@ class PermisosSeeder extends Seeder {
 			
 			array('nombre_permiso'=>'logs.index'),
 			array('nombre_permiso'=>'dashboard.index'),
-			array('nombre_permiso'=>'ubicacion.index'),
+			array('nombre_permiso'=>'ubicacion.store'),
+			
 
 		));
 

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
 class LocalizacionesController extends BaseController {
 
 	protected $layout = "layouts.main";
@@ -123,10 +124,14 @@ class LocalizacionesController extends BaseController {
 	}
 	
 
-	public static function ubicacion($id){
+	public function ubicacion(){
+		$id = Input::get('id');
+		if($id!=""){
+			$query = Servidores::find($id);
+			return $query->localizacion_id;
+		}
+		return "";
 		
-		$query = Servidores::find($id);
-		return $query->localizacion_id;
 	}
 	
 	public function verificarServidores(){

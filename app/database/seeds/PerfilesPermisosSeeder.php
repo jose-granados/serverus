@@ -89,7 +89,7 @@ class PerfilesPermisosSeeder extends Seeder {
 				
 			'logs.index',
 			'dashboard.index',
-			'ubicacion.index',
+			'ubicacion.store',
 		);
 
 		$permisos_power_user = array(
@@ -129,7 +129,7 @@ class PerfilesPermisosSeeder extends Seeder {
 				
 			'logs.index',
 			'dashboard.index',
-			'ubicacion.index',
+			'ubicacion.store',
 		);
 
 		$permisos_user = array(
@@ -145,7 +145,7 @@ class PerfilesPermisosSeeder extends Seeder {
 			
 			'logs.index',
 			'dashboard.index',
-			'ubicacion.index',
+			'ubicacion.store',
 		);
 
 		PerfilPermiso::truncate();
