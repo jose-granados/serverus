@@ -33,9 +33,8 @@ Route::group(array('before' => 'auth'), function(){
 	Route::resource('logs', 'LogsController');
 	Route::resource('dashboard', 'LocalizacionesController@dashboard');
 	Route::resource('mantenimientos', 'MantenimientosController');
-
 	Route::resource('ubicacion','LocalizacionesController@ubicacion');
-
+	Route::resource('tiposwitches', 'TipoSwitchesController');
 	Route::get('acceso_denegado', function(){
 		return View::make('layouts.main')->with('content', View::make('accesso_denegado'));
 	});

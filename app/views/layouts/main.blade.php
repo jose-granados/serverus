@@ -139,6 +139,14 @@ $module = Request::segment(1);
                             </li>
                         @endif
 
+                        @if(Usuario::canAccess('switches.index'))
+                            <li>
+                                <a href="{{ URL::to('tipo_switches') }}" class="{{ $module == 'switches' ? 'active' : '' }}">
+                                    <i class="fa fa-list-ul fa-2x"></i> T. de switches
+                                </a>
+                            </li>
+                        @endif
+
                         @if(Usuario::canAccess('cpus.index'))
                             <li>
                                 <a href="{{ URL::to('cpus') }}" class="{{ $module == 'cpus' ? 'active' : '' }}">
