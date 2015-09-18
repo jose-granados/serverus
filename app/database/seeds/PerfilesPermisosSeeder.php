@@ -78,9 +78,18 @@ class PerfilesPermisosSeeder extends Seeder {
 			'mantenimientos.edit',
 			'mantenimientos.update',
 			'mantenimientos.destroy',
+
+			'tiposwitches.index',
+			'tiposwitches.create',
+			'tiposwitches.store',
+			'tiposwitches.show',
+			'tiposwitches.edit',
+			'tiposwitches.update',
+			'tiposwitches.destroy',
 				
 			'logs.index',
 			'dashboard.index',
+			'ubicacion.index',
 		);
 
 		$permisos_power_user = array(
@@ -117,10 +126,10 @@ class PerfilesPermisosSeeder extends Seeder {
 			'mantenimientos.edit',
 			'mantenimientos.update',
 			'mantenimientos.destroy',
-			
+				
 			'logs.index',
 			'dashboard.index',
-				
+			'ubicacion.index',
 		);
 
 		$permisos_user = array(
@@ -136,6 +145,7 @@ class PerfilesPermisosSeeder extends Seeder {
 			
 			'logs.index',
 			'dashboard.index',
+			'ubicacion.index',
 		);
 
 		PerfilPermiso::truncate();

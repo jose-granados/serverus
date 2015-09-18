@@ -81,8 +81,17 @@ class PermisosSeeder extends Seeder {
 			array('nombre_permiso'=>'mantenimientos.update'),
 			array('nombre_permiso'=>'mantenimientos.destroy'),
 			
+			array('nombre_permiso'=>'tiposwitches.index'),
+			array('nombre_permiso'=>'tiposwitches.create'),
+			array('nombre_permiso'=>'tiposwitches.store'),
+			array('nombre_permiso'=>'tiposwitches.show'),
+			array('nombre_permiso'=>'tiposwitches.edit'),
+			array('nombre_permiso'=>'tiposwitches.update'),
+			array('nombre_permiso'=>'tiposwitches.destroy'),
+			
 			array('nombre_permiso'=>'logs.index'),
 			array('nombre_permiso'=>'dashboard.index'),
+			array('nombre_permiso'=>'ubicacion.index'),
 
 		));
 
