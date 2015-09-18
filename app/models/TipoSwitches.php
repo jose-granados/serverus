@@ -23,4 +23,13 @@ class TipoSwitches extends Ardent implements UserInterface, RemindableInterface 
 	public static $customMessages = array(
 		'required'  => 'El campo :attribute es requerido.',
 	);
+
+	public static function obtenerTipoSwitches(){
+		$retorno = array();
+		$tiposSwitches = TipoSwitches::all();
+		foreach($tiposSwitches as $tiposSwitche) {
+			$retorno[$tiposSwitche->id] = $tiposSwitche->nombre;
+		}	
+		return $retorno;
+	}
 }

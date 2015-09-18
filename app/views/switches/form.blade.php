@@ -18,7 +18,8 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Tipo</label>
                         <div class="col-sm-4">
-                            {{ Form::text( 'tipo', $switches->tipo, ['class'=>'form-control ','placeholder'=>'Tipo'] ) }}
+                            
+                            {{ Form::select('tipo_switch_id', $tipoSwitches, $switches->tipo_switch_id, ['class' => 'form-control']) }}
                         </div>
                     </div>
                      <div class="form-group">
@@ -50,6 +51,12 @@
                         <label class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-4">
                             {{ Form::text( 'password', $switches->password, ['class'=>'form-control ','placeholder'=>'Password'] ) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Password Enabled</label>
+                        <div class="col-sm-4">
+                            {{ Form::text( 'password_enabled', $switches->password_enabled, ['class'=>'form-control ','placeholder'=>'Password Enabled'] ) }}
                         </div>
                     </div>
                 </div>

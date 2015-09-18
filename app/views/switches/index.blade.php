@@ -19,7 +19,6 @@
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Modelo</th>
-                                <th>Tipo</th>
                                 <th>Serie</th>
                                 <th>Versi&oacute;n</th>
                                 <th>Opciones</th>
@@ -31,7 +30,6 @@
                                     <td>{{ $switch->id }}</td>
                                     <td>{{ $switch->nombre }}</td>
                                     <td>{{ $switch->modelo }}</td>
-                                    <td>{{ $switch->tipo }}</td>
                                     <td>{{ $switch->serie }}</td>
                                     <td>{{ $switch->version }}</td>
                                     <td>

@@ -13,7 +13,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Descripcion</label>
                         <div class="col-sm-4">
-                            {{ Form::text( 'descripcion', $tipo_switches->descripcion, ['class'=>'form-control ','placeholder'=>'Descripcion'] ) }}
+                            {{ Form::textarea( 'descripcion', $tipo_switches->descripcion, ['class'=>'form-control ','placeholder'=>'Descripcion'] ) }}
                         </div>
                     </div>
 

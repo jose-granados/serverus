@@ -12,7 +12,7 @@ class TipoSwitchesController extends BaseController {
 	public function index()
 	{
 		$tipo_switches = TipoSwitches::all();
-		$this->layout->content = View::make('tipo_switches/index')->with(compact('tipo_switches'));
+		$this->layout->content = View::make('tiposwitches/index')->with(compact('tipo_switches'));
 	}
 
 
@@ -24,7 +24,7 @@ class TipoSwitchesController extends BaseController {
 	public function create()
 	{
 		$tipo_switches = new TipoSwitches;
-		$this->layout->content = View::make('tipo_switches/create')->with(compact('tipo_switches'));
+		$this->layout->content = View::make('tiposwitches/create')->with(compact('tipo_switches'));
 	}
 
 
@@ -37,10 +37,10 @@ class TipoSwitchesController extends BaseController {
 	{
 		$tipo_switches = new TipoSwitches(Input::all());
 		if($tipo_switches->save()){
-			TipoSwitches::salvarMovimiento('tipo_switches', $tipo_switches->id,'Alta de Tipo de Switches');
-			return Redirect::to('tipo_switches')->with('success', "Tipo de switches creado con exito");
+			Logs::salvarMovimiento('tiposwitches', $tipo_switches->id,'Alta de Tipo de Switches');
+			return Redirect::to('tiposwitches')->with('success', "Tipo de switches creado con exito");
 		}else{
-			return Redirect::to('tipo_switches/create')->withInput()->withErrors($tipo_switches->errors());
+			return Redirect::to('tiposwitches/create')->withInput()->withErrors($tipo_switches->errors());
 		}
 	}
 
@@ -54,7 +54,7 @@ class TipoSwitchesController extends BaseController {
 	public function show($id)
 	{
 		$tipo_switches = TipoSwitches::find($id);
-		$this->layout->content = View::make('tipo_switches/show')->with(compact('tipo_switches'));
+		$this->layout->content = View::make('tiposwitches/show')->with(compact('tipo_switches'));
 	}
 
 
@@ -67,7 +67,7 @@ class TipoSwitchesController extends BaseController {
 	public function edit($id)
 	{
 		$tipo_switches = TipoSwitches::find($id);
-		$this->layout->content = View::make('tipo_switches/edit')->with(compact('tipo_switches'));
+		$this->layout->content = View::make('tiposwitches/edit')->with(compact('tipo_switches'));
 	}
 
 
@@ -82,9 +82,9 @@ class TipoSwitchesController extends BaseController {
 		$tipo_switches = TipoSwitches::find($id);
 		
 		if($tipo_switches->update(Input::all())){
-			return Redirect::to('tipo_switches')->with('success', "Tipo de Switche actualizado con exito");
+			return Redirect::to('tiposwitches')->with('success', "Tipo de Switche actualizado con exito");
 		}else{
-			return Redirect::route('tipo_switches.edit',$id)->withInput()->withErrors($tipo_switches->errors());
+			return Redirect::route('tiposwitches.edit',$id)->withInput()->withErrors($tipo_switches->errors());
 		}
 
 	}
@@ -98,10 +98,10 @@ class TipoSwitchesController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		if(Cpus::destroy($id)){
-			return Redirect::to('cpus')->with('success', "Tipo de Switche eliminado con exito.");
+		if(TipoSwitches::destroy($id)){
+			return Redirect::to('tiposwitches')->with('success', "Tipo de Switche eliminado con exito.");
 		}else{
-			return Redirect::to('cpus')->with('danger', "Ocurrio un error al eliminar el Tipo de Switche.");
+			return Redirect::to('tiposwitches')->with('danger', "Ocurrio un error al eliminar el Tipo de Switche.");
 		}
 	}
 

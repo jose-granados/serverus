@@ -139,9 +139,9 @@ $module = Request::segment(1);
                             </li>
                         @endif
 
-                        @if(Usuario::canAccess('switches.index'))
+                        @if(Usuario::canAccess('tiposwitches.index'))
                             <li>
-                                <a href="{{ URL::to('tipo_switches') }}" class="{{ $module == 'switches' ? 'active' : '' }}">
+                                <a href="{{ URL::to('tiposwitches') }}" class="{{ $module == 'tiposwitches' ? 'active' : '' }}">
                                     <i class="fa fa-list-ul fa-2x"></i> T. de switches
                                 </a>
                             </li>

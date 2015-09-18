@@ -6,7 +6,7 @@
 
 @include('alerts')
 
-{{ Form::open( ['route'=>['tiposwitches.update', $cpus->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
+{{ Form::open( ['route'=>['tiposwitches.update', $tipo_switches->id], 'method' => 'PUT', 'class'=>'form-horizontal'] ) }}
 
     @include('tiposwitches/form')
 
